@@ -2,14 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.40">
+<meta name="generator" content="quarto-1.6.42">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Dr.&nbsp;Gang He">
-<meta name="description" content="Quarto Academic Website Template adapted by Dr.&nbsp;Gang He">
+<meta name="author" content="Felix Schönbrodt">
+<meta name="description" content="Personal academic website of Felix Schönbrodt">
 
-<title>Quarto Academic, PhD – Quarto Academic</title>
+<title>Felix Schönbrodt</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -32,13 +32,11 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-3146a0984a964146c28da0a2cf78b9ad.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
@@ -72,45 +70,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-recent-posts .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-image','listing-date','listing-title','listing-subtitle',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      page: 3,
-    pagination: { item: "<li class='page-item'><a class='page page-link' href='#'></a></li>" },
-      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-recent-posts'] = new List('listing-recent-posts', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-<script async="" src="https://www.googletagmanager.com/gtag/js?id="></script>
-
-<script type="text/javascript">
-
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', '', { 'anonymize_ip': true});
-</script>
 
 <!-- 
 Load Academicons v1: https://jpswalsh.github.io/academicons/
@@ -132,45 +91,11 @@ https://badge.dimensions.ai/
 
 <script type="text/javascript" src="//cdn.plu.mx/widget-popup.js"></script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="styles.css">
-<meta property="og:title" content="Quarto Academic, PhD – Quarto Academic">
-<meta property="og:description" content="Quarto Academic Website Template adapted by Dr.&nbsp;Gang He">
-<meta property="og:image" content="https://drganghe.github.io/quarto-academic-website-template/files/profiles/profile1.JPG">
-<meta property="og:site_name" content="Quarto Academic">
-<meta name="twitter:title" content="Quarto Academic, PhD – Quarto Academic">
-<meta name="twitter:description" content="Quarto Academic Website Template adapted by Dr.&nbsp;Gang He">
-<meta name="twitter:image" content="https://drganghe.github.io/quarto-academic-website-template/files/profiles/profile1.JPG">
-<meta name="twitter:card" content="summary_large_image">
+<meta property="og:title" content="Felix Schönbrodt">
+<meta property="og:image" content="files/profiles/FS_portrait_2022_small.jpeg">
+<meta property="og:site_name" content="Felix Schönbrodt">
 </head>
 
 <body class="nav-fixed">
@@ -181,7 +106,7 @@ window.Quarto = {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">Quarto Academic</span>
+    <span class="navbar-title">Felix Schönbrodt</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -209,15 +134,15 @@ window.Quarto = {
   </li>  
     </ul>
   </li>
+  <li class="nav-item">
+    <a class="nav-link" href="./publications.html"> 
+<span class="menu-text">Publications</span></a>
+  </li>  
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-research" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Research</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-research">    
-        <li>
-    <a class="dropdown-item" href="./publications.html">
- <span class="dropdown-text">List of Publication</span></a>
-  </li>  
         <li>
     <a class="dropdown-item" href="./posts.html#category=paper">
  <span class="dropdown-text">Selected Papers</span></a>
@@ -232,35 +157,16 @@ window.Quarto = {
     <a class="nav-link" href="./teaching.html"> 
 <span class="menu-text">Teaching</span></a>
   </li>  
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-outreach" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Outreach</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-outreach">    
-        <li>
-    <a class="dropdown-item" href="./posts.html#category=presentation">
- <span class="dropdown-text">Presentations</span></a>
-  </li>  
-    </ul>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="./people.html"> 
-<span class="menu-text">Group</span></a>
-  </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="./files/nsf-biosketch.pdf"> 
-<span class="menu-text">CV</span></a>
-  </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/drganghe/quarto-academic-website-template" target="_blank"> <i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/nicebread" target="_blank"> <i class="bi bi-github" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://bsky.app" target="_blank"> 
-<span class="menu-text"><i class="fa-brands fa-bluesky" aria-label="bluesky"></i></span></a>
+    <a class="nav-link" href="https://scicomm.xyz/@nicebread" target="_blank"> 
+<span class="menu-text"><i class="fa-brands fa-mastodon" aria-label="mastodon"></i></span></a>
   </li>  
   <li class="nav-item compact">
     <a class="nav-link" href="./posts.xml" target="_blank"> <i class="bi bi-rss" role="img">
@@ -292,47 +198,32 @@ window.Quarto = {
 
 <div class="quarto-about-trestles column-page">
   <div class="about-entity">
-    <img src="files/profiles/profile1.JPG" class="about-image
+    <img src="files/profiles/FS_portrait_2022_small.jpeg" class="about-image
   rounded " style="width: 70%;">
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Quarto Academic, PhD</h1>
+<h1 class="title">Felix Schönbrodt</h1>
 </div>
 <div class="quarto-title-meta column-page">
   </div>
 </header>
     <div class="about-links">
-  <a href="https://www.github.com" class="about-link" rel="" target="_blank">
-    <i class="bi bi-sun"></i>
-     <span class="about-link-text">Lab</span>
-  </a>
-  <a href="https://baruch.cuny.edu" class="about-link" rel="" target="_blank">
+  <a href="https://www.lmu.de/psy/de/personen/kontaktseite/felix-schoenbrodt-21fe5d01.html" class="about-link" rel="" target="_blank">
     <i class="bi bi-globe"></i>
-     <span class="about-link-text">Uprofile</span>
+     <span class="about-link-text">LMU Website</span>
   </a>
-  <a href="mailto:email@gmail.com" class="about-link" rel="" target="">
+  <a href="mailto:felix.schoenbrodt@psy.lmu.de" class="about-link" rel="" target="">
     <i class="bi bi-envelope"></i>
      <span class="about-link-text">E-mail</span>
   </a>
-  <a href="https://linkedin.com" class="about-link" rel="" target="_blank">
-    <i class="bi bi-linkedin"></i>
-     <span class="about-link-text">LinkedIn</span>
-  </a>
-  <a href="https://www.youtube.com" class="about-link" rel="" target="_blank">
-    <i class="bi bi-youtube"></i>
-     <span class="about-link-text">YouTube</span>
-  </a>
-  <a href="https://orcid.org" class="about-link" rel="" target="_blank">
+  <a href="https://orcid.org/0000-0002-8282-3910" class="about-link" rel="" target="_blank">
      <span class="about-link-text"><i class="ai  ai-orcid"></i> ORCID</span>
-  </a>
-  <a href="https://www.webofscience.com" class="about-link" rel="" target="_blank">
-     <span class="about-link-text"><i class="ai  ai-clarivate"></i> Web of Science</span>
-  </a>
-  <a href="https://www.scopus.com" class="about-link" rel="" target="_blank">
-     <span class="about-link-text"><i class="ai  ai-scopus"></i> Scopus</span>
   </a>
   <a href="https://scholar.google.com" class="about-link" rel="" target="_blank">
      <span class="about-link-text"><i class="ai  ai-google-scholar"></i> Google Scholar</span>
+  </a>
+  <a href="https://scicomm.xyz/@nicebread" class="about-link" rel="" target="_blank">
+     <span class="about-link-text"><i class="fa-brands fa-mastodon" aria-label="mastodon"></i> Mastodon</span>
   </a>
 </div>
   </div>
@@ -367,81 +258,18 @@ window.Quarto = {
 </div></div>
 </div>
 
-<section id="recent-posts" class="level2">
-<h2 data-anchor-id="recent-posts">Recent Posts</h2>
-<p>Check out the latest &nbsp;<a href="./posts.html#category=paper">Papers</a>&nbsp;, &nbsp;<a href="./posts.html#category=news">News</a>&nbsp;, &nbsp;<a href="./posts.html#category=event">Events</a>&nbsp;, and &nbsp;<a href="./posts.html">More »</a></p>
-<div id="listing-recent-posts" class="quarto-listing quarto-listing-container-grid">
-<div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="bmV3cw==" data-listing-date-sort="1728964800000">
-<a href="https://drganghe.github.io/quarto-academic-site-examples.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./files/images/placeholder4.JPG" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Quarto Academic Website Examples and Tips
-</h5>
-<div class="card-attribution card-text-small end">
-<div class="listing-date">
-Oct 15, 2024
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="1" data-categories="ZXZlbnQlMkNwcmVzZW50YXRpb24=" data-listing-date-sort="1725336000000" data-listing-file-modified-sort="1739198683941" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="7">
-<a href="./posts/event-title/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./files/images/placeholder2.JPG" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Event item
-</h5>
-<div class="card-attribution card-text-small end">
-<div class="listing-date">
-Sep 3, 2024
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="2" data-categories="bmV3cw==" data-listing-date-sort="1719201600000" data-listing-file-modified-sort="1739198679824" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="9">
-<a href="./posts/news-title/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./files/images/placeholder1.jpg" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-News item
-</h5>
-<div class="card-attribution card-text-small end">
-<div class="listing-date">
-Jun 24, 2024
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div>
-<p align="right">
-<a href="./posts.html">All Posts »</a>
-</p>
+<!-- ## Recent Posts
+Check out the latest &nbsp;[Papers](posts.qmd#category=paper)&nbsp;, &nbsp;[News](posts.qmd#category=news)&nbsp;, &nbsp;[Events](posts.qmd#category=event)&nbsp;, and &nbsp;[More »](/posts.qmd)
+
+:::{#recent-posts}
+::: 
+
+<p align="right">[All Posts »](/posts.qmd)</p>
+
+-->
 
 
 
-
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -872,14 +700,14 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/drganghe/quarto-academic-website-template" target="_blank">
+    <a class="nav-link" href="https://github.com/nicebread" target="_blank">
       <i class="bi bi-github" role="img">
 </i> 
     </a>
   </li>  
     <li class="nav-item">
-    <a class="nav-link" href="https://bsky.app" target="_blank">
-<p><i class="fa-brands fa-bluesky" aria-label="bluesky"></i></p>
+    <a class="nav-link" href="https://scicomm.xyz/@nicebread" target="_blank">
+<p><i class="fa-brands fa-mastodon" aria-label="mastodon"></i></p>
 </a>
   </li>  
     <li class="nav-item compact">

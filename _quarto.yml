@@ -3,13 +3,13 @@ project:
   output-dir: docs
 
 # Meta
-description-meta: "Quarto Academic Website Template adapted by Dr. Gang He"
-author-meta: "Dr. Gang He"
+description-meta: "Academic Website of Felix Schönbrodt"
+author-meta: "Felix Schönbrodt"
 
 website:
-  title: "Quarto Academic"
+  title: "Felix Schönbrodt"
   image: "https://quarto.org/quarto.png"
-  description: "Quarto Academic Website Template adapted by Dr. Gang He"
+  description: "Academic Website of Felix Schönbrodt"
  
   navbar:
     background: light
@@ -25,32 +25,24 @@ website:
             href: posts.qmd#category=event      
           - text: Contact
             href: contact.qmd             
+      - text: Publications
+        href: publications.qmd
       - text: Research
-        menu:
-          - text: List of Publication
-            href: publications.qmd
+        menu:          
           - text: Selected Papers
             href: posts.qmd#category=paper
           - text: Grants
             href: projects.qmd                                
       - text: Teaching
-        href: teaching.qmd
-      - text: Outreach
-        menu:        
-        - text: Presentations
-          href: posts.qmd#category=presentation                   
-      - text: Group
-        href: people.qmd
+        href: teaching.qmd                 
 
     right: 
-      - text: CV
-        href: files/nsf-biosketch.pdf
       - icon: github
-        href: https://github.com/drganghe/quarto-academic-website-template
+        href: https://github.com/nicebread
         target: _blank
-      - text: "{{< fa brands bluesky >}}"
-        href: https://bsky.app
-        target: _blank      
+      - text: "{{< fa brands mastodon >}}" 
+        href: https://scicomm.xyz/@nicebread
+        target: _blank   
       - icon: rss
         href: posts.xml
         target: _blank
@@ -62,10 +54,10 @@ website:
     center: "Build on [Quart Academic Website Template](https://github.com/drganghe/quarto-academic-website-template) adapted by [Dr. Gang He](http://drganghe.github.io)"
     right:  
       - icon: github
-        href: https://github.com/drganghe/quarto-academic-website-template
+        href: https://github.com/nicebread
         target: _blank
-      - text: "{{< fa brands bluesky >}}" 
-        href: https://bsky.app
+      - text: "{{< fa brands mastodon >}}" 
+        href: https://scicomm.xyz/@nicebread
         target: _blank
       - icon: rss
         href: posts.xml
@@ -79,20 +71,13 @@ website:
 
   draft-mode: unlinked
   
-  repo-url: https://github.com/drganghe/quarto-academic-website-template
+#  repo-url: https://github.com/drganghe/quarto-academic-website-template
 #  repo-actions: [edit, issue, source]
   
   open-graph: true
+    
+  # site-url: "https://drganghe.github.io/quarto-academic-website-template"
   
-  twitter-card: true 
-#  card-style: summary      
-  
-  site-url: "https://drganghe.github.io/quarto-academic-website-template"
-  
-  google-analytics:
-    tracking-id: ""  # Please delete or replace with your own tracking ID
-    anonymize-ip: true 
-
 bibliography: references.bib
 
 format:

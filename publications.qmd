@@ -11,24 +11,94 @@ css: custom.css
 <!--Include academic icons or buttons-->
 {{< include /files/includes/_academic.qmd >}}
 
-Notes: \* corresponding author; <sup>GS</sup> graduate student advisee; <sup>VS</sup> visiting scholar; ![](https://drganghe.github.io/files/images/highly-cited-paper-badge.png "ESI Highly Cited Paper"){width=20 fig-alt="Highly cited paper"} ESI [Highly Cited Paper](https://webofscience.help.clarivate.com/en-us/Content/esi-highly-cited-papers.html) (top 1%); ![](https://drganghe.github.io/files/images/hot-paper-badge.png "ESI Hot Paper"){width=20 fig-alt="Hot paper"} ESI [Hot Paper](https://webofscience.help.clarivate.com/en-us/Content/esi-hot-papers.html) (top 0.1%) 
 
-Total citations as of January 2025:
+```{r setup0}
+#| include: false
 
-- [Web of Science](https://www.webofscience.com): 100,000 (h-index = 100)   
-- [Google Scholar](https://scholar.google.com/citations?user=qc6CJjYAAAAJ&hl=en): 179,000 (h-index = 127, i10-index = 377) 
+library(knitr)
+library(kableExtra)
+library(rio)
+library(openalexR)
+library(OAmetrics)
+library(dplyr)
+library(htmltools)
 
-## Selected Work
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  echo=FALSE,
+  message=FALSE,
+  warning=FALSE,
+  out.width="100%"
+)
 
-Einstein, A., Podolsky, B., & Rosen, N. (1935). [Can quantum-mechanical description of physical reality be considered complete?](posts/paper-title/index.qmd). *Physical review*, 47(10), 777. \[[pdf](https://scholar.google.com/)\] \[[code and data](https://doi.org)\] ![](https://drganghe.github.io/files/images/highly-cited-paper-badge.png "ESI Highly Cited Paper"){width=20 fig-alt="Highly cited paper"} ![](https://drganghe.github.io/files/images/hot-paper-badge.png "ESI Hot Paper"){width=20 fig-alt="Hot paper"} <span class="__dimensions_badge_embed__" data-doi="10.1103/PhysRev.47.777" data-style="large_rectangle"></span> <div data-badge-popover="right" data-badge-type="1" data-doi="10.1103/PhysRev.47.777" data-hide-no-mentions="true" class="altmetric-embed"></div>     
+# Set global chunk options for tables
+options(knitr.table.format = "html")
+```
 
 
-<center><hr style="width:50%"></center>
+```{r preprocess}
+#| results: asis
 
-Einstein, A. (1965). Concerning an heuristic point of view toward the emission and transformation of light. *American Journal of Physics*, 33(5), 367. [[pdf](https://icg.isy.liu.se/en/phd-courses/quantum_foundations/references/Einstein1905b.pdf)] <span class="__dimensions_badge_embed__" data-doi="10.1038/s41560-023-01304-w" data-style="large_rectangle"></span> <div data-badge-popover="right" data-badge-type="1" data-doi="10.1038/s41560-023-01304-w" data-hide-no-mentions="true" class="altmetric-embed"></div>
+publist <- import("files/publist.xlsx")
+publist$doi <- normalize_dois(publist$doi)
+publist <- publist %>% filter(!is.na(doi))
 
+OAlex_papers <- oa_fetch(entity = "works", doi = normalize_dois(publist$doi))
+
+OAlex_papers <- left_join(OAlex_papers, publist, by = "doi")
+
+OAlex_papers <- OAlex_papers %>% 
+    mutate(publication_date = as.Date(publication_date)) %>% 
+    arrange(desc(publication_date))
+# Build the publist
+
+PL <- c()
+for (y in unique(OAlex_papers$publication_year) |> sort(decreasing=TRUE)) {
+    PL <- c(PL, paste0("<h2>", y, "</h2>"))
+
+    OA_y <- OAlex_papers %>% 
+        filter(publication_year == y) %>% 
+        arrange(desc(publication_date))
+
+    for (i in 1:nrow(OA_y)) {
+        PL0 <- paste0(
+            "<div class='reference'>",
+
+            # ifelse(!is.na(OA_y[i, "OpenAccess"]), paste0(
+            #     "<a href='", OA_y[i, "OpenAccess"], "'><img height='20' class='small_badge' src='files/images/oa_small.png' alt='oa_badge'></a>"), ""),
+            # ifelse(!is.na(OA_y[i, "OpenData"]), paste0(
+            #     "<a href='", OA_y[i, "OpenData"], "'><img height='20' class='small_badge' src='files/images/od_small.png' alt='open_data_badge'></a>"), ""),
+            # ifelse(!is.na(OA_y[i, "OpenMaterial"]), paste0(
+            #     "<a href='", OA_y[i, "OpenMaterial"], "'><img height='20' class='small_badge' src='files/images/om_small.png' alt='open_material_badge'></a>"), ""),
+            # ifelse(!is.na(OA_y[i, "Preregistration"]), paste0(
+            #     "<a href='", OA_y[i, "Preregistration"], "'><img height='20' class='small_badge' src='files/images/prereg_small.png' alt='prereg_badge'></a>"), ""),
+            
+            br(),
+
+            OA_y[i, "display_name"],
+
+            "<div class='buttons'>",
+             ifelse(!is.na(OA_y[i, "OpenAccess"]), paste0(
+                "<a href='", OA_y[i, "OpenAccess"], "'  class='button'><img height='20' src='files/images/oa_small.png' alt='oa_badge'> PDF</a>"), ""),
+            ifelse(!is.na(OA_y[i, "OpenData"]), paste0(
+                "<a href='", OA_y[i, "OpenData"], "'  class='button'><img height='20' src='files/images/od_small.png' alt='open_data_badge'> Open Data</a>"), ""),
+            ifelse(!is.na(OA_y[i, "OpenMaterial"]), paste0(
+                "<a href='", OA_y[i, "OpenMaterial"], "'  class='button'><img height='20' src='files/images/om_small.png' alt='open_material_badge'> Open Material</a>"), ""),
+            ifelse(!is.na(OA_y[i, "Preregistration"]), paste0(
+                "<a href='", OA_y[i, "Preregistration"], "'  class='button'><img height='20' src='files/images/prereg_small.png' alt='prereg_badge'> Preregistration</a>"), ""),
+            "</div>",  # of .buttons
+            "</div>"   # of .reference
+        )
+        
+        PL <- c(PL, PL0)
+    }
+}
+
+HTML(PL)
+```
 
 
 <!--Include social share buttons-->
 
-{{< include /files/includes/_socialshare.qmd >}}
+<!-- {{< include /files/includes/_socialshare.qmd >}} -->
