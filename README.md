@@ -1,14 +1,6 @@
-# quarto-academic-website-template
+# nicenet 2025 website
 
-Here is a template that you can fork to develop your own website with easy adoption and deployment.
+Thids is the repo for my personal website. As my university moved to a new CMS (which has a terrible usability), I had to redo my publication list. I decided to use this opportunity to also update the design of my website. I used the [quarto-academic-website-template](https://github.com/drganghe/quarto-academic-website-template) by [Gang He](https://github.com/drganghe) as a starting point. 
 
-1. Star this repository so you can easily come back to the template  
-1. Folk this tempate and rename it to `yourgithubusername.github.io`  
-1. Update and edit `_quarto.yml` file for website setup  
-1. Update and add contents to `/posts`, `teaching.qmd`, `projects.yml`, and `people.qmd` and `/people` as needed.
-1. [Render and preview](https://quarto.org/docs/websites/) your website and [publish](https://quarto.org/docs/publishing/github-pages.html) it to your GitHub.
-1. Polish and fix any issues  
-1. Enjoy your website!
+The list of publications is heavily inspired by the examples from [Andrew Heiss](https://www.andrewheiss.com/research/) and [John Paul Helveston](https://www.jhelvy.com/research).
 
-For examples and tips, please check:
-<https://drganghe.github.io/quarto-academic-site-examples.html>
