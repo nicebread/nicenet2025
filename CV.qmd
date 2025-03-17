@@ -1,0 +1,26 @@
+---
+title: "CV"
+description-meta: "Curriculum Vitae"
+title-block-banner: false
+format:
+  html:
+    css: styles.css  # You can add a custom CSS file
+    df-print: paged  # Enables interactive tables
+---
+
+| Year            | Position/Title                                                                                                                                                                                                                                    |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **2020**        | Appointed as **professor** ("apl. Prof")                                                                                                                                                                                                          |
+| **since 2018**  | **Akademischer Rat auf Lebenszeit** at Ludwig-Maximilians-Universität München, [Quantitative Methods and Assessment (Psychologische Methodenlehre und Diagnostik)](http://www.psy.lmu.de/pm/personen/lehrstuhlmitarbeiter/schoenbrodt/index.html) |
+| **since 2017**  | **Managing director** of the [LMU Open Science Center](https://www.osc.uni-muenchen.de/index.html)                                                                                                                                                |
+| **2016**        | **Akademischer Rat** a.Z. at Ludwig-Maximilians-Universität München, [Quantitative Methods](http://www.psy.lmu.de/pm/personen/lehrstuhlmitarbeiter/schoenbrodt/index.html)                                                                        |
+| **2015-2016**   | **Visiting professor** (W3-Vertretungsprofessur) at Friedrich-Alexander-Universität Erlangen-Nürnberg                                                                                                                                             |
+| **2014**        | **Habilitation (Dr. habil.)** and “Privatdozent” PD at Ludwig-Maximilians-Universität München                                                                                                                                                     |
+| **2010 – 2016** | **Akademischer Rat** a.Z. at Ludwig-Maximilians-Universität München, Emotion and Motivation (Allgemeine Psychologie II)                                                                                                                           |
+| **2010**        | **Dr. rer. nat.** (*summa cum laude*), supervised by Prof. Dr. Jens B. Asendorpf (Humboldt-University Berlin). Thesis: “Transference of relationship qualities to a virtual spouse”                                                               |
+| **2007-2010**   | PhD scholarship from Studienstiftung des deutschen Volkes                                                                                                                                                                                         |
+| **2009**        | Research stay at New York State University (Stony Brook)                                                                                                                                                                                          |
+| **2008**        | Concession for psychotherapy (HPG)                                                                                                                                                                                                                |
+| **2000 – 2006** | **Diploma** in psychology, Saarland University, Germany. Diploma thesis: “Development of a questionnaire for the Zurich Model of Social Motivation”                                                                                               |
+| **1999-2000**   | Community service (“Zivildienst”) in a home for people with disabilities                                                                                                                                                                          |
+| **1990-1999**   | Rudolf-Diesel-Gymnasium, Augsburg                                                                                                                                                                                                                 |

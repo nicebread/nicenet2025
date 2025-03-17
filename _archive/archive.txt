@@ -1,0 +1,9 @@
+
+            # ifelse(!is.na(OA_y[i, "OpenAccess"]), paste0(
+            #     "<a href='", OA_y[i, "OpenAccess"], "'><img height='20' class='small_badge' src='files/images/oa_small.png' alt='oa_badge'></a>"), ""),
+            # ifelse(!is.na(OA_y[i, "OpenData"]), paste0(
+            #     "<a href='", OA_y[i, "OpenData"], "'><img height='20' class='small_badge' src='files/images/od_small.png' alt='open_data_badge'></a>"), ""),
+            # ifelse(!is.na(OA_y[i, "OpenMaterial"]), paste0(
+            #     "<a href='", OA_y[i, "OpenMaterial"], "'><img height='20' class='small_badge' src='files/images/om_small.png' alt='open_material_badge'></a>"), ""),
+            # ifelse(!is.na(OA_y[i, "Preregistration"]), paste0(
+            #     "<a href='", OA_y[i, "Preregistration"], "'><img height='20' class='small_badge' src='files/images/prereg_small.png' alt='prereg_badge'></a>"), ""),

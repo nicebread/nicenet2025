@@ -22,11 +22,11 @@ website:
           - text: News
             href: posts.qmd#category=news
           - text: Events
-            href: posts.qmd#category=event      
-          - text: Contact
-            href: contact.qmd             
-      - text: Publications
+            href: posts.qmd#category=event                             
+      - text: Publications      
         href: publications.qmd
+      - text: CV
+        href: CV.qmd
       - text: Research
         menu:          
           - text: Selected Papers
@@ -95,4 +95,6 @@ format:
     email-obfuscation: javascript
     link-external-filter: '^(?:http:|https:)\/\/drganghe\.github\.io\/custom'
     include-in-header: "files/includes/_academic.qmd"
+    df-print: paged  # Enables interactive tables
+
 

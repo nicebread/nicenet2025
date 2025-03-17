@@ -1,0 +1,29 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/2.3.1/list.min.js"></script>
+<script type="application/javascript">
+// Define the fields that correspond to your data attributes.
+
+  var options = {
+    valueNames: [
+      'year',
+      { data: ['id'] },
+      { attr: 'data-year', name: 'year' }
+    ]
+  };
+
+  // Initialize List.js on the container.
+  var refList = new List('refList', options);
+
+  // // Sort by year when the button is clicked.
+  // document.querySelector('.sort').addEventListener('click', function() {
+  //   // The sort function will use the "year" value from your divs.
+  //   alert("Sorting by year");
+  //   refList.sort('year', { order: "asc" });
+  // });
+
+  // // Filter to show only selected publications.
+  // document.getElementById('filter-selected').addEventListener('click', function() {
+  //   refList.filter(function(item) {
+  //     return item.values().selected === "yes";
+  //   });
+  // });
+</script>

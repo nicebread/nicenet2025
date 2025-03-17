@@ -5,12 +5,53 @@ description-meta: "Information, pdfs, and social metrics of papers"
 #back-to-top-navigation: true
 title-block-banner: false
 css: custom.css
+format:
+  html:
+    include-after-body: "files/includes/script-list.html"
 ---
 
 
 <!--Include academic icons or buttons-->
 {{< include /files/includes/_academic.qmd >}}
 
+```{=html}
+<script>
+function openPopup(event, popupId) {
+    const button = event.currentTarget;
+    const popup = document.getElementById(popupId);
+    const overlay = document.getElementById('overlay');
+
+    // Get button position
+    const rect = button.getBoundingClientRect();
+
+    // Position modal next to the button
+    popup.style.top = `${rect.top + window.scrollY}px`;
+    popup.style.left = `${rect.right + 10 + window.scrollX}px`;
+
+    // Show modal and overlay
+    popup.style.display = "block";
+    overlay.style.display = "block";
+}
+
+function closePopup(popupId) {
+    document.getElementById(popupId).style.display = "none";
+    document.getElementById('overlay').style.display = "none";
+}
+
+// Close the modal when clicking outside
+document.addEventListener("click", function(event) {
+    const modals = document.querySelectorAll(".popup");
+    const buttons = document.querySelectorAll(".button");
+    
+    if (![...modals, ...buttons].some(el => el.contains(event.target))) {
+        modals.forEach(modal => modal.style.display = "none");
+        document.getElementById('overlay').style.display = "none";
+    }
+});
+</script>
+
+<div id="overlay" class="overlay"></div>
+```
 
 ```{r setup0}
 #| include: false
@@ -22,6 +63,7 @@ library(openalexR)
 library(OAmetrics)
 library(dplyr)
 library(htmltools)
+library(stringr)
 
 knitr::opts_chunk$set(
   collapse = TRUE,
@@ -34,6 +76,62 @@ knitr::opts_chunk$set(
 
 # Set global chunk options for tables
 options(knitr.table.format = "html")
+
+# al = author list from the works object
+format_name <- function(al, which="first", focus=c("Felix Schönbrodt", "Felix D. Schönbrodt")) {
+
+    n_authors <- nrow(al)
+
+    if (which == "first") {names <- al$au_display_name[1]} else 
+    if (which == "last") {if (n_authors > 1) {
+            names <- al$au_display_name[nrow(al)]
+        }} else 
+    if (which == "middle") {
+        if (n_authors > 2) {names <- al$au_display_name[2:(nrow(al)-1)]}
+    }
+
+    # remember OSC members
+    is_OSC <- names %in% focus
+
+    namesplit <- str_split(names, " ")
+    names2 <- sapply(namesplit, function(x) paste0(x[length(x)], " ", x[1] |> str_sub(1, 1)))
+    
+    # make OSC members bold
+    names2[is_OSC] <- paste0("<b>", names2[is_OSC], "</b>")
+    return(paste(names2, collapse=", "))
+}
+
+
+
+get_authors <- function(sbib) {
+
+    res <- c()
+    for (i in 1:nrow(sbib)) {
+        n_authors <- nrow(sbib[i, ]$author[[1]])
+
+        if (!is.null(n_authors)) {
+            res <- c(res, paste0(
+                    # first author
+                    format_name(sbib[i, ]$author[[1]], which="first"),
+
+                    # middle author.ids
+                    ifelse(n_authors > 2, paste0(", ", format_name(al=sbib[i, ]$author[[1]], which="middle")), ""),
+
+                    # last author
+                    ifelse(n_authors > 1, paste0(" & ", format_name(sbib[i, ]$author[[1]], which="last")), ""),
+
+                    " (<span class='year'>", sbib[i, ]$publication_year, "</span>). ",
+                    #str_to_sentence(sbib[i, ]$display_name), 
+                    " <i>", sbib[i, ]$so, "</i>.", " <a href='", sbib[i, ]$doi, "'>", sbib[i, ]$doi, "</a>"
+                    ))
+        } else {
+            res <- c(res, "No authors indicated")
+        }
+
+      
+    }
+  return(res)
+}
 ```
 
 
@@ -46,16 +144,36 @@ publist <- publist %>% filter(!is.na(doi))
 
 OAlex_papers <- oa_fetch(entity = "works", doi = normalize_dois(publist$doi))
 
+# TODO: Get meta-data information for preprints
+
 OAlex_papers <- left_join(OAlex_papers, publist, by = "doi")
 
 OAlex_papers <- OAlex_papers %>% 
-    mutate(publication_date = as.Date(publication_date)) %>% 
+    mutate(
+        publication_date = as.Date(publication_date)
+    ) %>% 
     arrange(desc(publication_date))
+
+# Export
+export(
+    OAlex_papers %>% select(doi, publication_year, display_name, OpenAccess, OpenData, OpenMaterial, Preregistration),
+    file="files/publist_export.xlsx")
+
 # Build the publist
 
-PL <- c()
+PL <- c('<div id="refList">
+
+  <!-- Controls -->
+  <input class="search" placeholder="Search" />
+  <button class="sort" data-sort="year">Sort by year</button>
+
+  <!-- List container -->
+  <div class="list">
+')
+
+counter <- 0
 for (y in unique(OAlex_papers$publication_year) |> sort(decreasing=TRUE)) {
-    PL <- c(PL, paste0("<h2>", y, "</h2>"))
+    PL <- c(PL, paste0("\n\n<h2 class='year' data-id='y", y, "' data-year='", y, "'>", y, "</h2>\n\n"))
 
     OA_y <- OAlex_papers %>% 
         filter(publication_year == y) %>% 
@@ -63,22 +181,20 @@ for (y in unique(OAlex_papers$publication_year) |> sort(decreasing=TRUE)) {
 
     for (i in 1:nrow(OA_y)) {
         PL0 <- paste0(
-            "<div class='reference'>",
+            "<div data-id='", counter, "' class='reference' data-oa_status='", OA_y[i, "oa_status"], "'>",
 
-            # ifelse(!is.na(OA_y[i, "OpenAccess"]), paste0(
-            #     "<a href='", OA_y[i, "OpenAccess"], "'><img height='20' class='small_badge' src='files/images/oa_small.png' alt='oa_badge'></a>"), ""),
-            # ifelse(!is.na(OA_y[i, "OpenData"]), paste0(
-            #     "<a href='", OA_y[i, "OpenData"], "'><img height='20' class='small_badge' src='files/images/od_small.png' alt='open_data_badge'></a>"), ""),
-            # ifelse(!is.na(OA_y[i, "OpenMaterial"]), paste0(
-            #     "<a href='", OA_y[i, "OpenMaterial"], "'><img height='20' class='small_badge' src='files/images/om_small.png' alt='open_material_badge'></a>"), ""),
-            # ifelse(!is.na(OA_y[i, "Preregistration"]), paste0(
-            #     "<a href='", OA_y[i, "Preregistration"], "'><img height='20' class='small_badge' src='files/images/prereg_small.png' alt='prereg_badge'></a>"), ""),
-            
+            strong(OA_y[i, "display_name"]),
             br(),
 
-            OA_y[i, "display_name"],
+            "<span style='font-size: 80%; color: #555555;'>",
+            get_authors(OA_y[i, ]) |> HTML(),
+            "</span>",
 
             "<div class='buttons'>",
+
+            " <button class='button' onclick='openPopup(event, \"popup", counter, "\")'>
+                Abstract
+            </button>",
              ifelse(!is.na(OA_y[i, "OpenAccess"]), paste0(
                 "<a href='", OA_y[i, "OpenAccess"], "'  class='button'><img height='20' src='files/images/oa_small.png' alt='oa_badge'> PDF</a>"), ""),
             ifelse(!is.na(OA_y[i, "OpenData"]), paste0(
@@ -88,12 +204,25 @@ for (y in unique(OAlex_papers$publication_year) |> sort(decreasing=TRUE)) {
             ifelse(!is.na(OA_y[i, "Preregistration"]), paste0(
                 "<a href='", OA_y[i, "Preregistration"], "'  class='button'><img height='20' src='files/images/prereg_small.png' alt='prereg_badge'> Preregistration</a>"), ""),
             "</div>",  # of .buttons
+
+"<!-- Pop-up Modal (Hidden by Default) -->
+<div id='popup", counter, "' class='popup'>
+  <div class='popup-content'>
+    <span class='close' onclick='closePopup(\"popup", counter, "\")'>&times;</span>
+    <h3>Abstract</h3>
+    <p>", OA_y[i, "ab"], "</p>
+  </div>
+</div>",
+
             "</div>"   # of .reference
         )
         
         PL <- c(PL, PL0)
+        counter <- counter + 1
     }
 }
+
+PL <- c(PL, "</div></div>\n\n")  # closing outer divs "list" and "refList"
 
 HTML(PL)
 ```
