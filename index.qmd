@@ -49,25 +49,18 @@ about:
 
 :::{#hero-heading}
 
-I'm a [Quarto Academeic Website Template](https://github.com/drganghe/quarto-academic-website-template) adapted by [Dr. Gang He](http://drganghe.github.io).
+Professor at the Department of Psychology, Ludwig-Maximilians-Universität München, Germany.
+Managing director of the LMU Open Science Center and board member of the META-REP priority program ("A meta-scientific research program to analyse and optimise replicability in the behavioral, social, and cognitive Sciences"). Interested in Open Science, Metascience, implicit motives, machine learning, responsible research assessment (CoARA), solarpunk, piano, and cooking.
 
-I'm a template that you can fork to build your own website with easy adaptation and deployment.
+## Open and Reproducible Science
 
-1. Star this repository so you can easily come back to the template  
-1. Folk this tempate and rename it to `yourgithubusername.github.io`  
-1. Update and edit `_quarto.yml` file for website setup  
-1. Update and add contents to `/posts`, `teaching.qmd`, `projects.yml`, and `people.qmd` and `/people` as needed.
-1. [Render and preview](https://quarto.org/docs/websites/) your website and [publish](https://quarto.org/docs/publishing/github-pages.html) it to your GitHub.
-1. Polish and fix any issues  
-1. Enjoy your website!
+![](files/images/rt_logo_wide.png)
 
-## Experience
+I embrace the values of openness and transparency in science. I believe that such research practices increase the informational value and impact of our research, as the data can be reanalyzed and synthesized in future studies. Furthermore, they increase the credibility of the results, as an independent verification and replication is possible.
 
-- Researcher, Univerisity
+For this reason, I developed and signed a [Commitment to Research Transparency and Open Science](http://www.researchtransparency.org/).
 
-## Education
-
-- PhD, Univerisity
+You can sign, too!
 
 :::
 

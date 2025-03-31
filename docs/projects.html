@@ -81,9 +81,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-image','listing-title','listing-author','listing-subtitle','listing-description','listing-funding','listing-started','listing-ended',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-title-sort'] }],
+      valueNames: ['listing-image','listing-title','listing-author','listing-funder','listing-abstract','listing-funding','listing-started','listing-ended',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-title-sort'] }],
       
-      searchColumns: ["listing-image","listing-title","listing-author","listing-subtitle","listing-description","listing-started","listing-ended","listing-funding"],
+      searchColumns: ["listing-image","listing-title","listing-author","listing-funder","listing-abstract","listing-started","listing-ended","listing-funding"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -120,6 +120,22 @@ https://badge.dimensions.ai/
 <script async="" src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script>
 
 <script type="text/javascript" src="//cdn.plu.mx/widget-popup.js"></script>
+<!-- Matomo -->
+<script>
+    var _paq = window._paq = window._paq || [];
+    /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u="//tellmi.psy.lmu.de/matomo/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '1']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+    })();
+  </script>
+  <!-- End Matomo Code -->
+  
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -154,7 +170,7 @@ window.Quarto = {
 <link rel="stylesheet" href="styles.css">
 <meta property="og:title" content="Projects – Felix Schönbrodt">
 <meta property="og:description" content="Funded projects">
-<meta property="og:image" content="https://quarto.org/quarto.png">
+<meta property="og:image" content="files/images/DFG.png">
 <meta property="og:site_name" content="Felix Schönbrodt">
 </head>
 
@@ -175,21 +191,6 @@ window.Quarto = {
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-about" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">About</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-about">    
-        <li>
-    <a class="dropdown-item" href="./posts.html#category=news">
- <span class="dropdown-text">News</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./posts.html#category=event">
- <span class="dropdown-text">Events</span></a>
-  </li>  
-    </ul>
-  </li>
   <li class="nav-item">
     <a class="nav-link" href="./publications.html"> 
 <span class="menu-text">Publications</span></a>
@@ -198,24 +199,13 @@ window.Quarto = {
     <a class="nav-link" href="./CV.html"> 
 <span class="menu-text">CV</span></a>
   </li>  
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-research" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Research</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-research">    
-        <li>
-    <a class="dropdown-item" href="./posts.html#category=paper">
- <span class="dropdown-text">Selected Papers</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./projects.html">
- <span class="dropdown-text">Grants</span></a>
-  </li>  
-    </ul>
-  </li>
   <li class="nav-item">
-    <a class="nav-link" href="./teaching.html"> 
-<span class="menu-text">Teaching</span></a>
+    <a class="nav-link" href="./service.html"> 
+<span class="menu-text">Service to the field</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./projects.html" aria-current="page"> 
+<span class="menu-text">Funded Projects</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
@@ -228,19 +218,9 @@ window.Quarto = {
     <a class="nav-link" href="https://scicomm.xyz/@nicebread" target="_blank"> 
 <span class="menu-text"><i class="fa-brands fa-mastodon" aria-label="mastodon"></i></span></a>
   </li>  
-  <li class="nav-item compact">
-    <a class="nav-link" href="./posts.xml" target="_blank"> <i class="bi bi-rss" role="img">
-</i> 
-<span class="menu-text"></span></a>
-  </li>  
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
-  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
-  <div class="quarto-reader-toggle-btn">
-  <i class="bi"></i>
-  </div>
-</a>
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -290,11 +270,11 @@ window.Quarto = {
          <option value="listing-author" data-direction="asc">
           Team
         </option>
-         <option value="listing-subtitle" data-direction="asc">
+         <option value="listing-funder" data-direction="asc">
           Funder
         </option>
-         <option value="listing-description" data-direction="asc">
-          Description
+         <option value="listing-abstract" data-direction="asc">
+          Abstract
         </option>
          <option value="listing-started" data-direction="asc">
           Start
@@ -325,10 +305,10 @@ window.Quarto = {
 <a class="sort" data-sort="listing-author" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Team</a>
 </th>
 <th>
-<a class="sort" data-sort="listing-subtitle" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Funder</a>
+<a class="sort" data-sort="listing-funder" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Funder</a>
 </th>
 <th>
-<a class="sort" data-sort="listing-description" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Description</a>
+<a class="sort" data-sort="listing-abstract" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Abstract</a>
 </th>
 <th>
 <a class="sort" data-sort="listing-funding" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Funding</a>
@@ -342,30 +322,238 @@ window.Quarto = {
 </tr>
 </thead>
 <tbody class="list">
-<tr data-index="0" data-listing-title-sort="Exploring ">
+<tr data-index="0" data-listing-title-sort="Agile-RDM - Establishing an agile and needs-oriented research data management strategy in psychology">
 <td>
-<span class="listing-image"><img loading="lazy" src="https://new.nsf.gov/themes/custom/nsf_theme/components/sdc-components/molecules/logo/logo-desktop.svg" style="height: 30px;"></span>
+<span class="listing-image"><img loading="lazy" src="files/images/DFG.png" style="height: 30px;"></span>
 </td>
 <td>
-<a href="https://www.nsf.gov/" class="title listing-title">Exploring </a>
+<a href="https://gepris.dfg.de/gepris/projekt/535950381?language=en" class="title listing-title">Agile-RDM - Establishing an agile and needs-oriented research data management strategy in psychology</a>
 </td>
 <td>
-<span class="listing-author">Academic Website</span>
+<span class="listing-author">Katarina Blask, Mario Gollwitzer &amp; Felix Schönbrodt</span>
 </td>
 <td>
-<span class="listing-subtitle">Funder</span>
+<span class="listing-funder">DFG</span>
 </td>
 <td>
-<span class="listing-description">The goal of this project is to investigate .</span>
+<span class="listing-abstract"><a href="#" onclick="openProjectModal('Agile-RDM - Establishing an agile and needs-oriented research data management strategy in psychology', 'Transparency and openness in the research process are becoming increasingly important in all scientific fields - including psychology. Accordingly, researchers should not only make research results freely available, for example in the form of scientific articles (open access), but also provide research data, analysis scripts and study materials that are relevant for the replicability of the findings. However, the reusability of the data made available requires the most uniform, efficient and comprehensive research data management (RDM) possible on the part of the data providers: Research data should not only be findable (Findable) and accessible (Accessible), but also usable (Interoperable and Reusable) (cf. the FAIR principles). Despite a variety of training measures, the effort required to prepare data for sharing is often still perceived as very high, as it is often very difficult to translate and integrate the acquired knowledge into concrete workflows. In our view, this is because existing strategies to promote RDM skills are often too generic to address the specific needs of individual researchers. Furthermore, little effort is made to ensure the sustainability of the acquired skills or to resort to didactic-methodological approaches that enable an easy transfer of the acquired knowledge into the researchers\' workflows. With the project \'Agile-RDM: Establishing an agile and needs-oriented research data management strategy in psychology\', we aim to develop such a strategy for psychology and establish it in the discipline. To this end, three strategic goals are pursued: 1) The development of an agile and needs-oriented RDM certificate course for researchers in psychology; 2) an empirical evaluation of the agile certificate course to assess its suitability for the effective and efficient teaching of RDM competencies; 3) the development and evaluation of a concept for project-related incentive structures that will ensure the implementation of the RDM practices learned in the certificate course in research projects in the long term.'); return false;">🔍 Abstract</a></span>
 </td>
 <td>
-<span class="listing-funding">$0</span>
+<span class="listing-funding">187,636 € (overall: 557,000 €)</span>
+</td>
+<td>
+<span class="listing-started">2025</span>
+</td>
+<td>
+<span class="listing-ended">2028</span>
+</td>
+</tr>
+<tr data-index="1" data-listing-title-sort="From “Academic works” to “Working in academia”: Analyzing reform proposals in an agent-based modelling approach (part of the META-REP priority program, 2nd funding phase)">
+<td>
+<span class="listing-image"><img loading="lazy" src="files/images/DFG.png" style="height: 30px;"></span>
+</td>
+<td>
+<a href="https://gepris.dfg.de/gepris/projekt/464411255" class="title listing-title">From “Academic works” to “Working in academia”: Analyzing reform proposals in an agent-based modelling approach (part of the META-REP priority program, 2nd funding phase)</a>
+</td>
+<td>
+<span class="listing-author">Felix Schönbrodt, Richard McElreath, &amp; Filip Melinscak</span>
+</td>
+<td>
+<span class="listing-funder">DFG</span>
+</td>
+<td>
+<span class="listing-abstract"><a href="#" onclick="openProjectModal('From “Academic works” to “Working in academia”: Analyzing reform proposals in an agent-based modelling approach (part of the META-REP priority program, 2nd funding phase)', 'This proposal is a continuation of the META-REP project, “How an academic system can achieve a trustworthy knowledge base: Analyzing reform proposals in an agent-based modeling approach.” It aims to expand our existing study of academia with agent-based models (ABMs) by focusing on the people doing the research, their demographics, life history, and strategic choices in an academic environment that contains hiring institutions, funders, and research assessment procedures. ABMs, which create virtual, simplified representations of real-world environments for computational simulation, are valuable tools in studying these processes. In the first funding phase of this project, ABMs addressed various meta-scientific questions, focusing on individual activities related to the production of academic works, such as replication studies, record checking and correction, and p-hacking. The second funding phase will expand on this work by targeting structural and institutional aspects of academia and related reform proposals, expanding the focus from “academic works” towards “working in academia”. The project will implement the demographics of virtual researchers and include population and labour dynamics in the ABMs. By that, the project will concentrate on researchers as human beings and analyse how structural reforms affect their life trajectories and productivity. The second funding phase consists of three major areas of study: 1. Research evaluation: Examining how changes in incentives and assessment practices impact researchers’ life trajectories and, subsequently, the quality of the literature. 2. Differential value of early and late interventions: Assessing the effectiveness of interventions aimed at increasing researchers’ capabilities and, consequently, the quality of their output, compared to post-hoc error control. 3. Institutional career conditions and constraints: Analysing the impact of contractual and legal constraints on researchers and their output. The project will use several ABMs, which are calibrated to reality by a multitude of empirical data, and conduct one empirical evaluation study of an innovative training programme (the “switch-to-open” programme for academic working groups) to generate actionable input to policy recommendations. The insights from this project will contribute to ongoing debates about academia. By understanding current practices and consequences of reform proposals through ABMs, we can shed light on META-REP’s “How” question – “how can replication rates be improved” – and ultimately contribute to enhancing the quality of research and the working conditions of researchers.'); return false;">🔍 Abstract</a></span>
+</td>
+<td>
+<span class="listing-funding">347,517 €</span>
+</td>
+<td>
+<span class="listing-started">2025</span>
+</td>
+<td>
+<span class="listing-ended">2028</span>
+</td>
+</tr>
+<tr data-index="2" data-listing-title-sort="Experimental investigation of the daily motivational processes in intimate relationships using ecological momentary interventions">
+<td>
+<span class="listing-image"><img loading="lazy" src="files/images/DFG.png" style="height: 30px;"></span>
+</td>
+<td>
+<a href="https://gepris.dfg.de/gepris/projekt/497443642" class="title listing-title">Experimental investigation of the daily motivational processes in intimate relationships using ecological momentary interventions</a>
+</td>
+<td>
+<span class="listing-author">Caroline Zygar-Hoffmann &amp; Felix Schönbrodt</span>
+</td>
+<td>
+<span class="listing-funder">DFG</span>
+</td>
+<td>
+<span class="listing-abstract"><a href="#" onclick="openProjectModal('Experimental investigation of the daily motivational processes in intimate relationships using ecological momentary interventions', 'The goal of this research project is a consistent continuation of the DFG project “Dynamics of implicit motives in intimate couple relationships”, which showed the importance of motives for short-term motivation- and regulation processes in couple relationships: Motive dispositions orient, select and energize behavior towards the attainment of specific goals via motivational states. The experienced affect when reaching the desired goal state depends on the currently experienced motivational state (affect amplification by motivation), a process path that might explain the associations between motive dispositions and relationship quality. This functional, dynamic mode of action of motive dispositions, mediated by the current motivation, is the content of the “Dynamics of Motive Satisfaction” (DynaMoS) model, which was correlatively confirmed in the previous project by micro-longitudinal analyses for partner-related communal motives. The research project builds on these findings and addresses the fundamental question of the causality of the process paths of the DynaMoS model by testing the functional mode of action of the postulated mechanisms with the help of smartphone-based experimental microinterventions in the everyday life of couples (“ecological momentary interventions”). It will focus on comprehensively understanding the motivational system within the communal motive domain. In addition to considering the temporal component of the process, the manifestations of relationship-specific behavior and affect will be collected multimodally: Specific self and partner reports in experience sampling will be complemented by unobtrusive mobile sensing and content analysis of text messages. With this project we follow the collective call of a large number of researchers to fulfill the current desiderata of a future-oriented personality research: (a) to investigate the joint interplay of motivational, affective, and cognitive processes, (b) to link the microlevel of dynamic intrapersonal processes with the macrolevel of interindividual differences, and (c) to consider the causality of intrapersonal processes, especially those processes that act as a link between personality traits and social outcomes. Additionally, the causal approach to motivational microdynamics in intimate relationships and the natural assessment in everyday life provides an informed basis for the development of evidence-based interventions in (couple-)therapeutic contexts, suitable for everyday use. In addition to a better understanding of motivational processes in intimate relationships, the project makes an important contribution to the integration of psychological personality, motivation, and relationship research, as well as applied practice.'); return false;">🔍 Abstract</a></span>
+</td>
+<td>
+<span class="listing-funding">274,594 €</span>
 </td>
 <td>
 <span class="listing-started">2024</span>
 </td>
 <td>
+<span class="listing-ended">2027</span>
+</td>
+</tr>
+<tr data-index="3" data-listing-title-sort="META-REP (Priority Program): A meta-scientific program to analyze and optimize replicability in the behavioral, social, and cognitive sciences">
+<td>
+<span class="listing-image"><img loading="lazy" src="files/images/DFG.png" style="height: 30px;"></span>
+</td>
+<td>
+<a href="https://gepris.dfg.de/gepris/projekt/535950381?language=en" class="title listing-title">META-REP (Priority Program): A meta-scientific program to analyze and optimize replicability in the behavioral, social, and cognitive sciences</a>
+</td>
+<td>
+<span class="listing-author">Mario Gollwitzer, Katrin Auspurg, Tina Lonsdorf, Susann Fiedler, &amp; Felix Schönbrodt</span>
+</td>
+<td>
+<span class="listing-funder">DFG</span>
+</td>
+<td>
+<span class="listing-abstract"><a href="#" onclick="openProjectModal('META-REP (Priority Program): A meta-scientific program to analyze and optimize replicability in the behavioral, social, and cognitive sciences', ''); return false;">🔍 Abstract</a></span>
+</td>
+<td>
+<span class="listing-funding">~10 Mio €</span>
+</td>
+<td>
+<span class="listing-started">2022</span>
+</td>
+<td>
+<span class="listing-ended">2028</span>
+</td>
+</tr>
+<tr data-index="4" data-listing-title-sort="How an academic system can achieve a trustworthy knowledge base: Analyzing reform proposals in an agent-based modeling approach (part of the META-REP priority program, 1st funding phase)">
+<td>
+<span class="listing-image"><img loading="lazy" src="files/images/DFG.png" style="height: 30px;"></span>
+</td>
+<td>
+<a href="https://gepris.dfg.de/gepris/projekt/464411255" class="title listing-title">How an academic system can achieve a trustworthy knowledge base: Analyzing reform proposals in an agent-based modeling approach (part of the META-REP priority program, 1st funding phase)</a>
+</td>
+<td>
+<span class="listing-author">Felix Schönbrodt, Richard McElreath, &amp; Filip Melinscak</span>
+</td>
+<td>
+<span class="listing-funder">DFG</span>
+</td>
+<td>
+<span class="listing-abstract"><a href="#" onclick="openProjectModal('How an academic system can achieve a trustworthy knowledge base: Analyzing reform proposals in an agent-based modeling approach (part of the META-REP priority program, 1st funding phase)', 'In several scientific fields, evidence has accumulated that the scientific literature is much less robust and trustworthy than desired, constituting a “replication crisis”. Many reforms have been proposed to increase the trustworthiness of the scientific literature, but reasonable doubts have been raised about their effectiveness, fairness, potential side-effects, and evidentiary backing. In this project, we will formalize recent arguments and reform proposals, and build agent-based models of science (where researchers are the agents) to investigate the logical coherence, efficiency, and side- effects of reforms. The models will be empirically calibrated to three disciplines from the behavioral, social, and cognitive sciences. Three specific research questions investigate the impact of reform proposals on the trustworthiness and bandwidth of scientific output: (a) Open Science as a social dilemma, or: The evolution of transparency, (b) Registered reports and a multi-layered publication system, and (c) Assessing strategies for navigating epistemic landscapes: The role of replication and theory. In a final working package (d), we aim to combine the three submodels into an integrated model. This will be used to analyze potential interactions of reforms, optimal parameter configurations, and emergent patterns arising from the interactions of the agents. We expect that the insights of this research project can inform policy development, such as journal guidelines, hiring policies of academic institutions and other incentive structures, or funder’s resource allocation strategies. Furthermore, it informs how to maximize the informational gain of scientific results, which ultimately translates to the societal utility of research.'); return false;">🔍 Abstract</a></span>
+</td>
+<td>
+<span class="listing-funding">234,630 €</span>
+</td>
+<td>
+<span class="listing-started">2022</span>
+</td>
+<td>
 <span class="listing-ended">2025</span>
+</td>
+</tr>
+<tr data-index="5" data-listing-title-sort="Automatic classification of the emotional impact of video sequences">
+<td>
+<span class="listing-image"><img loading="lazy" src="files/images/DFG.png" style="height: 30px;"></span>
+</td>
+<td>
+<a href="https://gepris.dfg.de/gepris/projekt/289289379" class="title listing-title">Automatic classification of the emotional impact of video sequences</a>
+</td>
+<td>
+<span class="listing-author">Felix Schönbrodt &amp; Klaus Diepold</span>
+</td>
+<td>
+<span class="listing-funder">DFG</span>
+</td>
+<td>
+<span class="listing-abstract"><a href="#" onclick="openProjectModal('Automatic classification of the emotional impact of video sequences', 'The concept Quality of Experience (QoE) tries to assess the subjective quality which an observer experiences when consuming multimedia content. In the current proposal, QoE should be extended by a new central component, namely the emotional state an observer experiences when watching a video. The core of our project is to extract emotionally relevant key features if videos using several machine learning approaches, which in turn are used to predict the experienced emotion of the observer. In order to realize this interdisciplinary research question technically, we draw upon and extend psychological models of emotion, which are then computationally implemented by engineers. Supervised machine learning approaches are trained by comparing the predicted with the actual emotional experience of an observer. This learning stage will use a Crowd Sourcing approach which allows to gather a large amount of data for relatively low costs. The large sample allows a broad generalizability of the results, and allows to investigate how personality characteristics of the observers modulate the emotional impact of the videos. The results from the online study will be cross-validated and extended in a controlled laboratory experiment. In this study, objective and indirect indicators of the experienced emotions are assessed (electromyography of facial expressions; changes in skin conductance). The interdisciplinary project is composed of researchers from psychology and computer engineers and works on the following research questions: a) Is it possible to determine a mapping of technical features onto emotionally relevant stimuli? b) Are psychological models able to correctly predict the experienced emotions based on relevant stimuli of the video and personality features of a person? Goals of the project are, on the one hand, to implement existing psychological theories of emotion, validate them using large data sets, and to develop them further based on these results. On the other hand, the technical framework should be employed to classify a large set of videos concerning the emotional impact on observers. Furthermore, the project will generate a standardized data base of videos, for which the emotional impact is very well known. We expect that such a data base will have a huge impact and benefit for future studies in the area of human emotions.'); return false;">🔍 Abstract</a></span>
+</td>
+<td>
+<span class="listing-funding">230,000 € (overall volume: 520,000 €)</span>
+</td>
+<td>
+<span class="listing-started">2017</span>
+</td>
+<td>
+<span class="listing-ended">2020</span>
+</td>
+</tr>
+<tr data-index="6" data-listing-title-sort="The dynamics of implicit motives in close relationships">
+<td>
+<span class="listing-image"><img loading="lazy" src="files/images/DFG.png" style="height: 30px;"></span>
+</td>
+<td>
+<span class="listing-title">The dynamics of implicit motives in close relationships</span>
+</td>
+<td>
+<span class="listing-author">Birk Hagemeyer &amp; Felix Schönbrodt</span>
+</td>
+<td>
+<span class="listing-funder">DFG</span>
+</td>
+<td>
+<span class="listing-abstract"><a href="#" onclick="openProjectModal('The dynamics of implicit motives in close relationships', 'The research project aims at an extensive examination of the relevance of implicit motives for (a) long-term developmental trajectories and (b) short-term regulatory processes in intimate couple relationships. Implicit motives are defined as dispositional needs which, despite their non-conscious representation, energize and direct subjective experience and behavior towards specific classes of affectively valued goal states. In the domain of couple relationships, such goal states can be classified as communal (i.e., related to intimacy and closeness with one’s partner) or agentic (i.e., related to independence, mastery, and dominance). Communal and agentic motives are distinct need dimensions which have been shown to be valid predictors of relationship quality in cross-sectional and prospective studies. However, longitudinal studies with repeated motive assessments that allow for analyses of the dynamic transactions between motives and couple relationships are missing. Moreover, the motivational processes and mechanisms that underly the observed associations between motives and relationships are largely unknown. The proposed research project aims to fill these gaps in our knowledge about the role of motives in couple relationships. First, we intend to assess implicit motives in a subsample of the pairfam panel study three times in time intervals of one year. This design allows for (a) the prediction of long-term developmental trajectories in couple relationships and (b) analyses of the dynamic transactions between relationships and implicit motives. Second, we intend to implement an extensive experience sampling study to investigate (a) individual short-term processes of motivation and (b) dyadic patterns of coregulation that mediate the influences of implicit motives on couple relationships.'); return false;">🔍 Abstract</a></span>
+</td>
+<td>
+<span class="listing-funding">237,800 €</span>
+</td>
+<td>
+<span class="listing-started">2016</span>
+</td>
+<td>
+<span class="listing-ended">2019</span>
+</td>
+</tr>
+<tr data-index="7" data-listing-title-sort="Improving the course „Scientific working“ at the B.Sc. Psychology at LMU Munich">
+<td>
+<span class="listing-image"><img loading="lazy" src="files/images/BMBF.png" style="height: 30px;"></span>
+</td>
+<td>
+<span class="listing-title">Improving the course „Scientific working“ at the B.Sc. Psychology at LMU Munich</span>
+</td>
+<td>
+<span class="listing-author">Felix Schönbrodt &amp; Michael Zehetleitner</span>
+</td>
+<td>
+<span class="listing-funder">BMBF</span>
+</td>
+<td>
+<span class="listing-abstract"><a href="#" onclick="openProjectModal('Improving the course „Scientific working“ at the B.Sc. Psychology at LMU Munich', ''); return false;">🔍 Abstract</a></span>
+</td>
+<td>
+<span class="listing-funding">28,600 €</span>
+</td>
+<td>
+<span class="listing-started">2014</span>
+</td>
+<td>
+<span class="listing-ended">2014</span>
+</td>
+</tr>
+<tr data-index="8" data-listing-title-sort="Psychometrie impliziter Motive (Scientific Network)">
+<td>
+<span class="listing-image"><img loading="lazy" src="files/images/DFG.png" style="height: 30px;"></span>
+</td>
+<td>
+<a href="https://gepris.dfg.de/gepris/projekt/229566893" class="title listing-title">Psychometrie impliziter Motive (Scientific Network)</a>
+</td>
+<td>
+<span class="listing-author">Felix Schönbrodt &amp; Birk Hagemeyer</span>
+</td>
+<td>
+<span class="listing-funder">DFG</span>
+</td>
+<td>
+<span class="listing-abstract"><a href="#" onclick="openProjectModal('Psychometrie impliziter Motive', 'Die Messung impliziter (nicht-bewusster) Motive mithilfe des Thematischen Apperzeptionstests und verwandter Verfahren (“Picture Story Exercises”; PSE) hat eine lange Tradition in der klinischen Praxis und in der psychologischen Grundlagenforschung. Gleichzeitig hat das Interesse an impliziten Motiven in den letzten 15 Jahren, unter anderem auch inspiriert durch die strikte Unterscheidung zwischen impliziten und expliziten Dispositionen, stark zugenommen. Die psychometrische Qualität der PSE-Methodik wurde häufig kritisiert, obwohl ihre Validität vielfach und eindrucksvoll belegt ist. In Reaktion auf diese Methodenkritik wurde wiederholt argumentiert, dass die Klassische Testtheorie keine geeignete Rahmentheorie für PSE- Messungen ist. Allerdings existiert bis heute kein Konsens darüber, wie eine alternative Messtheorie aussehen sollte. Das beantragte wissenschaftliche Netzwerk soll Expert/innen der Motivationspsychologie mit Expert/innen für statistische Methoden und Psychometrie vernetzen, um gemeinsam eine Messtheorie für PSEs zu entwickeln. Dazu sollen bestehende theoretische Ansätze gesammelt, integriert und erweitert sowie mögliche Modifikationen der PSE-Methode diskutiert werden. Neben der Vernetzung der einzelnen Forschungsprogramme bestehen die konkreten Ziele des beantragten Netzwerks zum einen in der Erstellung und Einreichung eines gemeinsamen Überblicksartikels und zum anderen in der Konzeption und Beantragung kooperativer DFG-Projekte zur Untersuchung noch offener und neu aufgeworfener Fragen.'); return false;">🔍 Abstract</a></span>
+</td>
+<td>
+<span class="listing-funding">35,587 €</span>
+</td>
+<td>
+<span class="listing-started">2013</span>
+</td>
+<td>
+<span class="listing-ended">2015</span>
 </td>
 </tr>
 </tbody>
@@ -374,21 +562,81 @@ window.Quarto = {
 No matching items
 </div>
 </div>
-<!--Include social share buttons-->
-<!-- 
-AddToAny check more: https://www.addtoany.com/buttons/for/website 
-Using includes will make edits easier, will only need to add or remove button here if needed.
-https://quarto.org/docs/authoring/includes.html
--->
-<div class="a2a_kit a2a_kit_size_32 a2a_default_style">
-<pre><code>&lt;a class="a2a_dd" href="https://www.addtoany.com/share"&gt;&lt;/a&gt;
-&lt;a class="a2a_button_linkedin"&gt;&lt;/a&gt;
-&lt;a class="a2a_button_bluesky"&gt;&lt;/a&gt;
-&lt;a class="a2a_button_facebook"&gt;&lt;/a&gt;
-&lt;a class="a2a_button_copy_link"&gt;&lt;/a&gt;
-&lt;a class="a2a_button_email"&gt;&lt;/a&gt;</code></pre>
+<!-- Add this at the end of your projects.qmd file or in a separate include-after-body file -->
+<div id="dynamic-modal-container">
+
 </div>
-<script async="" src="https://static.addtoany.com/menu/page.js"></script>
+<script>
+function openProjectModal(title, content) {
+  // Remove any existing modal
+  document.getElementById('dynamic-modal-container').innerHTML = '';
+  
+  // Create modal elements
+  const modalHTML = `
+    <div class="modal fade" id="dynamic-project-modal" tabindex="-1" style="z-index: 20000;">
+      <div class="modal-dialog modal-lg" style="z-index: 20001;">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">${title}</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            <p>${content}</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-backdrop fade show" style="z-index: 19999;"></div>
+  `;
+  
+  // Add to container
+  document.getElementById('dynamic-modal-container').innerHTML = modalHTML;
+  
+  // Show modal
+  const modal = document.getElementById('dynamic-project-modal');
+  modal.classList.add('show');
+  modal.style.display = 'block';
+  document.body.classList.add('modal-open');
+  
+  // Set up close button
+  const closeButtons = modal.querySelectorAll('[data-bs-dismiss="modal"]');
+  closeButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      closeModal();
+    });
+  });
+  
+  // Close when clicking outside
+  document.querySelector('.modal-backdrop').addEventListener('click', () => {
+    closeModal();
+  });
+  
+  // Close when pressing escape key
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+      closeModal();
+    }
+  });
+}
+
+function closeModal() {
+  const modal = document.getElementById('dynamic-project-modal');
+  if (modal) {
+    modal.classList.remove('show');
+    modal.style.display = 'none';
+  }
+  
+  const backdrop = document.querySelector('.modal-backdrop');
+  if (backdrop) {
+    backdrop.parentNode.removeChild(backdrop);
+  }
+  
+  document.body.classList.remove('modal-open');
+}
+</script>
 
 
 
@@ -820,12 +1068,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<a href="http://www.github.com">Your Name</a> ©
+<a href="https://www.nicebread.de">Felix Schönbrodt</a> ©
 <script>document.write(new Date().getFullYear())</script>
 </div>   
     <div class="nav-footer-center">
-<p>Build on <a href="https://github.com/drganghe/quarto-academic-website-template">Quart Academic Website Template</a> adapted by <a href="http://drganghe.github.io">Dr.&nbsp;Gang He</a></p>
-</div>
+      &nbsp;
+    </div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">
@@ -838,12 +1086,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <a class="nav-link" href="https://scicomm.xyz/@nicebread" target="_blank">
 <p><i class="fa-brands fa-mastodon" aria-label="mastodon"></i></p>
 </a>
-  </li>  
-    <li class="nav-item compact">
-    <a class="nav-link" href="./posts.xml" target="_blank">
-      <i class="bi bi-rss" role="img">
-</i> 
-    </a>
   </li>  
 </ul>
     </div>

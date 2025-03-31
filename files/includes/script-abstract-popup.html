@@ -1,0 +1,37 @@
+<script>
+function openPopup(event, popupId) {
+    const button = event.currentTarget;
+    const popup = document.getElementById(popupId);
+    const overlay = document.getElementById('overlay');
+
+    // Get button position
+    const rect = button.getBoundingClientRect();
+
+    // Position modal next to the button
+    popup.style.top = `${rect.top + window.scrollY}px`;
+    popup.style.left = `${rect.right + 10 + window.scrollX}px`;
+
+    // Show modal and overlay
+    popup.style.display = "block";
+    overlay.style.display = "block";
+}
+
+function closePopup(popupId) {
+    document.getElementById(popupId).style.display = "none";
+    document.getElementById('overlay').style.display = "none";
+}
+
+// Close the modal when clicking outside
+document.addEventListener("click", function(event) {
+    const modals = document.querySelectorAll(".popup");
+    const buttons = document.querySelectorAll(".button");
+    
+    if (![...modals, ...buttons].some(el => el.contains(event.target))) {
+        modals.forEach(modal => modal.style.display = "none");
+        document.getElementById('overlay').style.display = "none";
+    }
+});
+</script>
+
+<!-- Initialize the hidden overlay -->
+<div id="overlay" class="overlay"></div>

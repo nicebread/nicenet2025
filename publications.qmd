@@ -5,53 +5,19 @@ description-meta: "Information, pdfs, and social metrics of papers"
 #back-to-top-navigation: true
 title-block-banner: false
 css: custom.css
-format:
-  html:
-    include-after-body: "files/includes/script-list.html"
 ---
-
 
 <!--Include academic icons or buttons-->
 {{< include /files/includes/_academic.qmd >}}
 
-```{=html}
-<script>
-function openPopup(event, popupId) {
-    const button = event.currentTarget;
-    const popup = document.getElementById(popupId);
-    const overlay = document.getElementById('overlay');
+<!--Popup windows for Abstracts-->
+{{< include /files/includes/script-abstract-popup.html >}}
 
-    // Get button position
-    const rect = button.getBoundingClientRect();
+*Note: I am rebuilding my website; pre-prints currently are missing in the list.*
 
-    // Position modal next to the button
-    popup.style.top = `${rect.top + window.scrollY}px`;
-    popup.style.left = `${rect.right + 10 + window.scrollX}px`;
+The buttons with small symbols for open access <img height='20' src='files/images/oa_small.png' alt='oa_badge'>, open data <img height='20' src='files/images/od_small.png' alt='od_badge'>, preregistration <img height='20' src='files/images/prereg_small.png' alt='prereg_badge'>, and open material <img height='20' src='files/images/om_small.png' alt='om_badge'> provide direct links to the sources. Not all of these badges have been officially awarded by the publishing journal (many journals have not implemented the badges yet, and some discarded them again).
 
-    // Show modal and overlay
-    popup.style.display = "block";
-    overlay.style.display = "block";
-}
-
-function closePopup(popupId) {
-    document.getElementById(popupId).style.display = "none";
-    document.getElementById('overlay').style.display = "none";
-}
-
-// Close the modal when clicking outside
-document.addEventListener("click", function(event) {
-    const modals = document.querySelectorAll(".popup");
-    const buttons = document.querySelectorAll(".button");
-    
-    if (![...modals, ...buttons].some(el => el.contains(event.target))) {
-        modals.forEach(modal => modal.style.display = "none");
-        document.getElementById('overlay').style.display = "none";
-    }
-});
-</script>
-
-<div id="overlay" class="overlay"></div>
-```
+The cards to the right provide a **Haiku Summary** for each publication (an idea I took from [John Helveston](https://www.jhelvy.com/research) and [Andrew Heiss](https://www.andrewheiss.com/research/)).
 
 ```{r setup0}
 #| include: false
@@ -127,61 +93,75 @@ get_authors <- function(sbib) {
         } else {
             res <- c(res, "No authors indicated")
         }
-
-      
     }
   return(res)
 }
+
+get_haiku <- function(title, abstract, model="llama3.1", seed=1) {
+    library(ollamar)
+    prompt <- paste("Using only the provided title and abstract from a scientific publication, create a Haiku that artistically captures the essence of the research. Only return the resulting Haiku, without explanation. \n\n**Title**: ", title, "\n\n**Abstract**:", abstract, "\n\n")
+    
+    # Use the ollamar package to get the corrected country name
+    haiku <- ollamar::generate(model, prompt, output = "text", seed = seed)
+    return(haiku)
+}
+
 ```
 
 
 ```{r preprocess}
+# keep the cached file if it exists.
+if (file.exists("files/publist_processed.RData")) {
+    load("files/publist_processed.RData")
+} else {
+    publist <- import("files/publist.xlsx")
+    publist$doi <- normalize_dois(publist$doi)
+    publist <- publist %>% filter(!is.na(doi))
+
+    OAlex_papers <- oa_fetch(entity = "works", doi = normalize_dois(publist$doi))
+
+    # TODO: Get meta-data information for preprints
+
+    OAlex_papers <- left_join(OAlex_papers, publist, by = "doi")
+
+    OAlex_papers <- OAlex_papers %>% 
+        mutate(
+            publication_date = as.Date(publication_date)
+        ) %>% 
+        arrange(desc(publication_date))
+
+    OAlex_papers$haiku <- ""
+    for (i in 1:nrow(OAlex_papers)) {
+        OAlex_papers$haiku[i] <- get_haiku(title=OAlex_papers[i, "display_name"], abstract=OAlex_papers[i, "ab"])
+        print(OAlex_papers$haiku[i])
+    }
+
+    # Export the cache file
+    save(OAlex_papers, file="files/publist_processed.RData")
+}
+
+```
+
+
+
+```{r build_reflist}
 #| results: asis
 
-publist <- import("files/publist.xlsx")
-publist$doi <- normalize_dois(publist$doi)
-publist <- publist %>% filter(!is.na(doi))
-
-OAlex_papers <- oa_fetch(entity = "works", doi = normalize_dois(publist$doi))
-
-# TODO: Get meta-data information for preprints
-
-OAlex_papers <- left_join(OAlex_papers, publist, by = "doi")
-
-OAlex_papers <- OAlex_papers %>% 
-    mutate(
-        publication_date = as.Date(publication_date)
-    ) %>% 
-    arrange(desc(publication_date))
-
-# Export
-export(
-    OAlex_papers %>% select(doi, publication_year, display_name, OpenAccess, OpenData, OpenMaterial, Preregistration),
-    file="files/publist_export.xlsx")
-
-# Build the publist
-
-PL <- c('<div id="refList">
-
-  <!-- Controls -->
-  <input class="search" placeholder="Search" />
-  <button class="sort" data-sort="year">Sort by year</button>
-
-  <!-- List container -->
-  <div class="list">
-')
+PL <- ""
 
 counter <- 0
 for (y in unique(OAlex_papers$publication_year) |> sort(decreasing=TRUE)) {
-    PL <- c(PL, paste0("\n\n<h2 class='year' data-id='y", y, "' data-year='", y, "'>", y, "</h2>\n\n"))
+    PL <- c(PL, paste0("\n\n<h2>", y, "</h2>\n\n"))
 
     OA_y <- OAlex_papers %>% 
         filter(publication_year == y) %>% 
         arrange(desc(publication_date))
 
-    for (i in 1:nrow(OA_y)) {
+    for (i in 1:nrow(OA_y)) {        
+
         PL0 <- paste0(
-            "<div data-id='", counter, "' class='reference' data-oa_status='", OA_y[i, "oa_status"], "'>",
+            "<div data-id='", counter, "' class='reference'>
+            <div class='reference-content'>",
 
             strong(OA_y[i, "display_name"]),
             br(),
@@ -204,6 +184,12 @@ for (y in unique(OAlex_papers$publication_year) |> sort(decreasing=TRUE)) {
             ifelse(!is.na(OA_y[i, "Preregistration"]), paste0(
                 "<a href='", OA_y[i, "Preregistration"], "'  class='button'><img height='20' src='files/images/prereg_small.png' alt='prereg_badge'> Preregistration</a>"), ""),
             "</div>",  # of .buttons
+            "</div>",  # of .reference-content
+
+
+            "<div class='haiku-box'>",
+            str_split(OA_y[i, "haiku"], "\n")[[1]] |> paste(collapse=" - <br/>"),
+            "</div>",
 
 "<!-- Pop-up Modal (Hidden by Default) -->
 <div id='popup", counter, "' class='popup'>

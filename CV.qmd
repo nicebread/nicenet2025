@@ -2,11 +2,9 @@
 title: "CV"
 description-meta: "Curriculum Vitae"
 title-block-banner: false
-format:
-  html:
-    css: styles.css  # You can add a custom CSS file
-    df-print: paged  # Enables interactive tables
 ---
+
+## Curriculum Vitæ
 
 | Year            | Position/Title                                                                                                                                                                                                                                    |
 | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -24,3 +22,19 @@ format:
 | **2000 – 2006** | **Diploma** in psychology, Saarland University, Germany. Diploma thesis: “Development of a questionnaire for the Zurich Model of Social Motivation”                                                                                               |
 | **1999-2000**   | Community service (“Zivildienst”) in a home for people with disabilities                                                                                                                                                                          |
 | **1990-1999**   | Rudolf-Diesel-Gymnasium, Augsburg                                                                                                                                                                                                                 |
+
+
+## Awards and Scholarships
+
+| Year        | Award |
+|-------------|-------------|
+| **2022**        | DGPs [Förderpreis für Qualitätssicherung in der Psychologie](https://www.dgps.de/die-dgps/preise-und-ehrungen/foerderpreis-qualitaetssicherung-in-der-psychologie/) |
+| **2016**        | [Leamer-Rosenthal Prize for Open Social Science](http://www.bitss.org/people/felix-schonbrodt/), awarded from the [Berkeley Initiative for Transparency in the Social Sciences](http://www.bitss.org/) (10,000 €) |
+| **2016**        | [Award for good teaching](files/images/Schoenbrodt_teaching_prize_Bavaria.jpg) from the federal ministry of education (5000 €) |
+| **2015**        | Best Paper Award from the [Journal of Research in Personality](http://www.journals.elsevier.com/journal-of-research-in-personality/awards/journal-of-research-in-personality-2015-best-paper-awards/) |
+| **2014**        | Department’s [Award for Excellent Teaching](files/images/Schoenbrodt_Fakultaetspreis_Gute_Lehre.JPG) |
+| **2010**        | Grant from “Google Summer of Code” for programming a statistical software (“TripleR: A package for social relations analyses”) |
+| **2007 – 2010** | PhD scholarship from Studienstiftung des deutschen Volkes |
+| **2009**        | Scholarship for research stay at the State University of New York, USA |
+| **2007**        | Stipend from International Society for Human Ethology (ISHE) |
+| **2006**        | Stipend from Volkswagen-Stiftung for a summer school “Evolutionary Anthropology” |

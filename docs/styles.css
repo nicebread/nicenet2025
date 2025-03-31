@@ -4,6 +4,8 @@
 }
 
 .reference {
+    display: flex;
+    justify-content: space-between;
     background-color: #f8f9fa;
     padding: 10px;
     margin: 10px 0;
@@ -12,6 +14,35 @@
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
   }
   
+  .reference-content {
+    flex: 3;
+  }
+
+  .haiku-box {
+    flex: 1;
+      background-color: #f7f7f7;
+      padding: 12px;
+      border-radius: 8px;
+      border-left: 4px solid #aaa;
+      font-family: \"Georgia\", serif;
+      font-size: 14px;
+      font-style: italic;
+      line-height: 1.4;
+      box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+      margin-left: 20px;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      max-width: 200px; /* Added to further constrain width */
+  }
+
+  .haiku-box p {
+    margin: 4px 0;
+  }
+
 
 /* buttons below each reference */
 
@@ -171,3 +202,36 @@ input {
     right:-5px;
   }
   
+
+
+  /* Grant modal */
+
+  /* Add this CSS to your project's custom CSS file or in a <style> tag in your Quarto document */
+
+/* Add this CSS with much higher z-index values */
+.modal-backdrop {
+  z-index: 10040 !important;
+}
+
+.modal {
+  z-index: 10050 !important;
+}
+
+/* Force the modal to be visible */
+.modal.show {
+  display: block !important;
+  opacity: 1 !important;
+}
+
+/* Make sure the dialog is positioned properly */
+.modal-dialog {
+  margin: 10vh auto !important;
+  transform: translate(0, 0) !important;
+  max-width: 800px;
+}
+
+/* Ensure content is visible */
+.modal-content {
+  opacity: 1 !important;
+  visibility: visible !important;
+}

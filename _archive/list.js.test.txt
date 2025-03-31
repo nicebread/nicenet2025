@@ -1,0 +1,17 @@
+format:
+  html:
+    include-after-body: "files/includes/script-list.html"
+
+
+PL <- c('<div id="refList">
+
+  <!-- Controls -->
+  <input class="search" placeholder="Search" />
+  <button class="sort" data-sort="year">Sort by year</button>
+
+  <!-- List container -->
+  <div class="list">
+')
+
+PL <- c(PL, paste0("\n\n<h2 class='year' data-id='y", y, "' data-year='", y, "'>", y, "</h2>\n\n"))
+

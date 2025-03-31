@@ -1,0 +1,19 @@
+---
+title: "Service to the Field"
+title-block-banner: false
+---
+
+| Year            | Position/Title                                                                                                                                                                                                   |
+| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **since 2025**  | Co-Chairing the working group "CoARA and responsible research assessment" of the DGPs                                                                                                                            |
+| **2023-2025**   | Co-Lead of the CoARA Working Group "[Responsible Metrics and Indicators](https://github.com/rachelHey/metricsWG)"                                                                                                |
+| **2020-2023**   | Founding member and member of steering committee of the [German Reproducibility Network (GRN)](https://reproducibilitynetwork.de)                                                                                                                      |
+| **2016-2024**   | Appointed member of the [Open Science Committee](https://www.dgps.de/schwerpunkte/transparente-wissenschaft/kommission-open-science/) of the DGPs (chairing 2022-2024)                                                                                                                                  |
+| **2018-2025**   | Appointed member of the Leibniz Institute for Psychology Information ([ZPID](https://www.zpid.de/index.php?lang=EN))’s scientific advisory board                                                                 |
+| **since 2021**  | Appointed member of advisory board of the [Mannheim University Open Science Office](https://www.uni-mannheim.de/open-science-office/) (2021- )                                                                   |
+| **2020-2023**   | Consulting Editorial Board Member, [Personality Science](https://ps.psychopen.eu/)                                                                                                                               |
+| **since 2018**  | Member of the advisory board of [JASP](https://jasp-stats.org/advisory-board/)                                                                                                                                   |
+| **since 2017**  | Editorial board member of [Meta-Psychology](https://open.lnu.se/index.php/metapsychology/about), a community-driven, diamond open access, no APC journal that adheres to high standards of research transparency |
+| **2017 – 2021** | Editorial board member at Advances in Methods and Practices in Psychological Science ([AMPPS](http://www.psychologicalscience.org/publications/ampps/editorial-board))                                           |
+| **2016 – 2020** | Consulting Editor for the European Journal of Personality ([EJP](http://onlinelibrary.wiley.com/journal/10.1002/(ISSN)1099-0984/homepage/EditorialBoard.html))                                                   |
+

@@ -1,0 +1,1167 @@
+
+
+
+
+
+
+
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+    "http://www.w3.org/TR/html4/loose.dtd">
+
+<!--- Template für automatisch generierte CSS-Klassen-Namen --->
+<!--- Klassename für automatische Objektklassen-Klasse --->
+
+
+
+<!--- CSS-Klassen für Kopfbilder --->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--- Localize-Template --->
+<!--- Globale Localize-Definitionen -->
+
+<!--- Seitentitel --->
+
+
+<!--- Seitenbereiche --->
+
+
+
+
+
+
+
+
+
+
+<!--- Allgemein --->
+
+
+
+<!--- Headlines und Labels  --->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--- Startseite --->
+
+
+
+
+
+
+
+
+
+<!--- Funktionsbereich --->
+
+
+
+
+
+<!--- Inhalts-Funktionen --->
+
+
+
+
+
+
+<!--- Fusszeile --->
+
+
+
+
+<!--- Definitionen LMU Fakultät --->
+
+
+
+
+
+
+
+
+
+
+
+
+<!--- Definitionen LMU Personenliste --->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--- LMU Person --->
+
+
+
+
+
+
+<!--- Vorlage LMU Publikation --->
+
+
+
+
+
+
+
+
+<!--- Vorlage LMU Lehrstuhl --->
+
+
+<!--- Vorlage LMU Meldungen, LMU News und LMU Termine --->
+
+
+
+
+
+
+
+
+<!--- Vorlage LMU Lehrveranstaltung und LMU Downloaddatei --->
+
+
+
+
+
+
+
+<!--- Bildunterschrift --->
+
+
+
+<!--- Bildergalerie --->
+
+
+
+
+
+
+<!--- ALT-Texte bei Buttons -->
+
+
+
+
+
+
+
+
+
+<!--- Feed-Container --->
+
+
+<!--- JW Player --->
+
+
+
+
+
+
+<!--- Impressum --->
+
+
+
+
+
+
+
+
+
+
+
+<!--- Datenschutz --->
+
+
+<!--- Google Maps Integration --->
+
+
+
+<!--- PDF-Generator --->
+
+
+<!--- toplink --->
+
+
+
+<!--- andere Sprachen --->
+
+
+
+
+<!--- blank image --->
+
+
+
+
+
+<!--- Fiona-Vorschau Flag --->
+
+
+<!--- Sitespezifische Localize-Definitions --->
+<!--- für englischsprachige Playlands bei folgender Zeile einfach die Kommentare entfernen  --->
+<!---<NPSOBJ name="t2_lmu_localize_en" insertvalue="template" />--->
+
+<!--- Definitionen LMU Personenliste --->
+<!---<NPSOBJ varname="path_personen" modifyvar="set">/schulung/_playland_ls/personen/</NPSOBJ>--->
+
+
+<!--- Vorlage LMU Publikation --->
+<!---<NPSOBJ context="forschung/index.html">
+    <NPSOBJ varname="path_publikationen" modifyvar="set"><NPSOBJ insertvalue="var" name="path" />/</NPSOBJ>
+</NPSOBJ>--->
+<!--- PDF Titel --->
+<!--- <NPSOBJ varname="title_pdf_standard" modifyvar="set">Name des Lehrstuhls </NPSOBJ> --->
+
+<!--- Startseitenmeldung --->
+
+
+
+<html lang="de">
+
+
+<head><script type="text/javascript">
+<!--
+function NpsPxRatio()
+{
+  var outer = document.createElement('DIV');
+  var inner = document.createElement('DIV');
+  inner.style.height = '1000em';
+  inner.style.width = '1000ex';
+  inner.style.fontSize = '9pt';
+  outer.style.height = '0';
+  outer.style.overflow = 'hidden';
+  outer.appendChild(inner);
+  document.body.appendChild(outer);
+  this.EM_TO_PX = inner.offsetHeight / 1000;
+  this.EX_TO_PX = inner.offsetWidth / 1000;
+  document.body.removeChild(outer);
+}
+function npsWindowOpen(uri, windowName, decorate) {
+  if (windowName=='_self') {
+    self.location = uri;
+    return self;
+  } else if (windowName=='_parent') {
+    parent.location = uri;
+    return parent;
+  } else {
+    var w = window.open(uri, windowName, decorate);
+    try {
+       w.opener = self;
+    } catch (e) {
+    }
+    return w;
+  }
+}
+function npsWindowClose(button) {
+  window.close();
+  return true;
+}
+function npsGetParentWindow(frame)
+{
+  var f = frame;
+  if (f == null) {
+    return null;
+  }
+  while (f.parent != f && f.name.indexOf('com_infopark_libs_htmlgui_root_frame') != 0) {
+    try {
+      f.parent.location.href;
+    } catch (e) {
+      break;
+    }
+    f = f.parent;
+  }
+  return f;
+}
+function ow(uri, windowName, windowType) {
+  npsOpenWindowWithReturn(uri, windowName, windowType);
+}
+function npsOpenWindowWithReturn(uri, windowName, windowType) {
+  var openedWindow;
+  var parentWindow = npsGetParentWindow(self);
+  if (windowName!='_parent' && windowName!='_self' && parentWindow != self) {
+     openedWindow = parentWindow.ow(uri, windowName, windowType);
+     return openedWindow;
+  }
+  var decorate = '';
+  var width = 0;
+  var height = 0;
+  if (windowName=='_npsOp' && typeof npsGetOpenerName == 'function') {
+    windowName = npsGetOpenerName(self);
+  } else if (windowName=='_npsNa' && typeof npsGetParentWindow == 'function') {
+    npsGetParentWindow(self).location = uri;
+    return null;
+  }
+  if (windowType != 'n') {
+    var exWidth = 0;
+    var emWidth = 64;
+    var emHeight = 51.2;
+    switch (windowType) {
+      case 'uds': emWidth = 55.5; emHeight = 32.5; break;
+      case 'udt': exWidth = 65; emHeight = 15.36; break;
+    };
+    decorate = 'dependent=yes, resizable=yes, scrollbars=yes, location=no, menubar=no, status=no, toolbar=no';
+    if (windowType != 'udp') {
+      var ratio = new NpsPxRatio();      width = (exWidth != 0) ? (exWidth * ratio.EX_TO_PX) : (emWidth * ratio.EM_TO_PX);      height = emHeight * ratio.EM_TO_PX;      decorate += ', width=' + width;
+      decorate += ', height=' + height;
+    }
+  }
+  var w;
+  if (typeof npsPostSelection == 'function') {
+    w = npsPostSelection(uri, windowName, decorate);
+  } else {
+    w = npsWindowOpen(uri, windowName, decorate);
+  }
+  w.focus();
+  return w;
+}
+// -->
+</script>
+<script type="text/javascript" src="/default/NPS/javascripts/nps_js_editmarker.js"></script>
+<link rel="stylesheet" type="text/css" href="/default/NPS/p/Stylesheet?file=previewStyle.css&amp;theme=default&amp;tct=1742393491836">
+<meta content="Infopark CMS Fiona; 6.9.0; 53616c7465645f5fb14a315e7e8b33048d3c428086aedb09" name="generator">
+<!--- base url für Fehlerseiten --->
+
+
+<!--- encoding --->
+<meta content="text/html; charset=utf-8" http-equiv="content-type">
+
+
+
+
+
+<!--- title --->
+
+<!--- zentrale Auftritte --->
+
+<!--- alle anderen --->
+
+
+
+
+            <title>Felix Schönbrodt's publications - Lehrstuhl für Psychologische Methodenlehre und Diagnostik - LMU München</title>
+
+
+
+
+
+
+<!--- dublin core --->
+<meta content="de" name="DC.language">
+<meta content="Lehrstuhl für Psychologische Methodenlehre und Diagnostik" name="DC.lmuSiteName">
+
+<!--- description und keywords --->
+
+
+
+<!--- lokales Template für Feed-Links und CSS --->
+<!--- favicon --->
+<link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.ico">
+<!--- RSS feeds --->
+<!--<link rel="alternate" type="application/rss+xml" href="funktionen/rss/news.xml" title="@{site_config.site_title} - News">-->
+<!--- local stylesheets --->
+<link title="lmustyle" rel="stylesheet" type="text/css" media="screen,print" href="../../../../_assets/css/screen.css">
+<link title="lmustyle" rel="stylesheet" type="text/css" media="print" href="../../../../_assets/css/print.css">
+
+
+<!--[if IE 6]>
+<link type="text/css" rel="stylesheet" href="../../../../_assets/css/screen-ie6.css" media="screen" title="lmustyle">
+<![endif]-->
+
+
+<!--- global CSS --->
+<link title="lmustyle" rel="stylesheet" type="text/css" href="../../../../../../system/___cms-static/default/jquery-fancybox/default/jquery_fancybox.css" media="screen,print">
+<!--- Slides-screen und Akkordeon nur laden, wenn erforderlich --->
+
+<!--- global JS --->
+<script src="../../../../../../system/___cms-static/default/jquery/default/jquery.js" type="text/javascript"></script>
+<script src="../../../../../../system/___cms-static/default/jquery-ui/default/jquery-ui-widgets.js" type="text/javascript"></script>
+<script src="../../../../../../system/___cms-static/default/jquery-fancybox/default/jquery_fancybox_pack.js" type="text/javascript"></script>
+<script src="../../../../../../system/___cms-static/default/lmu/js/lmu-functions.js" type="text/javascript"></script>
+<!--- mobiler Prototyp, falls einkonfiguriert --->
+
+<!--- Slides/Akkordeon js nur laden, wenn erforderlich --->
+
+<!--- JS Ressourcen für Monday Webforms nur bei Vorlage Kontaktformular 3 laden --->
+
+
+<!--- local JS --->
+
+<!-- Matomo -->
+<script type="text/javascript">
+var _paq = window._paq = window._paq || [];
+/* tracker methods like "setCustomDimension" should be called before "trackPageView" /
+_paq.push(["disableCookies"]);
+_paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+_paq.push(["setCookieDomain", ".uni-muenchen.de"]);
+_paq.push(["setDomains", ["*.uni-muenchen.de"]]);
+_paq.push(['trackPageView']);
+_paq.push(['enableLinkTracking']);
+(function() {
+var u="https://web-analytics.uni-muenchen.de/";
+_paq.push(['setTrackerUrl', u+'matomo.php']);
+_paq.push(['setSiteId', '1']);
+var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+})();
+</script>
+<!-- End Matomo Code -->
+
+
+
+<!--- addons --->
+
+
+</head>
+
+<body id="top">
+<div id="page" class="page page-personen page-personen-lehrstuhlmitarbeiter page-personen-lehrstuhlmitarbeiter-schoenbrodt page-personen-lehrstuhlmitarbeiter-schoenbrodt-publications page-standard page-167112380">
+    <!--- KOPFBEREICH --->
+<div id="home" class="home kopfbild kopfbild-personen kopfbild-personen-lehrstuhlmitarbeiter kopfbild-personen-lehrstuhlmitarbeiter-schoenbrodt kopfbild-personen-lehrstuhlmitarbeiter-schoenbrodt-publications">
+
+
+<a title="Lehrstuhl für Psychologische Methodenlehre und Diagnostik" href="../../../../index.html"> <img title="Lehrstuhl für Psychologische Methodenlehre und Diagnostik" alt="Lehrstuhl für Psychologische Methodenlehre und Diagnostik" class="home-img" src="../../../../../../system/___cms-static/default/lmu/img/blank.png"> </a>
+
+
+</div>
+<!--- Kopfbild für Druckausgabe --->
+<div class="logo-print"> <img alt="print" src="../../../../../../system/___cms-static/default/lmu/img/header-print.gif" border="0"> </div>
+
+    <!--- Root FUNKTIONSBEREICH --->
+
+<!--- Prüfe, ob Suchfeld angezeigt werden soll --->
+
+
+
+
+<hr class="g-hidden">
+
+
+<div id="bar" class="mod-bar kopfbild kopfbild-personen kopfbild-personen-lehrstuhlmitarbeiter kopfbild-personen-lehrstuhlmitarbeiter-schoenbrodt kopfbild-personen-lehrstuhlmitarbeiter-schoenbrodt-publications">
+
+
+    <!--- SUCHE --->
+    <!--- globales t2_lmu_localize: isNpsGui=nein --->
+
+
+
+            <div id="search" class="m-block m-block-search lmu-popover__wrapper">
+
+
+
+
+
+                <!--- funktioniert nicht in npsgui, nur online: --->
+
+                <h6 class="g-area-heading area-heading">
+                    Suche
+                </h6>
+                <form id="cref_iframe" action="https://www.psy.uni-muenchen.de/pm/funktionen/suche/index.html">
+                    <fieldset class="m-search-wrapper">
+<input placeholder="Google&trade; benutzerdefinierte Suche" name="q" onclick="this.value=''" class="m-search-term" type="text">
+                        <input title="Suchen" alt="Suchen" name="sa" value="Suchen" class="m-search-button" type="submit">
+                    </fieldset>
+                    <div class="lmu-popover__content">
+                        <a title="Hinweise zur Datenübertragung bei der Google™ Suche" class="lmu-popover_message" href="http://www.uni-muenchen.de/funktionen/datenschutz/index.html#google">Hinweise zur Datenübertragung bei der Google™ Suche</a>
+                    </div>
+                </form>
+            </div>
+
+
+    <!--- FUNKTIONEN --->
+    <div id="fn" class="m-block m-block-fn">
+        <h6 class="g-area-heading area-heading">Links und Funktionen</h6>
+        <ul class="m-list">
+
+                    <li class="m-item m-first"><span class="m-separator"><a title="www.lmu.de - Startseite" target="_blank" class="m-link" href="http://www.uni-muenchen.de">www.lmu.de</a></span></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            <li class="m-item">
+                                <span class="m-separator"><a title="LMU-Portal" target="_blank" class="m-link" href="http://www.portal.lmu.de">LMU-Portal</a></span>
+                            </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            <li class="m-item">
+                                <span class="m-separator"><a title="Sitemap" class="m-link" href="../../../../index.html">Sitemap</a></span>
+                            </li>
+
+
+
+
+        </ul>
+        <div class="g-clear"></div>
+    </div>
+    <!--- SPRACHUMSCHALTUNG --->
+
+    <div class="g-clear"></div>
+</div>
+
+    <!--- NAVIGATIONSPFAD --->
+<hr class="g-hidden">
+<div id="bc" class="mod-bc kopfbild kopfbild-personen kopfbild-personen-lehrstuhlmitarbeiter kopfbild-personen-lehrstuhlmitarbeiter-schoenbrodt kopfbild-personen-lehrstuhlmitarbeiter-schoenbrodt-publications">
+    <h6 class="g-area-heading area-heading">Navigationspfad</h6>
+
+        <ul class="m-list">
+
+
+
+
+                        <li class="m-item m-first">
+
+
+
+                        <!--- Abfrage um Navigations-Items zu verlinken oder nicht zu verlinken --->
+                        <!--- Aktives Navigations-Item der Breadcrumbhierarchie wird nicht verlinkt --->
+
+                            <a class="m-link" href="../../../../index.html">Startseite</a>
+
+
+                    </li>
+
+
+
+
+
+
+                        <li class="m-item">
+
+
+                        <!--- Abfrage um Navigations-Items zu verlinken oder nicht zu verlinken --->
+                        <!--- Aktives Navigations-Item der Breadcrumbhierarchie wird nicht verlinkt --->
+
+                            <a class="m-link">Personen</a>
+
+
+                    </li>
+
+
+
+
+
+
+                        <li class="m-item">
+
+
+                        <!--- Abfrage um Navigations-Items zu verlinken oder nicht zu verlinken --->
+                        <!--- Aktives Navigations-Item der Breadcrumbhierarchie wird nicht verlinkt --->
+
+                            <a class="m-link">Lehrstuhlmitarbeiter</a>
+
+
+                    </li>
+
+
+
+
+
+
+                        <li class="m-item">
+
+
+                        <!--- Abfrage um Navigations-Items zu verlinken oder nicht zu verlinken --->
+                        <!--- Aktives Navigations-Item der Breadcrumbhierarchie wird nicht verlinkt --->
+
+                            <a class="m-link" href="../index.html">Prof. Dr. Felix Schönbrodt</a>
+
+
+                    </li>
+
+
+
+
+
+
+                        <li class="m-item">
+
+
+                        <!--- Abfrage um Navigations-Items zu verlinken oder nicht zu verlinken --->
+                        <!--- Aktives Navigations-Item der Breadcrumbhierarchie wird nicht verlinkt --->
+
+
+
+                                Publications
+
+
+
+                    </li>
+
+
+
+        </ul>
+        <div class="g-clear"></div>
+
+
+
+
+</div>
+    <!--- HAUPTBEREICH --->
+<hr class="g-hidden">
+<div id="main" class="main">
+    <!--- Die Einstellung des Kontextes erfolgt über die Variable @setContext --->
+
+
+
+
+<!--- HAUPTNAVIGATION --->
+<div id="mainNav" class="mod-mainnav">
+    <h6 class="g-area-heading area-heading">Hauptnavigation</h6>
+
+    <!--- Ebene 1 --->
+    <ul class="m-list m-list-1">
+
+
+
+
+
+    </ul>
+</div>
+<hr class="g-hidden">
+
+    <!--- INHALTSBEREICH --->
+    <!--- Globale Einstellung für Anzeige Servicebereich auslesen --->
+
+
+
+
+    <!--- Lokale Einstellung für Anzeige Servicebereich auslesen und den globalen Wert damit ersetzen --->
+
+    <!--- Fall "nur Startseite": auf Startseite "ja", sonst "nein" --->
+
+
+        <div id="contentcontainer" class="contentcontainer g-grid-535">
+
+
+        <!--- Inhalts-Navigation oben --->
+
+
+        <!--- Inhalts-Funktionen oben --->
+
+    <div id="cFn1" class="mod mod-cfn mod-cfn-1">
+        <h6 class="g-area-heading area-heading"></h6>
+        <ul class="m-col-2 m-buttons">
+
+            <li class="m-button m-button-print"><a title="drucken" class="m-link m-link-print" onclick="print();" href="#top">drucken</a></li>
+        </ul>
+        <div class="g-clear"></div>
+        <hr class="g-hidden">
+    </div>
+
+
+        <!--- Inhalt --->
+        <h6 class="g-area-heading area-heading">Inhaltsbereich</h6>
+<!--- Entsprechend der Objektklasse das zugehörige Content-Template einfügen --->
+
+
+        <!--- STANDARD --->
+
+<div id="content" class="content content-standard">
+    <h1 class="g-h1">Felix Schönbrodt's publications</h1>
+
+    <!--- Bildausgabe --->
+
+
+    <!--- Gibt den Hauptinhalt aus, wenn vorhanden --->
+
+
+
+
+            <div class="user-html hauptinhalt">
+
+
+
+
+            <div id="pub">
+<p>The small symbols for open access <img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png">, open data <img height="16" alt="data_small_color" width="15" src="../../../../../../00_uebergreifend/00zz_osc_en/images/data_small_color.png">, preregistration <img height="16" alt="preregistered_small_color" width="15" src="../../../../../../00_uebergreifend/00zz_osc_en/images/preregistered_small_color.png">, and open material <img height="16" alt="materials_small_color" width="15" src="../../../../../../00_uebergreifend/00zz_osc_en/images/materials_small_color.png"> provide direct links to the sources. Not all of these badges have been officially awarded by the publishing journal (unfortunately, many journals have not implemented the badges yet).</p>
+<h2>Pre-prints</h2>
+<ul></ul>
+<ul>
+<li><a href="https://zenodo.org/records/14282874"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> Kohrt, F., Melinscak, F., McElreath, R., &amp; Sch&ouml;nbrodt, F. D. (2024). A conceptual framework for computational reproductions: Formal definitions and epistemic functions (2.1). Zenodo. <a href="https://doi.org/10.5281/zenodo.14282874">https://doi.org/10.5281/zenodo.14282874</a></li>
+<li><a href="https://osf.io/preprints/osf/7qvfz"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> <a href="https://osf.io/bqd4m/"><img height="16" alt="materials_small_color" width="15" src="../../../../../../00_uebergreifend/00zz_osc_en/images/materials_small_color.png"></a> Lange, J., Freyer, N., Musfeld, P., Sch&ouml;nbrodt, F. D., &amp; Leising, D. (2025). <em>A checklist for incentivizing and facilitating good theory building.</em>&nbsp;<a href="https://osf.io/preprints/osf/7qvfz">https://osf.io/preprints/osf/7qvfz</a></li>
+<li><a href="https://doi.org/10.31234/osf.io/4w7rb"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> <a href="https://osf.io/xdhpa/"><img height="16" alt="data_small_color" width="15" src="../../../../../../00_uebergreifend/00zz_osc_en/images/data_small_color.png"></a> <a href="https://osf.io/hqny7"><img height="16" alt="preregistered_small_color" width="15" src="../../../../../../00_uebergreifend/00zz_osc_en/images/preregistered_small_color.png"></a> <a href="https://osf.io/xdhpa/"><img height="16" alt="materials_small_color" width="15" src="../../../../../../00_uebergreifend/00zz_osc_en/images/materials_small_color.png"></a> Etzel, F. T., Seyffert-M&uuml;ller, A., Sch&ouml;nbrodt, F. D., Kreuzer, L., G&auml;rtner, A., Knischewski, P., &amp; Leising, D. (2024, May 8). <em>Inter-Rater Reliability in Assessing the Methodological Quality of Research Papers in Psychology.</em> <a href="https://doi.org/10.31234/osf.io/4w7rb">https://doi.org/10.31234/osf.io/4w7rb</a>.</li>
+<li><a href="http://doi.org/10.5281/zenodo.5126637"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> Leising, D., Dshemuchadse, M., Sch&ouml;nbrodt, F., &amp; Scherbaum, S. (2021, July 27). Genug ist genug: Unethisches Verhalten in der Wissenschaft muss endlich systematisch angegangen werden!. <em>Zenodo</em>. <a href="http://doi.org/10.5281/zenodo.5126637">http://doi.org/10.5281/zenodo.5126637</a><a href="http://doi.org/10.5281/zenodo.5126637"></a></li>
+<li><a href="https://psyarxiv.com/vhmbq"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> <a href="http://dx.doi.org/10.23668/psycharchives.5042"><img height="16" alt="data_small_color" width="15" src="../../../../../../00_uebergreifend/00zz_osc_en/images/data_small_color.png"></a> <a href="https://gitlab.lrz.de/nicebread/openlav"><img height="16" alt="materials_small_color" width="15" src="../../../../../../00_uebergreifend/00zz_osc_en/images/materials_small_color.png"></a> Israel, L. S. F., Paukner, P., Schiestel, L., Diepold, K., &amp; Sch&ouml;nbrodt, F. D. (2021, September 27). <em>The OpenLAV video database for affect induction: Analyzing the uniformity of video stimuli effects</em>. Retrieved from <a href="http://psyarxiv.com/vhmbq">psyarxiv.com/vhmbq</a></li>
+<li><a href="https://zenodo.org/record/6840403"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> Toelch, U. &amp; Sch&ouml;nbrodt F. D. (2022).&nbsp;Offene Daten als Grundlage f&uuml;r wissenschaftliche Innovation und &ouml;ffentliches Vertrauen (Positionspapier des German Reproducibility Networks).&nbsp;<em>Zenodo</em>. <a href="https://doi.org/10.5281/zenodo.6840403">https://doi.org/10.5281/zenodo.6840403</a></li>
+<li><a href="https://doi.org/10.31219/osf.io/ndggf"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> Sch&ouml;nbrodt, F. D. (2016, November 25). Testing fit patterns with polynomial regression models. <a href="https://doi.org/10.31219/osf.io/ndggf">https://doi.org/10.31219/osf.io/ndggf</a></li>
+</ul>
+<h2>Peer-reviewed Publications</h2>
+<h3 id="pub">In press</h3>
+<br>
+<ul>
+<li><a href="https://osf.io/preprints/psyarxiv/ftr6u"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> <a href="https://osf.io/fs5pw/"><img height="16" alt="materials_small_color" width="15" src="../../../../../../00_uebergreifend/00zz_osc_en/images/materials_small_color.png"></a> Humberg, S., Sch&ouml;nbrodt, F. D., &amp; Nestler, S. (in press). Improving the probability of reaching correct conclusions about congruence hypotheses: Integrating statistical equivalence testing into response surface analysis.<em> Psychological Methods</em>. <a href="https://doi.org/10.1037/met0000743">https://doi.org/10.1037/met0000743</a></li>
+<li><a href="https://psyarxiv.com/rgh5b"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> Sch&ouml;nbrodt, F. D., G&auml;rtner, A., Frank, M., Gollwitzer, M., Ihle, M., Mischkowski, D., &hellip; Leising, D. (in press). Responsible Research Assessment I: Implementing DORA and CoARA for hiring and promotion in psychology. <em>Meta-Psychology</em>.&nbsp;<a href="https://doi.org/10.31234/osf.io/rgh5b">https://doi.org/10.31234/osf.io/rgh5b</a></li>
+<li><a href="https://psyarxiv.com/5yexm/"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> G&auml;rtner, A., Leising, D., &amp; Sch&ouml;nbrodt, F. D. (in press). Responsible Research Assessment II: A specific proposal for hiring and promotion in psychology. <em>Meta-Psychology</em>.&nbsp;<a href="https://doi.org/10.31234/osf.io/5yexm">https://doi.org/10.31234/osf.io/5yexm</a></li>
+<li><a href="https://doi.org/10.31234/osf.io/r5yfz"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> <a href="https://osf.io/pf9db/"><img height="16" alt="materials_small_color" width="15" src="../../../../../../00_uebergreifend/00zz_osc_en/images/materials_small_color.png"></a> van Dongen, N. N. N., Finnemann, A., de Ron, J., Tiokhin, L., Wang, S. B., Algermissen, J., &hellip; Sch&ouml;nbrodt, F. D., ... Borsboom, D. (in press). Practicing theory building in a many modelers hackathon: A proof of concept. <em>Meta-Psychology</em>. Preprint: <a href="https://doi.org/10.31234/osf.io/r5yfz">https://doi.org/10.31234/osf.io/r5yfz</a></li>
+</ul>
+<h3>2024</h3>
+<ul>
+<li><a href="https://psyarxiv.com/ra8qe/"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> <a href="https://osf.io/4tyk5/"><img height="16" alt="data_small_color" width="15" src="../../../../../../00_uebergreifend/00zz_osc_en/images/data_small_color.png"></a> <a href="https://osf.io/4tyk5/"><img height="16" alt="materials_small_color" width="15" src="../../../../../../00_uebergreifend/00zz_osc_en/images/materials_small_color.png"></a> Kirchner-H&auml;usler, A., Sch&ouml;nbrodt, F. D., Uskul, A. K., Vignoles, V. L., Rodr&iacute;guez-Bail&oacute;n, R., Castillo, V. A., Cross, S. E., Gezici-Yal&ccedil;ın, M., Harb, C., Husnu, S., Ishii, K., Karamaouna, P., Kafetsios, K., Kateri, E., Matamoros-Lima, J., Miniesy, R., Na, J., &Ouml;zkan, Z., Pagliaro, S., &hellip; Uchida, Y. (2024). Proximal and distal honor fit and subjective well‐being in the Mediterranean region. Journal of Personality, 92(1), 38&ndash;54. . <a href="https://doi.org/10.1111/jopy.12803">https://doi.org/10.1111/jopy.12803</a></li>
+<li><a href="https://doi.org/10.1371/journal.pbio.3002553"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> G&auml;rtner, A., Leising, D., &amp; Sch&ouml;nbrodt, F. D. (2024). Towards responsible research assessment: How to reward research quality. PLOS Biology, 22(2), e3002553. <a href="https://doi.org/10.1371/journal.pbio.3002553">https://doi.org/10.1371/journal.pbio.3002553</a><a href="https://doi.org/10.1371/journal.pbio.3002553"></a></li>
+<li><a href="https://osf.io/preprints/psyarxiv/jdh9m"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> <a href="https://doi.org/10.5160/psychdata.zrce 16dy99_v20100 "><img height="16" alt="data_small_color" width="15" src="../../../../../../00_uebergreifend/00zz_osc_en/images/data_small_color.png"></a> <a href="https://osf.io/hafsx"><img height="16" alt="preregistered_small_color" width="15" src="../../../../../../00_uebergreifend/00zz_osc_en/images/preregistered_small_color.png"></a> <a href="https://osf.io/psqx8/"><img height="16" alt="materials_small_color" width="15" src="../../../../../../00_uebergreifend/00zz_osc_en/images/materials_small_color.png"></a> Zygar-Hoffmann, C., Hagemeyer, B., &amp; Sch&ouml;nbrodt, F. D. (2024). The reflection of motive dispositions in everyday agentic motivational states. <em>Motivation Science</em>. Advance online publication. <a href="https://doi.org/10.1037/mot0000344">https://doi.org/10.1037/mot0000344</a></li>
+</ul>
+<h3>2023</h3>
+<ul>
+<li><a href="https://doi.org/10.1026/0033-3042/a000630"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> G&auml;rtner, A., Leising, D., &amp; Sch&ouml;nbrodt, F. D. (2023). Empfehlungen zur Bewertung wissenschaftlicher Leistungen bei Berufungsverfahren in der Psychologie. Psychologische Rundschau, 74(3), 166&ndash;174. <a href="https://doi.org/10.1026/0033-3042/a000630">https://doi.org/10.1026/0033-3042/a000630</a></li>
+<li><a href="https://doi.org/10.5281/zenodo.10285395"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> Ihle, M., &amp; Sch&ouml;nbrodt, F. (2023). LMU Open Science Center Impact Report 2017 &ndash; 2023 (1.0). <em>Zenodo</em>. <a href="https://doi.org/10.5281/zenodo.10285395">https://doi.org/10.5281/zenodo.10285395</a><a href="https://doi.org/10.5281/zenodo.10285395"></a></li>
+<li><a href="https://psyarxiv.com/z6ky2"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> <a href="https://github.com/nicebread/sexual_recidivism"><img height="16" alt="materials_small_color" width="15" src="../../../../../../00_uebergreifend/00zz_osc_en/images/materials_small_color.png"></a>&nbsp;Etzler, S., Sch&ouml;nbrodt, F. D., Pargent, F., Eher, R., &amp; Rettenberger, M. (2023). Machine learning and risk assessment: Random Forest does not outperform logistic regression in the prediction of sexual recidivism. Assessment, 107319112311646. https://doi.org/10.1177/10731911231164624</li>
+<li><a href="https://doi.org/10.1098/rsos.221306"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> <a href="https://archive.softwareheritage.org/browse/snapshot/7b56f1ce3bc6918766773b21d18012ffc731b59b/directory/?origin_url=https://gitlab.com/fkohrt/bachelorarbeit-code"><img height="16" alt="materials_small_color" width="15" src="../../../../../../00_uebergreifend/00zz_osc_en/images/materials_small_color.png"></a> Kohrt, F., Smaldino, P. E., McElreath, R., &amp; Sch&ouml;nbrodt, F. (2023). Replication of the natural selection of bad science. <i>Royal Society Open Science, 10</i>(2), 221306. <a href="https://doi.org/10.1098/rsos.221306">https://doi.org/10.1098/rsos.221306</a></li>
+<li><a href="https://doi.org/10.1098/rsos.230206"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a>&nbsp;Brembs, B., Huneman, P., Sch&ouml;nbrodt, F. D., Nilsonne, G., Susi, T., Siems, R., Perakakis, P., Trachana, V., Ma, L., &amp; Rodriguez-Cuadrado, S. (2023). Replacing academic journals. <em>Royal Society Open Science, 10</em>(7), 230206. <a href="https://doi.org/10.1098/rsos.230206">https://doi.org/10.1098/rsos.230206</a></li>
+<li><a href="https://doi.org/10.15626/MP.2020.2556"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> <a href="https://dataverse.harvard.edu/dataverse/SAPA-Project"><img height="16" alt="data_small_color" width="15" src="../../../../../../00_uebergreifend/00zz_osc_en/images/data_small_color.png"></a> <a href="https://osf.io/59gf4/"><img height="16" alt="materials_small_color" width="15" src="../../../../../../00_uebergreifend/00zz_osc_en/images/materials_small_color.png"></a> Klau, S., Sch&ouml;nbrodt, F. D., Patel, C. J., Ioannidis, J. P. A., Boulesteix, A.-L., &amp; Hoffmann, S. (2023). Comparing the vibration of effects due to model, data pre-processing and sampling uncertainty on a large data set in personality psychology.<em> Meta-Psychology, 7</em>. <a title="Prof. Dr. Felix Schönbrodt" href="../index.html">https://doi.org/10.15626/MP.2020.2556</a></li>
+<li><a href="https://doi.org/10.1098/rsos.220346"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> <a href="https://osf.io/5nbkc/"><img height="16" alt="materials_small_color" width="15" src="../../../../../../00_uebergreifend/00zz_osc_en/images/materials_small_color.png"></a>&nbsp;Stefan, A. M., &amp; Sch&ouml;nbrodt, F. D. (2023). Big little lies: A compendium and simulation of p-hacking strategies.<em> Royal Society Open Science</em>, 10(2), 220346. <a href="https://doi.org/10.1098/rsos.220346">https://doi.org/10.1098/rsos.220346</a></li>
+<li><a href="https://rdcu.be/c5brE"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> Rahal, R.-M., Fiedler, S., Adetula, A., Berntsson, R. P.-A., Dirnagl, U., Feld, G. B., Fiebach, C. J., Himi, S. A., Horner, A. J., Lonsdorf, T. B., Sch&ouml;nbrodt, F., Silan, M. A. A., Wenzler, M., &amp; Azevedo, F. (2023). Quality research needs good working conditions. <em>Nature Human Behaviour</em>. <a href="https://doi.org/10.1038/s41562-022-01508-2">https://doi.org/10.1038/s41562-022-01508-2</a></li>
+</ul>
+<h3>2022</h3>
+<ul>
+<li><a href="https://psyarxiv.com/cu43g"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> <a href="https://osf.io/k9c5q/"><img height="16" alt="data_small_color" width="15" src="../../../../../../00_uebergreifend/00zz_osc_en/images/data_small_color.png"></a> <a href="https://osf.io/k9c5q/"><img height="16" alt="materials_small_color" width="15" src="../../../../../../00_uebergreifend/00zz_osc_en/images/materials_small_color.png"></a> Heck, D. W., Boehm, U., B&ouml;ing-Messing, F., B&uuml;rkner, P., Derks, K., Dienes, Z., &hellip;, Sch&ouml;nbrodt, F. D., ..., &nbsp;Hoijtink, H. (2022). A Review of Applications of the Bayes Factor in Psychological Research. <em>Psychological Methods.</em>&nbsp;<a href="https://doi.org/10.1037/met0000454"> https://doi.org/10.1037/met0000454</a></li>
+<li><a href="https://psyarxiv.com/6j34w/"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> <a href="https://osf.io/fbshg/"><img height="16" alt="materials_small_color" width="15" src="../../../../../../00_uebergreifend/00zz_osc_en/images/materials_small_color.png"></a> Humberg, S., Dufner, M., Sch&ouml;nbrodt, F. D., Geukes, K., Hutteman, R., van Zalk, M. H. W., Denissen, J. J. A., Nestler, S., &amp; Back, M. D. (2022). The true role that suppressor effects play in condition-based regression analysis: None. A reply to Fiedler (2021). <em>Journal of Personality and Social Psychology, 123</em>, 884&ndash;888. <a href="https://doi.org/10.1037/pspp0000428">https://doi.org/10.1037/pspp0000428</a></li>
+<li><a href="https://doi.org/10.31234/osf.io/dvzn4"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> <a href="https://osf.io/8mxda/"><img height="16" alt="data_small_color" width="15" src="../../../../../../00_uebergreifend/00zz_osc_en/images/data_small_color.png"></a> <a href="https://clinicaltrials.gov/ct2/show/NCT04791137"><img height="16" alt="preregistered_small_color" width="15" src="../../../../../../00_uebergreifend/00zz_osc_en/images/preregistered_small_color.png"></a> <a href="https://osf.io/8mxda/"><img height="16" alt="materials_small_color" width="15" src="../../../../../../00_uebergreifend/00zz_osc_en/images/materials_small_color.png"></a> Blackwell, S. E., Sch&ouml;nbrodt, F. D., Woud, M. L., Wannem&uuml;ller, A., Bektas, B., Braun Rodrigues, M., Hirdes, J., Stumpp, M., &amp; Margraf, J. (2022). Demonstration of a &lsquo;leapfrog&rsquo; randomized controlled trial as a method to accelerate the development and optimization of psychological interventions. <em>Psychological Medicine</em>, 1&ndash;11. Cambridge Core. https://doi.org/10.1017/S0033291722003294</li>
+<li><a href="https://doi.org/10.1525/collabra.38599"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> <a href="https://osf.io/agchm/"><img height="16" alt="data_small_color" width="15" src="../../../../../../00_uebergreifend/00zz_osc_en/images/data_small_color.png"></a> <a href="https://osf.io/ge4sd/"><img height="16" alt="preregistered_small_color" width="15" src="../../../../../../00_uebergreifend/00zz_osc_en/images/preregistered_small_color.png"></a> <a href="https://osf.io/agchm/"><img height="16" alt="materials_small_color" width="15" src="../../../../../../00_uebergreifend/00zz_osc_en/images/materials_small_color.png"></a> Zygar-Hoffmann, C., Cristoforo, L., Wolf, L., &amp; Sch&ouml;nbrodt, F. D. (2022). Eliciting short-term closeness in couple relationships with Ecological Momentary Interventions. <em>Collabra: Psychology, 8(1)</em>, 38599. <a href="https://doi.org/10.1525/collabra.38599">https://doi.org/10.1525/collabra.38599</a></li>
+<li><a href="https://doi.org/10.5964/ps.6029"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> Leising, D., Thielmann, I., Gl&ouml;ckner, A., G&auml;rtner, A., &amp; Sch&ouml;nbrodt, F. (2022). Ten steps toward a better personality science &ndash; how quality may be rewarded more in research evaluation. <em>Personality Science, 3</em>, e6029. <a href="https://doi.org/10.5964/ps.6029.">https://doi.org/10.5964/ps.6029.</a><a href="https://doi.org/10.31234/osf.io/6btc3"></a></li>
+<li><a href="https://doi.org/10.5964/ps.7961"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a>&nbsp;Leising, D., Thielmann, I., Gl&ouml;ckner, A., G&auml;rtner, A., &amp; Sch&ouml;nbrodt, F. (2022). Ten steps toward a better personality science &ndash; a rejoinder to the comments. <em>Personality Science, 3</em>, e7961. <a href="https://doi.org/10.5964/ps.7961">https://doi.org/10.5964/ps.7961</a></li>
+<li><a href="https://onlinelibrary.wiley.com/doi/10.1111/jsr.13641"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> <a href="https://osf.io/6eah2"><img height="16" alt="preregistered_small_color" width="15" src="../../../../../../00_uebergreifend/00zz_osc_en/images/preregistered_small_color.png"></a> <a href="https://osf.io/72ejg/"><img height="16" alt="materials_small_color" width="15" src="../../../../../../00_uebergreifend/00zz_osc_en/images/materials_small_color.png"></a> Werner, G. G., Cludius, B., Sckopke, P., Stefan, A., Sch&ouml;nbrodt, F., &amp; Zygar‐Hoffmann, C. (2022). The predictive power of insomnia symptoms on other aspects of mental health during the COVID ‐19 pandemic: A longitudinal study. <em>Journal of Sleep Research</em>. <a href="https://doi.org/10.1111/jsr.13641">https://doi.org/10.1111/jsr.13641</a></li>
+<li><a href="https://doi.org/10.3389/fpsyg.2022.827746"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> <a href="https://doi.org/10.5160/psychdata.zrce18mo99"><img height="16" alt="data_small_color" width="15" src="../../../../../../00_uebergreifend/00zz_osc_en/images/data_small_color.png"></a> <a href="https://osf.io/2fz5w/"><img height="16" alt="materials_small_color" width="15" src="../../../../../../00_uebergreifend/00zz_osc_en/images/materials_small_color.png"></a> Pusch, S., Sch&ouml;nbrodt, F. D., Zygar-Hoffmann, C., &amp; Hagemeyer, B. (2022). Motivational interdependence in couple relationships. <em>Frontiers in Psychology, 13</em>, 827746. <a href="https://doi.org/10.3389/fpsyg.2022.827746">https://doi.org/10.3389/fpsyg.2022.827746</a></li>
+<li><a href="https://psyarxiv.com/yut4x"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> <a href="https://osf.io/4jxhv/wiki/home/"><img height="16" alt="materials_small_color" width="15" src="../../../../../../00_uebergreifend/00zz_osc_en/images/materials_small_color.png"></a> Sch&ouml;nbrodt, F., Zygar-Hoffmann, C., Frank, M., &amp; Gollwitzer, M. (2022). Gute wissenschaftliche Praxis &bdquo;hands-on&ldquo;: Ein Kerncurriculum f&uuml;r Empirische Praktika. Psychologische Rundschau, 73(2), 130&ndash;132. <a href="https://doi.org/10.1026/0033-3042/a000590">https://doi.org/10.1026/0033-3042/a000590</a></li>
+<li><a href="https://link.springer.com/content/pdf/10.3758/s13428-021-01754-8.pdf"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> <a href="https://osf.io/5esbc/"><img height="16" alt="materials_small_color" width="15" src="../../../../../../00_uebergreifend/00zz_osc_en/images/materials_small_color.png"></a> Stefan, A. M., Sch&ouml;nbrodt, F. D., Evans, N. J., &amp; Wagenmakers, E.-J. (2022). Efficiency in sequential testing: Comparing the sequential probability ratio test and the sequential Bayes factor test. <em>Behavior Research Methods</em>. <a href="https://doi.org/10.3758/s13428-021-01754-8">https://doi.org/10.3758/s13428-021-01754-8</a></li>
+<li><a href="https://psyarxiv.com/ksfvq/"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> <a href="https://osf.io/7np92/"><img height="16" alt="data_small_color" width="15" src="../../../../../../00_uebergreifend/00zz_osc_en/images/data_small_color.png"></a> <a href="https://osf.io/vg9zy"><img height="16" alt="preregistered_small_color" width="15" src="../../../../../../00_uebergreifend/00zz_osc_en/images/preregistered_small_color.png"></a> <a href="https://osf.io/7np92/"><img height="16" alt="materials_small_color" width="15" src="../../../../../../00_uebergreifend/00zz_osc_en/images/materials_small_color.png"></a> Nosek, B. A., Hardwicke, T. E., Moshontz, H., Allard, A., Corker, K. S., Dreber, A., Fidler, F., Hilgard, J., Kline Struhl, M., Nuijten, M., Rohrer, J., Romero, F., Scheel., A., Scherer, L., Sch&ouml;nbrodt, F., &amp; Vazire, S. (2022). Replicability, Robustness, and Reproducibility in Psychological Science. <em>Annual Review of Psychology, 73</em>, 719-748<em>.&nbsp;</em><a href="https://doi.org/10.1146/annurev-psych-020821-114157">https://doi.org/10.1146/annurev-psych-020821-114157</a><a href="https://doi.org/10.31234/osf.io/ksfvq"></a></li>
+</ul>
+<h3>2021</h3>
+<ul>
+<li><a href="https://psyarxiv.com/6mq7t"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> <a href="https://osf.io/jmeaw/"><img height="16" alt="materials_small_color" width="15" src="../../../../../../00_uebergreifend/00zz_osc_en/images/materials_small_color.png"></a>&nbsp;Sch&ouml;nbrodt, F. D., Zygar-Hoffmann, C., Nestler, S., Pusch, S., &amp; Hagemeyer, B. (2021). Measuring motivational relationship processes in experience sampling: A reliability model for moments, days, and persons nested in couples. <i>Behavior Research Methods, 54(4)</i>, 1869&ndash;1888. <a href="https://doi.org/10.3758/s13428-021-01701-7">https://doi.org/10.3758/s13428-021-01701-7</a></li>
+<li><a href="https://psyarxiv.com/6j34w/"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> <a href="https://osf.io/fbshg/"><img height="16" alt="materials_small_color" width="15" src="../../../../../../00_uebergreifend/00zz_osc_en/images/materials_small_color.png"></a>&nbsp;Humberg, S., Dufner, M., Sch&ouml;nbrodt, F. D., Geukes, K., Hutteman, R., van Zalk, M. H. W., Denissen, J. J. A., Nestler, S., &amp; Back, M. D. (2022). The true role that suppressor effects play in condition-based regression analysis: None. A reply to Fiedler (2021). <em>Journal of Personality and Social Psychology, 123(4)</em>, 884&ndash;888. <a href="https://doi.org/10.1037/pspp0000428">https://doi.org/10.1037/pspp0000428</a></li>
+<li><a href="https://zenodo.org/record/4317253#.Ye51oC9XaX0"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> Brembs, B., F&ouml;rstner, K., Kraker, P., Lauer, G., M&uuml;ller-Birn, C., Sch&ouml;nbrodt, F. D., &amp; Siems, R. (2020).<em> Auf einmal Laborratte</em>. <a href="https://doi.org/10.5281/ZENODO.4317252">https://doi.org/10.5281/ZENODO.4317252</a></li>
+<li><a href="https://econtent.hogrefe.com/doi/full/10.1026/0033-3042/a000514"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a>&nbsp;Gollwitzer, M., Abele-Brehm, A., Fiebach, C. J., Ramthun, R., Scheel, A., Sch&ouml;nbrodt, F. &amp; Steinberg, U. (2021). Management und Bereitstellung von Forschungsdaten in der Psychologie: &Uuml;berarbeitung der DGPs-Empfehlungen. <em>Psychologische Rundschau, 72</em>, 132-146. German OA version: <a href="https://econtent.hogrefe.com/doi/full/10.1026/0033-3042/a000514">https://econtent.hogrefe.com/doi/full/10.1026/0033-3042/a000514</a><a href="https://doi.org/10.31234/osf.io/hcxtm">;</a>&nbsp;English OA version:&nbsp;<a href="https://psyarxiv.com/24ncs/">https://psyarxiv.com/24ncs/</a>.</li>
+<li><a href="https://osf.io/preprints/metaarxiv/afb9p/"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> Hoffmann, S., Sch&ouml;nbrodt, F., Elsas, R., Wilson, R., Strasser, U., &amp; Boulesteix, A.-L. (2021). The multiplicity of analysis strategies jeopardizes replicability: Lessons learned across disciplines. <em>Royal Society Open Science, 8(4)</em>, 201925. https://doi.org/10.1098/rsos.201925doi:<a href="https://royalsocietypublishing.org/doi/10.1098/rsos.201925">10.1098/rsos.201925</a>&nbsp; [<a href="https://shiny.psy.lmu.de/multiplicity/">website with interactive material</a>]</li>
+<li><a href="https://psyarxiv.com/jcxzu"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> <a href="http://dx.doi.org/10.23668/psycharchives.2738"><img height="16" alt="data_small_color" width="15" src="../../../../../../00_uebergreifend/00zz_osc_en/images/data_small_color.png"></a> <a href="https://github.com/nicebread/PSE-Database"><img height="16" alt="materials_small_color" width="15" src="../../../../../../00_uebergreifend/00zz_osc_en/images/materials_small_color.png"></a> Sch&ouml;nbrodt, F. D., Hagemeyer, B., Brandst&auml;tter, V., Czikmantori, T., Gr&ouml;pel, P., Hennecke, M., Israel, L. S. F., Janson, K., Kemper, N., K&ouml;llner, M., Kopp, P. M., Mojzisch, A., M&uuml;ller-Hotop, R., Pr&uuml;fer, J., Quirin, M., Scheidemann, B., Schiestel, L., Schulz-Hardt, S., Sust, L., Zygar-Hoffmann, C., Schultheiss, O. C. (2020). Measuring Implicit Motives With the Picture Story Exercise (PSE): Databases of Expert-Coded German Stories, Pictures, and Updated Picture Norms.<em>&nbsp;Journal of Personality Assessment, 103(3)</em>, 392&ndash;405. <a href="https://doi.org/10.1080/00223891.2020.1726936">https://doi.org/10.1080/00223891.2020.1726936</a></li>
+<li><a href="https://onlinelibrary.wiley.com/doi/10.1002/acp.3776"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a>&nbsp;Oberlader, V. A., Quinten, L., Banse, R., Volbert, R., Schmidt, A. F., &amp; Sch&ouml;nbrodt, F. D. (2021). Validity of content‐based techniques for credibility assessment&mdash;How telling is an extended meta‐analysis taking research bias into account? <em>Applied Cognitive Psychology, 35</em>(2), 393&ndash;410. <a href="https://doi.org/10.1002/acp.3776">https://doi.org/10.1002/acp.3776</a><a href="https://doi.org/10.1002/acp.3776"></a></li>
+<li><a href="https://osf.io/preprints/psyarxiv/fetzm"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> <a href="https://osf.io/jc932/"><img height="16" alt="materials_small_color" width="15" src="../../../../../../00_uebergreifend/00zz_osc_en/images/materials_small_color.png"></a> Pusch, S., Sch&ouml;nbrodt, F. D., Zygar-Hoffmann, C., &amp; Hagemeyer, B. (2021). Perception of communal motives in couples: Accuracy, bias, and their associations with relationship length. <em>Journal of Research in Personality, 91</em>, 104060. <a href="https://doi.org/10.1016/j.jrp.2020.104060">https://doi.org/10.1016/j.jrp.2020.104060</a></li>
+</ul>
+<h3>2020</h3>
+<ul>
+<li><a href="https://psyarxiv.com/v6m35"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> <a href="https://osf.io/drv3a"><img height="16" alt="materials_small_color" width="15" src="../../../../../../00_uebergreifend/00zz_osc_en/images/materials_small_color.png"></a> Humberg, S., Sch&ouml;nbrodt, F. D., Back, M. D., &amp; Nestler, S. (2020). Cubic response surface analysis: Investigating asymmetric and level-dependent congruence effects with third-order polynomial models. <em>Psychological Methods</em>. doi:10.1037/met0000352.</li>
+<li><a href="https://doi.org/10.3758/s13428-020-01435-y"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> <a href="https://osf.io/pbt9r/"><img height="16" alt="data_small_color" width="15" src="../../../../../../00_uebergreifend/00zz_osc_en/images/data_small_color.png"></a> <a href="https://osf.io/pbt9r/"><img height="16" alt="materials_small_color" width="15" src="../../../../../../00_uebergreifend/00zz_osc_en/images/materials_small_color.png"></a> Israel, L. S. F., &amp; Sch&ouml;nbrodt, F. D. (2020). Predicting affective appraisals from facial expressions and physiology using machine learning.<em> Behavior Research Methods</em>. doi:10.3758/s13428-020-01435-y</li>
+<li><a href="https://doi.org/10.32872/spb.2873"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> <a href="https://doi.org/10.5160/psychdata.zrce18mo99"><img height="16" alt="data_small_color" width="15" src="../../../../../../00_uebergreifend/00zz_osc_en/images/data_small_color.png"></a> <a href="https://osf.io/af4yb/"><img height="16" alt="preregistered_small_color" width="15" src="../../../../../../00_uebergreifend/00zz_osc_en/images/preregistered_small_color.png"></a> <a href="https://osf.io/urwq7/"><img height="16" alt="materials_small_color" width="15" src="../../../../../../00_uebergreifend/00zz_osc_en/images/materials_small_color.png"></a> Zygar-Hoffmann, C., Pusch, S., Hagemeyer, B., &amp; Sch&ouml;nbrodt, F. D. (2020). Motivated Behavior in Intimate Relationships: Comparing the Predictive Value of Motivational Variables. <em>Social Psychological Bulletin, 15</em>, 1-37. https://doi.org/10.32872/spb.2873</li>
+<li><a href="https://psyarxiv.com/37f2k/"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> <a href="https://osf.io/fhtw5/"><img height="16" alt="preregistered_small_color" width="15" src="../../../../../../00_uebergreifend/00zz_osc_en/images/preregistered_small_color.png"></a> <a href="https://osf.io/cbsgq/"><img height="16" alt="materials_small_color" width="15" src="../../../../../../00_uebergreifend/00zz_osc_en/images/materials_small_color.png"></a> Pusch, S., Sch&ouml;nbrodt, F. D., Zygar-Hoffmann, C., &amp; Hagemeyer, B. (2020). Truth and wishful thinking: How inter-individual differences in communal motives manifest in momentary partner perceptions. <em>European Journal of Personality</em>, 34, 115-134. doi:10.1002/per.2227</li>
+<li><a href="https://psyarxiv.com/d2a3s/"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> <a href="https://osf.io/vec5d/"><img height="16" alt="data_small_color" width="15" src="../../../../../../00_uebergreifend/00zz_osc_en/images/data_small_color.png"></a> <a href="https://osf.io/f9upa/"><img height="16" alt="preregistered_small_color" width="15" src="../../../../../../00_uebergreifend/00zz_osc_en/images/preregistered_small_color.png"></a> <a href="https://osf.io/vec5d/"><img height="16" alt="materials_small_color" width="15" src="../../../../../../00_uebergreifend/00zz_osc_en/images/materials_small_color.png"></a> Woll, C. F., &amp; Sch&ouml;nbrodt, F. D. (2020). A series of meta-analytic tests of the efficacy of long-term psychoanalytic psychotherapy. <i>European Psychologist</i>, 25, 51-72<i>.</i> doi:10.1027/1016-9040/a000385<i><br></i></li>
+<li><a href="https://psyarxiv.com/mvynu/"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> <a href="https://osf.io/sq7mw/"><img height="16" alt="materials_small_color" width="15" src="../../../../../../00_uebergreifend/00zz_osc_en/images/materials_small_color.png"></a> Zygar-Hoffmann, C., &amp; Sch&ouml;nbrodt, F. D. (2020). Recalling Experiences: Looking at Momentary, Retrospective and Global Assessments of Relationship Satisfaction. Collabra: Psychology, 6(1), None. DOI: http://doi.org/10.1525/collabra.278</li>
+<li><a href="https://onlinelibrary.wiley.com/doi/full/10.1002/per.2227"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> <a href="https://dx.doi.org/0.5160/psychdata.zrce18mo9"><img height="16" alt="data_small_color" width="15" src="../../../../../../00_uebergreifend/00zz_osc_en/images/data_small_color.png"></a> <a href="https://osf.io/cbsgq/"><img height="16" alt="materials_small_color" width="15" src="../../../../../../00_uebergreifend/00zz_osc_en/images/materials_small_color.png"></a> Pusch, S., Sch&ouml;nbrodt, F. D., Zygar‐Hoffmann, C., &amp; Hagemeyer, B. (2020). Truth and Wishful Thinking: How Interindividual Differences in Communal Motives Manifest in Momentary Partner Perceptions. <em>European Journal of Personality</em>. https://doi.org/10.1002/per.2227</li>
+</ul>
+<h3>2019</h3>
+<ul>
+<li><a href="https://rdcu.be/bVJSz"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> Sch&ouml;nbrodt, F. D. (2019). Training students for the open science future. <em>Nature Human Behaviour, 3</em>, 1031&ndash;1031. doi:10.1038/s41562-019-0726-z</li>
+<li><a href="https://psyarxiv.com/zywpr/"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> Blackwell, S. E., Woud, M., Margraf, J., &amp; Sch&ouml;nbrodt, F. D. (2019). Introducing the leapfrog design: A simple Bayesian adaptive rolling trial design for accelerated treatment development and optimization. <i>Clinical Psychological Science,</i> 7, 1207&ndash;1221<i>.</i> doi:10.1177/2167702619858071</li>
+<li><a href="https://psyarxiv.com/hfbj7/"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> <a href="https://osf.io/te4z3/"><img height="16" alt="materials_small_color" width="15" src="../../../../../../00_uebergreifend/00zz_osc_en/images/materials_small_color.png"></a> Israel, L. S. F., &amp; Sch&ouml;nbrodt, F. D. (2019). Emotion prediction with weighted appraisal models - Validating a psychological theory of affect. <em>IEEE Transactions on Affective Computing</em>, 1&ndash;1. doi:10.1109/TAFFC.2019.2940937</li>
+<li><a href="https://psyarxiv.com/pk82n/"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> <a href="https://www.psycharchives.org/handle/20.500.12034/654"><img height="16" alt="data_small_color" width="15" src="../../../../../../00_uebergreifend/00zz_osc_en/images/data_small_color.png"></a> <a href="https://www.psycharchives.org/handle/20.500.12034/654"><img height="16" alt="materials_small_color" width="15" src="../../../../../../00_uebergreifend/00zz_osc_en/images/materials_small_color.png"></a> Abele-Brehm, A. E., Gollwitzer, M., Steinberg, U., &amp; Sch&ouml;nbrodt, F. D. (2019). Attitudes toward open science and public data sharing. <i>Social Psychology</i>, 1&ndash;9. doi:10.1027/1864-9335/a000384</li>
+<li><a href="https://psyarxiv.com/9h3nu/"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> <a href="https://osf.io/rf3ys/"><img height="16" alt="data_small_color" width="15" src="../../../../../../00_uebergreifend/00zz_osc_en/images/data_small_color.png"></a> <a href="https://osf.io/rf3ys/"><img height="16" alt="materials_small_color" width="15" src="../../../../../../00_uebergreifend/00zz_osc_en/images/materials_small_color.png"></a> Carter, E. C., Sch&ouml;nbrodt, F. D., Gervais, W. M., &amp; Hilgard, J. (2019). Correcting for Bias in Psychology: A Comparison of Meta-Analytic Methods. <em>Advances in Methods and Practices in Psychological Science, 2</em>, 115&ndash;144. doi:10.1177/2515245919847196</li>
+<li><a href="https://psyarxiv.com/aqr79/"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> <a href="https://osf.io/3f5qd/"><img height="16" alt="materials_small_color" width="15" src="../../../../../../00_uebergreifend/00zz_osc_en/images/materials_small_color.png"></a> Stefan, A. M., Gronau, Q. F., Sch&ouml;nbrodt, F. D., &amp; Wagenmakers, E. J. (2019). A tutorial on Bayes Factor Design Analysis with informed priors. <i>Behavior Research Methods</i>. doi:10.3758/s13428-018-01189-8.</li>
+<li>Nestler, S., Humberg, S., &amp; Sch&ouml;nbrodt, F. D. (2019). Response surface analysis with multilevel data: Illustration for the case of congruence hypotheses. <em>Psychological Methods, 24</em>, 291&ndash;308. <a href="https://doi.org/10.1037/met0000199">https://doi.org/10.1037/met0000199</a></li>
+</ul>
+<div></div>
+<h3>2018</h3>
+<ul>
+<li><a href="https://journals.sagepub.com/doi/pdf/10.1177/2515245918810225"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> <a href="https://osf.io/8cd4r/"><img height="16" alt="data_small_color" width="15" src="../../../../../../00_uebergreifend/00zz_osc_en/images/data_small_color.png"></a> <a href="https://osf.io/ejcfw/"><img height="16" alt="preregistered_small_color" width="15" src="../../../../../../00_uebergreifend/00zz_osc_en/images/preregistered_small_color.png"></a> <a href="https://osf.io/8cd4r/"><img height="16" alt="materials_small_color" width="15" src="../../../../../../00_uebergreifend/00zz_osc_en/images/materials_small_color.png"></a> Klein, R. A., Vianello, M., Hasselman, F., Adams, B. G., Adams, R. B., ..., Sch&ouml;nbrodt, F. D., ..., &amp; Nosek, B. A. (2018). Many labs 2: Investigating variation in replicability across sample and setting. <em>Advances in Methods and Practices in Psychological Science.</em> doi:10.1177/2515245918810225</li>
+<li><a href="https://osf.io/preprints/psyarxiv/mky9j/"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> Benjamin, D. J., Berger, J. O., Johannesson, M., Nosek, B. A., Wagenmakers, E.-J., Berk, R., &hellip; Sch&ouml;nbrodt, F.D., ..., &amp; Johnson, V. E. (2018). Redefine statistical significance. <em>Nature Human Behaviour, 2</em>, 6&ndash;10. doi:10.1038/s41562-017-0189-z</li>
+<li><a href="https://psyarxiv.com/8mpua/"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> <a href="https://osf.io/ftsrd/"><img height="16" alt="materials_small_color" width="15" src="../../../../../../00_uebergreifend/00zz_osc_en/images/materials_small_color.png"></a> Sch&ouml;nbrodt, F. D., Humberg, S., &amp; Nestler, S. (2018). Testing similarity effects with dyadic response surface analysis. <em>European Journal of Personality</em>. doi:10.1002/per.2169</li>
+<li><a href="https://osf.io/d4dcu/"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> <a href="https://github.com/nicebread/BFDA"><img height="16" alt="materials_small_color" width="15" src="../../../../../../00_uebergreifend/00zz_osc_en/images/materials_small_color.png"></a> Sch&ouml;nbrodt, F. D. &amp; Wagenmakers, E.-J. (2018). Bayes Factor Design Analysis: Planning for compelling evidence. <em>Psychonomic Bulletin &amp; Review, 25</em>, 128-142. doi:10.3758/s13423-017-1230-y</li>
+<li><a href="https://psyarxiv.com/vquyh/"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> <a href="https://osf.io/uxtq2/"><img height="16" alt="data_small_color" width="15" src="../../../../../../00_uebergreifend/00zz_osc_en/images/data_small_color.png"></a> <a href="https://osf.io/rge59/"><img height="16" alt="preregistered_small_color" width="15" src="../../../../../../00_uebergreifend/00zz_osc_en/images/preregistered_small_color.png"></a> <a href="https://osf.io/uxtq2/"><img height="16" alt="materials_small_color" width="15" src="../../../../../../00_uebergreifend/00zz_osc_en/images/materials_small_color.png"></a> Suessenbach, F., Loughnan, S., Sch&ouml;nbrodt, F. D., &amp; Moore, A. B. (2018). The dominance, prestige, and leadership account of social power motives. <i>European Journal of Personality</i>. https://doi.org/10.1002/per.2184.</li>
+<li><a href="https://www.collabra.org/article/10.1525/collabra.137/"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> Humberg, S., Dufner, M., Sch&ouml;nbrodt, F. D., Geukes, K., Hutteman, R., van Zalk, M. H. W., Denissen, J. J. A., Nestler, S., &amp; Back, M. D. (2018). Why Condition-Based Regression Analysis (CRA) is Indeed a Valid Test of Self-Enhancement Effects: A Response to Krueger et al. (2017). <em>Collabra: Psychology, 4(1), 26. doi:<a href="https://www.collabra.org/article/10.1525/collabra.137/">10.1525/collabra.137</a>.</em></li>
+<li><a href="https://doi.org/10.31234/osf.io/9w3bh"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> <a href="https://osf.io/m6pb2"><img height="16" alt="data_small_color" width="15" src="../../../../../../00_uebergreifend/00zz_osc_en/images/data_small_color.png"></a> <a href="https://osf.io/m6pb2"><img height="16" alt="materials_small_color" width="15" src="../../../../../../00_uebergreifend/00zz_osc_en/images/materials_small_color.png"></a> Humberg, S., Dufner, M., Sch&ouml;nbrodt, F. D., Geukes, K., Hutteman, R., K&uuml;fner, A. C. P., van Zalk, M. H. W., Denissen, J. J. A., Nestler, S., &amp; Back, M. D. (2019). Is accurate, positive, or inflated self-perception most advantageous for psychological adjustment? A competitive test of key hypotheses. <em>Journal of Personality and Social Psychology, 116</em>, 835&ndash;859. doi:10.1037/pspp0000204</li>
+<li><a href="https://psyarxiv.com/qkwst/"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> <a href="https://osf.io/47tnc/"><img height="16" alt="materials_small_color" width="15" src="../../../../../../00_uebergreifend/00zz_osc_en/images/materials_small_color.png"></a> Silberzahn, R., Uhlmann, E. L., Martin, D. P., Anselmi, P., Aust, F., Awtrey, E. C., Bahn&iacute;k, &Scaron;., Bai, F., Bannard, C., Bonnier, E., Carlsson, R., Cheung, F., Christensen, G., Clay, R., Craig, M. A., Rosa, A. D., Dam, L., Evans, M. H., Cervantes, I. F., Fong, N., Gamez-Djokic, M., Glenz, A., Gordon-McKeon, S., Heaton, T., Eriksson, K. H., Heene, M., Mohr, A. H., H&ouml;gden, F., Hui, K., Johannesson, M., Kalodimos, J., Kaszubowski, E., Kennedy, D., Lei, R., Lindsay, T. A., Liverani, S., Madan, C., Molden, D. C., Molleman, E., Morey, R. D., Mulder, L., Nijstad, B. A., Pope, B., Pope, N., Prenoveau, J. M., Rink, F., Robusto, E., Roderique, H., Sandberg, A., Schlueter, E., Sch&ouml;nbrodt, F. D., Sherman, M. F., Sommer, S. A., Sotak, K. L., Spain, S., Sp&ouml;rlein, C., Stafford, T., Stefanutti, L., T&auml;uber, S., Ullrich, J., Vianello, M., Wagenmakers, E.-J., Witkowiak, M., Yoon, S., &amp; Nosek, B. A. (2018). Many analysts, one dataset: Making transparent how variations in analytical choices affect results. <em>Advances in Methods and Practices in Psychological Science, 1(3)</em>, 337-356. doi:10.1177/2515245917747646 [<a href="https://psyarxiv.com/qkwst/">PDF on PsyArXiv, 4.2 MB</a>]</li>
+<li><a href="https://osf.io/fwzus/"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> <a href="https://doi.org/10.5160/psychdata.zrce16dy99"><img height="16" alt="data_small_color" width="15" src="../../../../../../00_uebergreifend/00zz_osc_en/images/data_small_color.png"></a> <a href="https://osf.io/hafsx/"><img height="16" alt="preregistered_small_color" width="15" src="../../../../../../00_uebergreifend/00zz_osc_en/images/preregistered_small_color.png"></a> <a href="https://osf.io/b8pu6/"><img height="16" alt="materials_small_color" width="15" src="../../../../../../00_uebergreifend/00zz_osc_en/images/materials_small_color.png"></a> Zygar, C., Hagemeyer, B., Pusch, S., &amp; Sch&ouml;nbrodt, F. D. (2018). From motive dispositions to states to outcomes: An intensive experience sampling study on communal motivational dynamics in couples. <em>European Journal of Personality, 32</em>, 306&ndash;324. doi:10.1002/per.2145 [<a href="https://osf.io/fwzus/">Open Access PDF</a>, <a href="https://osf.io/hafsx/">preregistration</a> and <a href="https://osf.io/b8pu6/">study materials</a>]</li>
+<li><a href="https://psyarxiv.com/smmh7/"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> <a href="https://osf.io/e8p5r/"><img height="16" alt="data_small_color" width="15" src="../../../../../../00_uebergreifend/00zz_osc_en/images/data_small_color.png"></a> <a href="https://osf.io/e8p5r/"><img height="16" alt="materials_small_color" width="15" src="../../../../../../00_uebergreifend/00zz_osc_en/images/materials_small_color.png"></a> Humberg, S., Dufner, M., Sch&ouml;nbrodt, F. D., Geukes, K., Hutteman, R., van Zalk, M. H. W., Denissen, J. J. A., Nestler, S., &amp; Back, M. D. (2018). Enhanced versus simply positive: A new condition-based regression analysis to disentangle effects of self-enhancement from effects of positivity of self-view. <em>Journal of Personality and Social Psychology, 114</em>, 303-322. doi:10.1037/pspp0000134</li>
+<li><a href="https://econtent.hogrefe.com/doi/10.1026/0033-3042/a000386"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> Sch&ouml;nbrodt, F.D., Maier, M., Heene, M., &amp; B&uuml;hner, M. (2018). Forschungstransparenz als hohes wissenschaftliches Gut st&auml;rken: Konkrete Ansatzm&ouml;glichkeiten f&uuml;r Psychologische Institute. <em>Psychologische Rundschau, 69</em>, 37&ndash;44. doi:10.1026/0033-3042/a000386</li>
+</ul>
+<h3>2017</h3>
+<ul>
+<li><a href="https://osf.io/w3s3s"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> <a href="https://osf.io/qny5x/"><img height="16" alt="materials_small_color" width="15" src="../../../../../../00_uebergreifend/00zz_osc_en/images/materials_small_color.png"></a> Sch&ouml;nbrodt, F. D., Wagenmakers, E.-J., Zehetleitner, M., &amp; Perugini, M. (2017). Sequential hypothesis testing with Bayes factors: Efficiently testing mean differences. <em>Psychological Methods, 22</em>, 322&ndash;339. doi:10.1037/met0000061 [<a href="https://osf.io/qny5x/">OSF project with reproducible code, workshop slides, presentation slides</a>]</li>
+<li><a href="https://econtent.hogrefe.com/doi/abs/10.1026/1612-5010/a000217"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> Sch&ouml;nbrodt, F. D., &amp; Scheel, A. (2017). FAQ zu Open Data und Open Science in der Sportpsychologie. <em>Zeitschrift f&uuml;r Sportpsychologie, 24</em>, 134&ndash;139. doi:10.1026/1612-5010/a000217 [<a href="https://econtent.hogrefe.com/doi/abs/10.1026/1612-5010/a000217">Free access PDF</a>]</li>
+</ul>
+<ul>
+<li><a href="https://osf.io/preprints/psyarxiv/uzbg6"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> Weidmann, R., Sch&ouml;nbrodt, F. D., Ledermann, T., &amp; Grob, A. (2017). Concurrent and longitudinal dyadic polynomial regression analyses of Big Five traits and relationship satisfaction: Does similarity matter? <em>Journal of Research in Personality, 70</em>, 6&ndash;15. doi:10.1016/j.jrp.2017.04.003 [<a href="https://osf.io/preprints/psyarxiv/uzbg6">PDF, 0.9 MB</a>]</li>
+<li><a href="http://econtent.hogrefe.com/doi/pdf/10.1026/0033-3042/a000341"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> Sch&ouml;nbrodt, F. D., Gollwitzer, M., &amp; Abele-Brehm, A. (2017). Der Umgang mit Forschungsdaten im Fach Psychologie: Konkretisierung der DFG-Leitlinien. Psychologische Rundschau, 68, 20&ndash;35. doi:10.1026/0033-3042/a000341. [<a href="http://econtent.hogrefe.com/doi/pdf/10.1026/0033-3042/a000341">PDF German</a>][<a href="http://www.dgps.de/fileadmin/documents/Empfehlungen/Data_Management_eng.pdf">PDF English</a>]</li>
+<li><a href="https://royalsocietypublishing.org/doi/full/10.1098/rsos.160426#d3e3552"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> <a href="https://osf.io/bqwzd/"><img height="16" alt="data_small_color" width="15" src="../../../../../../00_uebergreifend/00zz_osc_en/images/data_small_color.png"></a> <a href="https://osf.io/bqwzd/"><img height="16" alt="materials_small_color" width="15" src="../../../../../../00_uebergreifend/00zz_osc_en/images/materials_small_color.png"></a> Marsman, M., Sch&ouml;nbrodt, F. D., Morey, R. D., Yao, Y., Gelman, A., &amp; Wagenmakers, E.-J. (2017). A Bayesian bird&rsquo;s eye view of &rsquo;Replications of important results in social psychology&rsquo;. <em>Royal Society Open Science, 4</em>, 160426. doi:10.1098/rsos.160426 [<a href="http://rsos.royalsocietypublishing.org/content/4/1/160426.full.pdf">PDF</a>, 850 KB][<a href="http://rsos.royalsocietypublishing.org/content/4/1/160426">Website</a>]</li>
+<li><a href="https://osf.io/u6m2m/"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> Gebauer, J. E., Sedikides, C., Sch&ouml;nbrodt, F. D., Bleidorn, W., Rentfrow, P. J., Potter, J., &amp; Gosling, S. D. (2017). The religiosity as social value hypothesis: A multi-method replication and extension across 65 countries and three levels of spatial aggregation. <i>Journal of Personality and Social Psychology, 113(3)</i>, e18-e39. [<a href="https://osf.io/u6m2m/">PDF</a>]</li>
+</ul>
+<h3>2016</h3>
+<ul>
+<li><a href="https://osf.io/preprints/sn5bq"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> Geukes, K., Sch&ouml;nbrodt, F. D., Utesch, T. , Geukes, S., &amp; Back, M. D. (2016). Wege aus der Vertrauenskrise &ndash; Individuelle Schritte hin zu verl&auml;sslicher und offener Forschung [Ways out of the crisis of confidence &ndash; Individual steps towards reliable and open science]. <em>Zeitschrift f&uuml;r Sportpsychologie, 23</em>, 99-109<em>.</em> doi:10.1026/1612-5010/a000167<em> [<a href="https://osf.io/preprints/sn5bq">PDF, 0.3MB</a>]</em></li>
+<li><a href="http://rsos.royalsocietypublishing.org/content/3/1/150547"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> Morey, R. D., Chambers, C. D., Etchells, P. J., Harris, C. R., Hoekstra, R., Lakens, D., Lewandowsky, S., Coker Morey, C., Newman, D. P., Sch&ouml;nbrodt, F. D., Vanpaemel, W., Wagenmakers, E.-J., Zwaan, R. A. (2016). The Peer Reviewers&rsquo; Openness Initiative: Incentivising open research practices through peer review. <em>Royal Society Open Science</em>. doi:10.1098/rsos.150547 [<a href="http://rsos.royalsocietypublishing.org/content/3/1/150547">PDF</a>][<a href="https://opennessinitiative.org/">Website</a>]</li>
+<li><a href="https://osf.io/wy37y/"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> Bleidorn, W., Sch&ouml;nbrodt, F. D., Gebauer, J. E., Rentfrow, P. J., Potter, J., &amp; Gosling, S. D. (2016). To live among like-minded others: Exploring the links Between person-city Personality fit and self-esteem. <em>Psychological Science, 27</em>, 419-427. doi:10.1177/0956797615627133 [<a href="https://osf.io/wy37y/">PDF</a>]</li>
+<li><a href="https://osf.io/wcgk9"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> Luhmann, M., Necka, E. A., Sch&ouml;nbrodt, F. D., &amp; Hawkley, L. C. (2016). Is valuing happiness associated with lower well-being? A factor-level analysis using the Valuing Happiness Scale. <em>Journal of Research in Personality, 60</em>, 46-50. doi: 10.1016/j.jrp.2015.11.003 [<a href="https://osf.io/wcgk9">PDF</a>]</li>
+</ul>
+<h3>2015</h3>
+<ul>
+<li><a href="https://osf.io/6emfk"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> Sch&ouml;nbrodt, F. D., &amp; Hagemeyer, B. (2015). The value of past and present cues: An evolutionary perspective. <em>European Journal of Personality, 29</em>, 382&ndash;432. doi:10.1002/per.2005 [<a href="https://osf.io/6emfk">PDF</a>]</li>
+<li><a href="https://osf.io/wrvmg"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> Hagemeyer, B., Sch&ouml;nbrodt, F. D., Neyer, F. J., Neberich, W., &amp; Asendorpf, J. B. (2015). When &ldquo;together&ldquo; means &ldquo;too close&ldquo;: Agency motives and relationship functioning in co-resident and living-apart-together couples. Journal of Personality and Social Psychology (109), 813-835. doi:10.1037/pspi0000031 [<a href="https://osf.io/wrvmg">PDF</a>]</li>
+<li><a href="https://osf.io/krk8k"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> Nestler, S., Grimm, K. J., &amp; Sch&ouml;nbrodt, F. D. (2015). The social consequences and mechanisms of personality: How to analyse longitudinal data from individual, dyadic, round-robin and network designs. <em>European Journal of Personality, 29</em>, 272&ndash;295. [<a href="https://osf.io/krk8k">PDF</a>]</li>
+<li><a href="https://osf.io/kgsb3"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> Dufner, M., Arslan, R. C., Hagemeyer, B., Sch&ouml;nbrodt, F. D., &amp; Denissen, J. J. A. (2015). Affective contingencies in the affiliative domain: Physiological assessment, associations with the affiliation motive, and prediction of behavior. <em>Journal of Personality and Social Psychology, 109</em>, 662&ndash;676. doi:10.1037/pspp0000025 [<a href="https://osf.io/kgsb3">PDF</a>]</li>
+<li><a href="https://osf.io/58ucm"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> Richetin, J., Costantini, G., Perugini, M., &amp; Sch&ouml;nbrodt, F. D. (2015). Should we stop looking for a better scoring algorithm for handling Implicit Association Test data? Test of the role of errors, extreme latencies treatment, scoring formula, and practice trials on reliability and validity. <em>PLoS ONE 10</em>, e0129601. doi:10.1371/journal.pone.0129601 [<a href="https://osf.io/58ucm">PDF</a>]</li>
+<li><a href="https://osf.io/swgyj"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> <a href="https://github.com/nicebread/fSRM"><img height="16" alt="materials_small_color" width="15" src="../../../../../../00_uebergreifend/00zz_osc_en/images/materials_small_color.png"></a> Stas, L., Sch&ouml;nbrodt, F. D., &amp; Loeys, T. (2015). Getting the most out of family data with the R package fSRM. <em>Journal of Family Psychology, 29</em>, 263&ndash;275. doi:10.1037/fam0000058&nbsp;[<a title="2014 Stas" href="https://osf.io/swgyj">PDF</a>]</li>
+<li><a href="https://osf.io/dgnby/"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> Schiestel, L., &amp; Sch&ouml;nbrodt, F. D. (2015). Does the experience of presence restore self-control? Self and Identity. doi:10.1080/15298868.2015.1132758 [<a href="https://osf.io/dgnby/">PDF</a>]</li>
+<li><a href="https://osf.io/3452n"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> Luhmann, M., Sch&ouml;nbrodt, F. D., Hawkley, L. C., &amp; Cacioppo, J. T. (2015). Loneliness and social behaviours in a virtual social environment. <em>Cognition and Emotion, 29</em>, 548&ndash;558. doi:10.1080/02699931.2014.922053 [<a href="https://osf.io/3452n">PDF</a>]</li>
+</ul>
+<h3>2014</h3>
+<ul>
+<li><a href="https://osf.io/hde55"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> <a href="https://osf.io/rq35b/"><img height="16" alt="data_small_color" width="15" src="../../../../../../00_uebergreifend/00zz_osc_en/images/data_small_color.png"></a> <a href="https://osf.io/rq35b/"><img height="16" alt="materials_small_color" width="15" src="../../../../../../00_uebergreifend/00zz_osc_en/images/materials_small_color.png"></a> S&uuml;&szlig;enbach, F. &amp; Sch&ouml;nbrodt, F. D. (2014). Not afraid to trust you: Trustworthiness moderates gaze cueing. <em>Journal of Cognitive Psychology, 26,</em> 670-678<em>. </em>doi: 10.1080/20445911.2014.945457 [<a href="https://osf.io/hde55">PDF</a>][<a href="https://osf.io/rq35b/">PDF + raw data + R script available on Open Science Framework</a>]<em><br></em></li>
+<li><a href="https://osf.io/m2xne/"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> Larue, D., Schmidt, A. F., Imhoff, R., Eggers, K., Sch&ouml;nbrodt, F. D., &amp; Banse, R. (2014). Validation of direct and indirect measures of preference for sexualized violence.<em> Psychological Assessment, 26</em>, 1173&ndash;1183. doi:10.1037/pas0000016 [<a href="https://osf.io/m2xne/">PDF</a>]</li>
+</ul>
+<h3>2013</h3>
+<ul>
+<li><a href="https://www.sciencedirect.com/science/article/abs/pii/S0092656613000858"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> <a href="https://github.com/nicebread/corEvol/"><img height="16" alt="materials_small_color" width="15" src="../../../../../../00_uebergreifend/00zz_osc_en/images/materials_small_color.png"></a> Sch&ouml;nbrodt, F. D., &amp; Perugini, M. (2013). At what sample size do correlations stabilize? <em>Journal of Research in Personality, 47</em>, 609-612. doi:10.1016/j.jrp.2013.05.009&nbsp;[<a href="http://www.sciencedirect.com/science/article/pii/S0092656613000858">publisher link</a>] [<a href="https://osf.io/5u6hv/">PDF</a>] [<a href="http://www.nicebread.de/research/corEvol/index.html">Website with supplementary material</a>][<a href="https://osf.io/p2kag/">Corrigendum</a>]</li>
+</ul>
+<h3>2012</h3>
+<ul>
+<li><a href="https://osf.io/5nq8w/"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> Sch&ouml;nbrodt, F. D., &amp; Gerstenberg, F. X. R. (2012). An IRT analysis of motive questionnaires: The Unified Motive Scales. <em>Journal of Research in Personality, 46</em>, 725&ndash;742. doi:10.1016/j.jrp.2012.08.010 [<a href="http://www.sciencedirect.com/science/article/pii/S0092656612001353">publisher link</a>][<a title="UMS_JRP_final_formatted" href="https://osf.io/5nq8w/">PDF</a>] [<a href="http://www.nicebread.de/research/UMS">Website with supplementary material</a>]</li>
+<li><a href="https://osf.io/nq3qv"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> Sch&ouml;nbrodt, F. D., &amp; Asendorpf, J. B. (2012). Attachment dynamics in a virtual world. <em>Journal of Personality, 80</em>, 429-463. doi:10.1111/j.1467-6494.2011.00736.x [<a href="http://onlinelibrary.wiley.com/doi/10.1111/j.1467-6494.2011.00736.x/abstract">publisher link</a>] [<a title="attachment_dynamics_schoenbrodt_2012" href="https://osf.io/nq3qv">PDF</a>]</li>
+<li><a href="https://osf.io/xx267/"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> <a href="https://github.com/nicebread/TripleR"><img height="16" alt="materials_small_color" width="15" src="../../../../../../00_uebergreifend/00zz_osc_en/images/materials_small_color.png"></a> Sch&ouml;nbrodt, F. D., Back, M. D., &amp; Schmukle, S. C. (2012). TripleR: An R package for social relations analyses based on round-robin designs. <em>Behavior Research Methods, 44</em>, 455&ndash;470. doi:10.3758/s13428-011-0150-4. [<a href="http://link.springer.com/article/10.3758%2Fs13428-011-0150-4">publisher link</a>]&nbsp;<a href="https://osf.io/xx267"> [PDF]</a></li>
+</ul>
+<h3>2011</h3>
+<ul>
+<li><a href="https://osf.io/cetw7"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> Sch&ouml;nbrodt, F. D., &amp; Asendorpf, J. B. (2011). The challenge of constructing psychologically believable agents. <em>Journal of Media Psychology: Theories, Methods, and Applications, 23</em>, 100-107. doi:10.1027/1864-1105/a000040 [<a href="http://psycnet.apa.org/journals/jmp/23/2/100/">publisher link</a>] [<a title="psych_believable_agents_schoenbrodt_2011" href="https://osf.io/cetw7">PDF</a>]</li>
+<li><a href="https://osf.io/2rh6f"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> Sch&ouml;nbrodt, F. D., &amp; Asendorpf, J. B. (2011). Virtual social environments as a tool for psychological assessment: Dynamics of interaction with a virtual spouse. <em>Psychological Assessment, 2</em>3, 7 - 17. [<a href="http://psycnet.apa.org/journals/pas/23/1/7/">publisher link</a>] <a title="Schoenbrodt_et_al_2010a" href="https://osf.io/2rh6f">[PDF]</a></li>
+<li><a href="https://osf.io/nczzp"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> Back, M. D., Baumert, A., Denissen, J. J. A., Hartung, F.-M., Penke, L., Schmukle, S. C., Sch&ouml;nbrodt, F. D., et al. (2011). PERSOC: A unified framework for understanding the dynamic interplay of personality and social relationships.<em> European Journal of Personality, 25</em>, 90-107. doi:10.1002/per.811 (<a href="https://osf.io/nczzp">PDF</a>)</li>
+<li><a href="https://osf.io/3avze"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> Denissen, J. J. A., Sch&ouml;nbrodt, F. D., van Zalk, M., Meeus, W. H. J., &amp; van Aken, M. A. G. (2011). Antecedents and consequences of peer-rated intelligence. <em>European Journal of Personality, 25</em>, 108-119. doi:10.1002/per.799 [<a href="https://osf.io/3avze">PDF</a>]</li>
+</ul>
+<h3>2010 and earlier</h3>
+<ul>
+<li><a href="https://osf.io/cxtqj"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> Petters, D., Waters, E., &amp; Sch&ouml;nbrodt, F. D. (2010). Strange carers: Robots as attachment figures and aids to parenting.<em> Interaction Studies: Social Behaviour and Communication in Biological and Artificial Systems, 11</em>, 246&ndash;252.&nbsp; <a title="Petters_Waters_Schoenbrodt_2010" href="https://osf.io/cxtqj">(PDF)</a></li>
+<li><a href="https://osf.io/wj78p"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> Sch&ouml;nbrodt, F.D., Unkelbach, S.R., Spinath, F.M. (2009). Broad Motives in Short Scales - A Questionnaire for the Zurich Model of Social Motivation<em>.</em> <em>European Journal of Psychological Assessment, 25</em>, 141-149. <a title="Download PDF" href="https://osf.io/wj78p">(PDF)</a></li>
+<li>Sch&ouml;nbrodt, F.D. (2007). Interview mit Prof. Dr. Karl Grammer. <em>Zeitschrift f&uuml;r Medienpsychologie, 19</em>, 160-161.</li>
+</ul>
+<h2>Published Data Sets</h2>
+<p>As a signatory of the <a href="http://www.researchtransparency.org/">Commitment to Research Transparency</a>, I always publish the underlying raw data of an empirical publication (see references above). Here I list data sets which are published on their own.</p>
+<ul>
+<li>Israel, L., Paukner, P., Schiestel, L., Diepold, K., &amp; Sch&ouml;nbrodt, F. (2021). Open Library for Affective Videos (OpenLAV). PsychArchives. <a href="https://doi.org/10.23668/PSYCHARCHIVES.5042">https://doi.org/10.23668/PSYCHARCHIVES.5042</a></li>
+<li><a href="http://dx.doi.org/10.23668/psycharchives.2738"><img height="16" alt="data_small_color" width="15" src="../../../../../../00_uebergreifend/00zz_osc_en/images/data_small_color.png"></a> Sch&ouml;nbrodt, F. D., Hagemeyer, B., Brandst&auml;tter, V., Czikmantori, T., Gr&ouml;pel, P., Hennecke, M., Israel, L. S. F., Janson, K., Kemper, N., K&ouml;llner, M., Kopp, P. M., Mojzisch, A., M&uuml;ller-Hotop, R., Pr&uuml;fer, J., Quirin, M., Scheidemann, B., Schiestel, L., Schulz-Hardt, S., Sust, L., Zygar-Hoffmann, C., Schultheiss, O. C. (2020). Database of expert-coded German PSE stories. <i>PsychArchives</i>. doi:10.23668/PSYCHARCHIVES.2738</li>
+<li><a href="https://doi.org/10.5160/psychdata.zrce16dy99"><img height="16" alt="data_small_color" width="15" src="../../../../../../00_uebergreifend/00zz_osc_en/images/data_small_color.png"></a> Zygar, C., Hagemeyer, B., Pusch, S., &amp; Sch&ouml;nbrodt, F.D. (2018). From motive dispositions to states to outcomes: Research data of an intensive experience sampling study on communal motivational dynamics in couples [Translated Title] (Version 1) [Files on CD-ROM]. Trier: Center for Research Data in Psychology: PsychData of the Leibniz Institute for Psychology Information ZPID. <a href="https://doi.org/10.5160/psychdata.zrce16dy99">https://doi.org/10.5160/psychdata.zrce16dy99</a></li>
+<li><a href="https://doi.org/10.5160/psychdata.zrce18mo99"><img height="16" alt="data_small_color" width="15" src="../../../../../../00_uebergreifend/00zz_osc_en/images/data_small_color.png"></a> Zygar-Hoffmann, C., Hagemeyer, B., Pusch, S., &amp; Sch&ouml;nbrodt, F.D. (2020). Eine gro&szlig;e L&auml;ngsschnittstudie zu Motivation, Verhalten und Zufriedenheit von Paaren: Forschungsdaten einer vierw&ouml;chigen Experience-Sampling-Studie mit einer Vor-, Nach- und einj&auml;hrigen Follow-up-Befragung. [A large longitudinal study on motivation, behavior and satisfaction in couples: Research data from a four-week experience sampling study with a pre-, post-, and one-year follow-up assessment.] (Version 1.0.0) [Daten und Dokumentation]. Trier: Psychologisches Datenarchiv PsychData des Leibniz-Zentrums f&uuml;r Psychologische Information und Dokumentation ZPID. <a title="Prof. Dr. Felix Schönbrodt" href="../index.html">https://doi.org/10.5160/psychdata.zrce18mo99</a></li>
+</ul>
+<h2>Book Chapters</h2>
+<ul>
+<li>Humberg, S., F&ouml;rster, N., Kaiser, J., Sch&ouml;nbrodt, F.D. (im Druck). <em>Konsequenzen akkurater Lehrerurteile: Response Surface Analyse als statistisches Verfahren zur Untersuchung von &Uuml;bereinstimmungshypothesen.</em> In A. S&uuml;dkamp, A.-K. Praetorius (Hrsg.). Diagnostische Kompetenz von Lehrkr&auml;ften: Theoretische und methodische Weiterentwicklungen. M&uuml;nster: Waxmann. [If you are interested in this chapter, simply ask the <a href="http://www.uni-muenster.de/PsyIFP/AEBack/members/Publications_Humberg.html">first author</a>]</li>
+<li><a href="https://osf.io/g7as9/"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> Zehetleitner, M., &amp; Sch&ouml;nbrodt, F. D. (2015). When misrepresentation is successful. In T. Breyer (Ed.), <em>Epistemological dimensions of evolutionary psychology</em> (pp. 197&ndash;222). New York: Springer.&nbsp;[<a href="https://osf.io/g7as9/">PDF</a>]</li>
+<li>
+<p>Petters, D., Waters, E., &amp; Sch&ouml;nbrodt, F. D. (in press). Measurement and modeling: Complementary approaches to the organization and underpinnings of attachment behavior. In E. Waters, B. Vaughn, &amp; H. Waters (Eds.), <em>Measuring attachment</em>. New York: Guilford.</p>
+</li>
+</ul>
+<ul>
+<li>Sch&ouml;nbrodt, F. D., &amp; Schwab, F. (2008). Transportation. In N. C. Kr&auml;mer, S. Schwan, D. Unz, &amp; M. Suckf&uuml;ll (Eds.), <em>Medienpsychologie. Schl&uuml;sselbegriffe und Konzepte</em> (pp. 213-217). Stuttgart: Kohlhammer.</li>
+</ul>
+<h2>Other publications</h2>
+<ul>
+<li><a href="https://osf.io/9tkwk/"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> Sch&ouml;nbrodt, F. D. (2012). <em>Why using age as a proxy for testosterone is a bad deal.</em> doi:10.2139/ssrn.2028882 [<a href="https://osf.io/9tkwk/">PDF</a>]</li>
+<li><a href="https://osf.io/ptjhg/"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> Sch&ouml;nbrodt, F.D. (2010). <em>Transference of relationship qualities to a virtual world: Regulation of behavior to a virtual spouse.</em> Dissertation, Humboldt-Universit&auml;t zu Berlin. (<a href="https://osf.io/ptjhg/">PDF</a>)</li>
+<li><a href="https://osf.io/9h29x/"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> Sch&ouml;nbrodt, F.D. (2006). <em>Das Evolution&auml;re Motivprofil. Entwicklung eines Motivfragebogens zum 'Z&uuml;rcher Modell sozialer Motivation' und seine Validierung an der PRF-D, dem MMG sowie biographischen Angaben [A profile of evolutionary motives - Development of a questionnaire for the 'Zurich model of social motivation' and its validation to the PRF-D, MMG and biographical events].</em> Online in Internet: <a href="https://osf.io/9h29x/">PDF</a> (Stand: 15.05.2008)</li>
+<li>Interview in the "Laborjournal" (interviewed by Hans Zauner): <a href="http://www.laborjournal-archiv.de/epaper/LJ_17_05/index.html#20#20">http://www.laborjournal-archiv.de/epaper/LJ_17_05/index.html#20</a></li>
+</ul>
+<h2>Published Software</h2>
+<ul>
+<li><a href="https://github.com/nicebread/fSRM"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> Sch&ouml;nbrodt, F. D. &amp; Humberg, S. (2019). RSA: An R package for response surface analysis. Retrieved from&nbsp;<a href="https://cran.r-project.org/package=RSA">https://cran.r-project.org/package=RSA</a>. Development at&nbsp;<a href="https://github.com/nicebread/RSA">https://github.com/nicebread/RSA</a></li>
+<li><a href="http://cran.r-project.org/web/packages/RSA/index.html"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> Sch&ouml;nbrodt, F. D., Stas, L., &amp; Loeys, T. (2014). fSRM: Social Relations Analyses with roles. Retrieved from <a href="https://github.com/nicebread/fSRM">https://github.com/nicebread/fSRM</a></li>
+<li><a href="http://r-forge.r-project.org/projects/wrs/"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> Wilcox, R. R. &amp; Sch&ouml;nbrodt, F. D. (2015). The WRS package for robust statistics in R (version 0.26). Retrieved from <a href="https://github.com/nicebread/WRS/">https://github.com/nicebread/WRS/</a></li>
+<li><a href="http://www.persoc.net"><img height="16" alt="oa_badge" width="10" src="../../../../../../00_uebergreifend/00zz_osc_en/images/oa_badge.png"></a> Schmukle, S.C., Sch&ouml;nbrodt, F.D., &amp; Back, M.D. (2014). TripleR: A package for round robin analyses using R (version 1.2). Retrieved from&nbsp;<a href="https://github.com/nicebread/TripleR">https://github.com/nicebread/TripleR</a></li>
+</ul>
+<h2>Websites from Felix Sch&ouml;nbrodt</h2>
+<ul>
+<li>Personal website: <a href="http://www.nicebread.de">www.nicebread.de</a></li>
+<li>Interactive statistical tools: <a href="http://www.shinyapps.org">www.shinyapps.org</a></li>
+<li>Commitment to Research Transparency: <a href="http://www.researchtransparency.org">www.researchtransparency.org</a></li>
+</ul>
+<h2>Workshops/ Summer schools</h2>
+<ul>
+<li>"How to do Open Science: Prospects and emerging standards": Frankfurt.</li>
+<li>"Do's and Don'ts of data analysis: How to avoid and detect p-hacking": LMU Munich, University Bonn.</li>
+<li>"Multilevel Models in R": Universit&auml;t Greifswald; Ludwig-Maximilians-Universit&auml;t M&uuml;nchen.</li>
+<li>"Introduction to Response Surface Analyses": TU Munich, LMU Munich, University of Zurich, University of Osnabr&uuml;ck.</li>
+<li>"Introduction to Social Relations Analyses in round-robin designs" (together with Mitja Back and Stefan Schmukle).</li>
+<li>"Introduction to R", Humboldt-Universit&auml;t zu Berlin</li>
+<li>Summer school "Robust Statistics for Personality And Individual Differences" (Bertinoro, Italy, July 16-21, 2011).<br>Faculty: Jens B. Asendorpf, Marco Perugini, Ryne Sherman, Felix D. Sch&ouml;nbrodt, Rand R. Wilcox; Supported by EAPP and ISSID.</li>
+<li>
+<p>Summer school "<a href="http://www.eapp.org/news/?id=228">Using R for personality research</a>" (Bertinoro, Italy, 2014). Faculty: Marco Perugini, William Revelle, Yves Rosseel, Felix Sch&ouml;nbrodt, Ryne Sherman, Giulio Costantini; Supported by EAPP and ISSID.</p>
+</li>
+</ul>
+<h2>Talks (outdated)</h2>
+</div>
+<div>Please see my list of current talks on workshops <a href="http://www.nicebread.de/talks/index.html">here</a>. This list will not be updated.<br>
+<ul>
+<li>Sch&ouml;nbrodt, F. D. (2014, September). <em>Sequential Bayes Factors: Der flexible und effiziente Weg um Hypothesen zu testen [Sequential Bayes factors: The flexible and efficient way of hypothesis testing]</em>. DGPs-Kongress, University of Bochum.</li>
+<li>Hagemeyer, B. &amp; Sch&ouml;nbrodt, F. D. (2014, September). <em>Psychometrics of implicit motives</em>. Symposium at the DGPs-Kongress, University of Bochum.</li>
+<li>
+<p>Sch&ouml;nbrodt, F. D. (2014, May). <em>Denk nicht nach und du kommst zur L&ouml;sung! Wann man (nicht) auf seine Intuition vertrauen sollte. [Stop to think and you will come to the solution! When we should (not) trust our intuitions].</em> Invited talk at the University of Landau.</p>
+</li>
+<li>Jiang, Y., Tiliopoulos, N., Sch&ouml;nbrodt, F. D., de Rosnay, M., &amp; Gatt, J. M. (2013, November). <em>Individual differences in adult attachment and reinforcement sensitivity as predictors of behaviour in a virtual social environment.</em> Paper presented at the 12th Australasian Conference on Personality and Individual Differences, Brisbane, Australia</li>
+<li>Jiang, Y., Sch&ouml;nbrodt, F. D., Tiliopoulos, N., de Rosnay, M., &amp; Gatt, J. M. (2013, November). <em>Attachment and motivational influences on behaviour in a virtual social environment.</em> Paper presented at the 13th Annual Conference of the Australian Psychological Society&rsquo;s Psychology of Relationships Interest Group, Sydney, Australia.</li>
+<li>Sch&ouml;nbrodt, F. D. (2013, September). <a href="http://www.nicebread.de/software/RSA/index.html"><em>Lasst uns unsere absoluten Differenzen beilegen: Response Surface Analysen als valide Alternative zu Differenzwerten.</em></a> Positionsreferat auf der DPPD in Greifswald.</li>
+<li>Sch&ouml;nbrodt, F. D. (2013, May). <em>How do explicit and implicit motives interact? Modern statistical models for congruence hypotheses.</em> Invited talk at TU Munich.</li>
+<li>Sch&ouml;nbrodt, F. D. (2013, February). <em>Power stress, facial expressions, and the power motive: A double dissociation pattern?</em> Invited talk at the University of Erlangen.</li>
+<li>Sch&ouml;nbrodt, F.D. (2012, October). <em>The boundary between 'I' and 'You': The gaze-cueing-effect as an indirect measure of 'differentiation of self'?</em> Invited talk at the University of Milano-Bicocca, Italy.</li>
+<li>Sch&ouml;nbrodt, F. D. (2012, September).<em> Dyadic similarity and intergenerational transmission of explicit and implicit motives.</em> Talk held at the DGPs conference, Bielefeld, Germany.</li>
+<li>Sch&ouml;nbrodt, F. D. (2012, September).<em> Personality research in virtual environments: Welcome to Simoland. </em>Talk held at the Quo-Vadis symposium of the DGPs, Bielefeld, Germany.</li>
+<li>Sch&ouml;nbrodt, F. D. (2012, September). <em>Power stress und Mimik. Eine doppelte Dissoziation impliziter und expliziter Motive?</em> [Power stress and mimic: A double dissociation of implicit and explicit motives?] Talk held at the 32. MPK, Halle, Germany.</li>
+<li>Hagemeyer, B., &amp; Sch&ouml;nbrodt, F. D. (2012, September). <em>Psychometrie impliziter Motive.</em> Talk held at the 32. MPK, Halle, Germany.</li>
+<li>Sch&ouml;nbrodt, F. D. (2012, July).&nbsp; <em>Can we judge other's (implicit) motives? A Social Relations Analysis of motive perceptions.</em> Talk held at the 16th European Conference on Personality (ECP16), Triest, Italy.</li>
+<li>Gerstenberg, F. X. R., Sch&ouml;nbrodt, F. D. (2012, July).<em> Validation of an item response theory analysis of self-report measures of motives.</em> Talk held at the 16th European Conference on Personality (ECP16), Triest, Italy.</li>
+<li>Zehetleitner, M., &amp; Sch&ouml;nbrodt, F. D. (2012, March). <em>Meta-, para-, and ortho-cosmos: when misrepresentation is optimal. </em>Invited talk at the symposium "Epistemological Foundations of Evolutionary Psychology", Internationales Wissenschaftsforum Heidelberg.</li>
+<li>Sch&ouml;nbrodt, F. D. (2012, January). <em>Verhaltensbeobachtung in virtuellen Welten: Ein &bdquo;Fremde-Situations-Test&ldquo; </em><em>f&uuml;r Erwachsene? [Behavioral observations in virtual worlds: A strange-situation-test for adults?].</em> University of Dortmund, Germany.</li>
+<li>Sch&ouml;nbrodt, F. D. (2011, September).<em> Bindungsdynamik zu einem virtuellen Partner: Verhaltensuntersuchung in virtuellen Welten [Attachment dynamics to a virtual partner: Investigating behavior in virtual environments]</em>. Talk held at the 11th conference of the DPPD, Saarbr&uuml;cken, Germany. <a title="VIRIM_DPPD_export" href="../../../../../11ls_allg_psych2_en/download/schoenbrodt/pub/vse2011.pdf">[PDF, 1.8MB</a>]</li>
+<li>Dislich, F. X. R., &amp; Sch&ouml;nbrodt, F. D. (2011, September).<em> An Item Response Theory analysis of self-report measures of motives.</em> Talk held at the 11 th European Conference on Psychological Assessment, Riga, Latvia.</li>
+<li>Sch&ouml;nbrodt, F.D., Dislich, F.X.R. (2011, July). <em>Die "Unified Motive Scales": Eine Item-Response-Analyse und Synthese von expliziten Motivfrageb&ouml;gen [The Unififed Motive Scales: An Item-response analysis and synthesis of motive questionnaires]</em>. Vortrag auf dem 31. MPK (Motivationspsychologisches Kolloquium), M&uuml;nchen</li>
+<li>Stollenwerk, D., Schmidt, A. F., Imhoff, R., Eggers, K., Sch&ouml;nbrodt, F. D., &amp; Banse, R. (2010, November). <em>The indirect measurement of a preference for sexual coercion in a sadomasochistic context.</em> Paper presented as the XVth Workshop Aggression in Bonn, Germany.</li>
+<li>Sch&ouml;nbrodt, F. D. &amp; Hagemeyer, B. (2010, July). <em>Ein Kuli hat kein Backspace - werden spontane Motivausdr&uuml;cke in Computer-PSEs wieder gel&ouml;scht?</em> Vortrag auf dem 30. MPK (Motivationspsychologisches Kolloquium), Mannheim.</li>
+<li>Sch&ouml;nbrodt, F. D. &amp; Zehetleitner, M. (2010, March). <em>Ein L&auml;cheln schenkt nicht immer Freude. Eine empirische Untersuchung von 7 L&auml;chelvarianten.</em> Vortrag auf der 52. TeaP (Tagung experimentell arbeitender Psychologen), Saarbr&uuml;cken.</li>
+<li>Sch&ouml;nbrodt, F. D. (2009, October).<em> Assessing interaction dynamics in virtual environments.</em> Eingeladener Vortrag an der Ryerson University, Toronto.</li>
+<li>Sch&ouml;nbrodt, F. D. (2009, October). <em>Intimacy, autonomy, and ego-boundaries: The dance of distance.</em> Vortrag an der Stony Brook University, New York.</li>
+<li>Denissen, J., Sch&ouml;nbrodt, F. D., Selfhout, M. (2009, September). <em>Je bekannter, desto fremder: Eine aufschlussreiche Anomalie bei der Intelligenzeinsch&auml;tzung.</em> Vortrag auf der 10. Fachgruppenkonferenz der DPPD, Landau.</li>
+<li>Sch&ouml;nbrodt, F. D. (2009, July). <em>Die Psychologie der Ich-Grenze.</em> Vortrag im Kolloquium der Sozialpsychologie, Department Psychologie, Ludwig-Maximilians-Universit&auml;t M&uuml;nchen.&nbsp; <a title="Download PDF" href="../../../../../11ls_allg_psych2_en/download/schoenbrodt/pub/ich_grenze_schoenbro.pdf">(PDF, 2.4MB)</a></li>
+<li>Sch&ouml;nbrodt, F. D. (2009, February). <em>Robuste Statistiken und logistische Multilevel-Analysen von virtuellem Interaktionsverhalten.</em> Vortrag im Kolloquium Advances in Personality and Relationship Science, Humboldt-Universit&auml;t zu Berlin.</li>
+<li>Sch&ouml;nbrodt, F. D. (2009, January). Partnerschaft und Pers&ouml;nlichkeitsentwicklung. Vortrag auf der 2. Konferenz von <a title="PERSOC" href="http://www.persoc.net">PERSOC</a>, Berlin.</li>
+<li>Sch&ouml;nbrodt, F. D. (2008, September). <em>Lieben Sie Ihren virtuellen Partner? Die Messung des impliziten Intimit&auml;tsmotivs durch ein Computerspiel.</em> Vortrag auf dem 28. MPK (Motivationspsychologisches Kolloquium), Trier.&nbsp; <a title="Download PDF" href="../../../../../11ls_allg_psych2_en/download/schoenbrodt/pub/timve_2.pdf">(PDF, 4.2MB)</a></li>
+<li>Sch&ouml;nbrodt, F. D. (2008, July). <em>How do you treat your virtual partner? Assessment of implicit motives with a computer game.</em> Vortrag auf dem XXIX International Congress of Psychology, Berlin.&nbsp; <a title="Download PDF" href="../../../../../11ls_allg_psych2_en/download/schoenbrodt/pub/timve.pdf">(PDF, 3.0MB)</a></li>
+<li>Sch&ouml;nbrodt, F. D. (2007, September). <em>TIMVE - Ein impliziter Motivtest in virtuellen Welten.</em> Vortrag auf dem 28. MPK (Motivationspsychologisches Kolloquium), Siegen.</li>
+<li>Sch&ouml;nbrodt, F. D. (2007, July). <em>The 'virtual field' - a new paradigm for behavioral observations?</em> Vortrag auf der Sommerschule der ISHE (International Society for Human Ethology), MPI Seewiesen.</li>
+<li>Sch&ouml;nbrodt, F. D. (2006, August). <em>Das Fundament der Motivation - Die evolution&auml;ren Grundlagen menschlicher Motive</em>. Vortrag auf der Sommerschule "Evolution&auml;re Anthropologie" am Hanse-Wissenschaftskolleg Delmenhorst.</li>
+</ul>
+<h2>Posters</h2>
+<ul>
+<li>Sch&ouml;nbrodt, F. D., Hagemeyer, B., &amp; "Netzwerk Psychometrie impliziter Motive" (2013, July).<em> Die Psychometrie impliziter Motive (Teil 1 von 7): Kodiere jeden Satz, und die Messung wird reliabler!</em> MPK, Osnabr&uuml;ck. [<a href="http://www.nicebread.de/downloads/Schoenbrodt_Psychometrie_Poster.pdf">pdf, 1.4 MB</a>]</li>
+<li>Sch&ouml;nbrodt, F. D. (2007, September).<em> Intimit&auml;t und Autonomie - Ein impliziter Motivtest in virtuellen Welten.</em> Poster auf der Fachgruppentagung Differentielle Psychologie, Pers&ouml;nlichkeitspsychologie und Psychologische Diagnostik (DPPD), Wien.</li>
+<li>Sch&ouml;nbrodt, F. D. (2007, July). <em>Do you trust your 'virtual partner'? Cooperation towards a self-modelled avatar of your partner.</em> Poster auf der 13. Konferenz der ISSID (International Society for the Study of Individual Differences), Gie&szlig;en.</li>
+<li>Sch&ouml;nbrodt, F. D., Unkelbach, S. R. (2007, March). <em>Das Evolution&auml;re Motivprofil (EMP-Z).</em> Poster auf der 8. MVE-Tagung (Menschliches Verhalten in evolution&auml;rer Perspektive), Landau.</li>
+<li>Sch&ouml;nbrodt, F. D., Unkelbach, S. R. (2006, March). <em>Ein evolution&auml;res Pers&ouml;nlichkeitsmodell - die "Tiefenstruktur" der Pers&ouml;nlichkeit?</em> Poster auf der 7. MVE-Tagung (Menschliches Verhalten in evolution&auml;rer Perspektive), K&ouml;ln.</li>
+</ul>
+</div>
+            <div class="g-clear"></div>
+        </div>
+
+
+
+    <!--- Enthaltene Unterobjekte vom Typ Genericsin einem Block zusammenfassen --->
+    <!--- Block Downloads fasst alle sichtbaren Unterojekte vom Typ Generic zusammen --->
+
+
+    <!--- Weiterführende Links  --->
+
+
+    <!--- Falls vorhanden, Kontaktadresse ausgeben --->
+
+
+    <!--- Google Maps Integration --->
+
+
+    <!--- TOC --->
+    <!--- TOC --->
+
+    <!--- leere temporäre Liste für Toc --->
+
+    <!--- temporäre Liste befüllen: die 'unwichtigen' Elemente raus lassen --->
+
+    <!--- Ausgabe --->
+    <!--- Es wird nur eine ul erzeugt, wenn tatsaechlich Elemente vorhanden sind --->
+
+<!--- ende condition max_links für 1. Unterebene --->
+</div>
+
+
+        <!--- Block "Verantwortlich für" --->
+
+
+        <!--- Inhalts-Funktionen unten --->
+        <div id="cFn2" class="mod mod-cfn mod-cfn-2">
+    <hr class="g-hidden">
+    <h6 class="g-area-heading area-heading"></h6>
+    <ul class="m-col-1 m-buttons">
+        <li class="m-button m-button-print"><a title="drucken" class="m-link m-link-print" onclick="print();" href="#top">drucken</a></li>
+
+    </ul>
+    <ul class="m-col-2 m-buttons">
+        <li class="m-button m-button-top"><a title="nach oben" class="m-link m-link-top" href="#top">nach oben</a></li>
+    </ul>
+    <div class="g-clear"></div>
+</div>
+    </div>
+
+    <!--- SERVICEBEREICH --->
+
+        <!--- SERVICEBEREICH --->
+<hr class="g-hidden">
+<div id="service" class="service">
+    <h6 class="g-area-heading area-heading">Servicebereich</h6>
+
+    <!--- Beliebte Links --->
+    <!--- Variablen setzen --->
+
+
+
+<!--- site_home bzw. home_path setzen --->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--- Variablen freigeben --->
+
+
+
+</div>
+
+    <div class="g-clear"></div>
+</div>
+    <!--- FUSSZEILE --->
+<!--- Sprachversion über lokales Config-Objekt ermitteln für Barrierefreiheit --->
+
+
+
+
+<hr class="g-hidden">
+<div id="footer" class="mod-footer">
+    <h6 class="g-area-heading area-heading">Fußzeile</h6>
+    <ul class="m-list">
+
+
+                <li class="m-item">
+
+                        <a title="Impressum und Disclaimer" class="m-link" href="../../../../funktionen/impressum/index.html">Impressum und Disclaimer</a>
+
+
+                </li>
+
+                <li class="m-item">
+
+                        <a title="Datenschutzerklärung" class="m-link" href="../../../../funktionen/datenschutz/index.html">Datenschutzerklärung</a>
+
+
+                </li>
+
+
+        <li class="m-item">
+
+
+
+
+
+
+
+
+
+
+
+	<!--- Über site_home Linklisten-Element zunächst das Object ermitteln --->
+
+
+
+
+	<!--- Startpfad für Link auf Barrierefreiheit bauen --->
+
+
+
+	<!--- Link auf BF-Seite --->
+
+		<a class="m-link" href="../../../../funktionen/barrierefreiheit/index.html">
+			Barrierefreiheit
+		</a>
+
+
+
+        </li>
+    </ul>
+    <div class="g-clear"></div>
+</div>
+</div>
+<span id=nps_js_editmarker_container></span><script type="text/javascript">npsEditMarkerOldWindowOnload = window.onload;
+window.onload = function() {
+  if (typeof(npsEditMarkerOldWindowOnload) == 'function') {
+    npsEditMarkerOldWindowOnload();
+  }
+  nps.editMarker.init();
+};
+</script>
+</body>
+</html>
+
