@@ -75,18 +75,19 @@ website:
 
   draft-mode: unlinked
   
-#  repo-url: https://github.com/drganghe/quarto-academic-website-template
-#  repo-actions: [edit, issue, source]
+  repo-url: https://github.com/nicebread/nicenet2025
+# repo-actions: [edit, issue, source]
   
   open-graph: true
-    
-  site-url: "https://www.nicebread.de"
+
+  site-url: https://www.nicebread.de
   
 bibliography: references.bib
 
 format:
   html:
-    theme: cosmo
+    theme: 
+      light: spacelab
     css: styles.css
     toc: true
     footnotes-hover: true
