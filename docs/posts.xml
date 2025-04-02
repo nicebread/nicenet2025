@@ -15,94 +15,11 @@
 <link>https://www.nicebread.de/posts.html</link>
 </image>
 <generator>quarto-1.6.42</generator>
-<lastBuildDate>Mon, 14 Oct 2024 22:00:00 GMT</lastBuildDate>
+<lastBuildDate>Tue, 01 Apr 2025 22:00:00 GMT</lastBuildDate>
 <item>
-  <title>Quarto Academic Website Examples and Tips</title>
-  <link>https://www.nicebread.de/</link>
-  <description>Examples and tips for Quarto Academic Website</description>
-  <category>news</category>
-  <guid>https://www.nicebread.de/</guid>
-  <pubDate>Mon, 14 Oct 2024 22:00:00 GMT</pubDate>
-  <media:content url="https://www.nicebread.de/files/images/placeholder4.JPG" medium="image"/>
-</item>
-<item>
-  <title>Event item</title>
-  <dc:creator>Event </dc:creator>
-  <link>https://www.nicebread.de/posts/event-title/</link>
-  <description><![CDATA[ 
-
-
-
-
-<p><a href="https://drganghe.github.io/quarto-academic-website-template/"><img src="https://www.nicebread.de/files/images/placeholder2.JPG" class="img-fluid" style="width:90.0%"></a></p>
-<!--Include social share buttons-->
-<!-- 
-AddToAny check more: https://www.addtoany.com/buttons/for/website 
-Using includes will make edits easier, will only need to add or remove button here if needed.
-https://quarto.org/docs/authoring/includes.html
--->
-<div class="a2a_kit a2a_kit_size_32 a2a_default_style">
-<pre><code>&lt;a class="a2a_dd" href="https://www.addtoany.com/share"&gt;&lt;/a&gt;
-&lt;a class="a2a_button_linkedin"&gt;&lt;/a&gt;
-&lt;a class="a2a_button_bluesky"&gt;&lt;/a&gt;
-&lt;a class="a2a_button_facebook"&gt;&lt;/a&gt;
-&lt;a class="a2a_button_copy_link"&gt;&lt;/a&gt;
-&lt;a class="a2a_button_email"&gt;&lt;/a&gt;</code></pre>
-</div>
-<script async="" src="https://static.addtoany.com/menu/page.js"></script>
-
-
-
- ]]></description>
-  <category>event</category>
-  <category>presentation</category>
-  <guid>https://www.nicebread.de/posts/event-title/</guid>
-  <pubDate>Mon, 02 Sep 2024 22:00:00 GMT</pubDate>
-  <media:content url="https://www.nicebread.de/files/images/placeholder2.JPG" medium="image"/>
-</item>
-<item>
-  <title>News item</title>
-  <dc:creator>News </dc:creator>
-  <link>https://www.nicebread.de/posts/news-title/</link>
-  <description><![CDATA[ 
-
-
-
-
-<section id="summary" class="level2">
-<h2 class="anchored" data-anchor-id="summary">Summary</h2>
-<p>About the news</p>
-<!--Include social share buttons-->
-<!-- 
-AddToAny check more: https://www.addtoany.com/buttons/for/website 
-Using includes will make edits easier, will only need to add or remove button here if needed.
-https://quarto.org/docs/authoring/includes.html
--->
-<div class="a2a_kit a2a_kit_size_32 a2a_default_style">
-<pre><code>&lt;a class="a2a_dd" href="https://www.addtoany.com/share"&gt;&lt;/a&gt;
-&lt;a class="a2a_button_linkedin"&gt;&lt;/a&gt;
-&lt;a class="a2a_button_bluesky"&gt;&lt;/a&gt;
-&lt;a class="a2a_button_facebook"&gt;&lt;/a&gt;
-&lt;a class="a2a_button_copy_link"&gt;&lt;/a&gt;
-&lt;a class="a2a_button_email"&gt;&lt;/a&gt;</code></pre>
-</div>
-<script async="" src="https://static.addtoany.com/menu/page.js"></script>
-
-
-</section>
-
- ]]></description>
-  <category>news</category>
-  <guid>https://www.nicebread.de/posts/news-title/</guid>
-  <pubDate>Sun, 23 Jun 2024 22:00:00 GMT</pubDate>
-  <media:content url="https://www.nicebread.de/files/images/placeholder1.jpg" medium="image" type="image/jpeg"/>
-</item>
-<item>
-  <title>Can quantum-mechanical description of physical reality be considered complete?</title>
-  <dc:creator>Albert Einstein</dc:creator>
-  <dc:creator>Boris Podolsky</dc:creator>
-  <dc:creator>Nathan Rosen</dc:creator>
-  <link>https://www.nicebread.de/posts/paper-title/</link>
+  <title>My personal reviewing policy: No more billion-dollar donations</title>
+  <dc:creator>Felix Schönbrodt</dc:creator>
+  <link>https://www.nicebread.de/posts/reviewing_policy.html</link>
   <description><![CDATA[ 
 
 
@@ -122,42 +39,52 @@ https://badge.dimensions.ai/
 <script type="text/javascript" src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script>
 <script async="" src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script>
 <script type="text/javascript" src="//cdn.plu.mx/widget-popup.js"></script>
-<section id="abstract" class="level2">
-<h2 class="anchored" data-anchor-id="abstract">Abstract</h2>
-<p>In a complete theory there is an element corresponding to each element of reality. A sufficient condition for the reality of a physical quantity is the possibility of predicting it with certainty, without disturbing the system. In quantum mechanics in the case of two physical quantities described by non-commuting operators, the knowledge of one precludes the knowledge of the other. Then either (1) the description of reality given by the wave function in quantum mechanics is not complete or (2) these two quantities cannot have simultaneous reality. Consideration of the problem of making predictions concerning a system on the basis of measurements made on another system that had previously interacted with it leads to the result that if (1) is false then (2) is also false. One is thus led to conclude that the description of reality as given by a wave function is not complete.</p>
+<p><img src="https://www.nicebread.de/posts/img/burning_money.jpg" alt="Descriptive alt text" class="float-right" style="height: 300px; width: auto;"></p>
+<p>I get more requests to review scientific papers than I can reasonably handle<sup>1</sup>. Hence, I have to decide which requests I accept and which I decline.</p>
+<p><strong>I want to invest my reviewing work in research that is worth to be reviewed. Furthermore, I do not want to further increase the <a href="https://link.springer.com/epdf/10.1186/s41073-021-00118-2?sharing_token=UeRgaB3yWmGNtySWmnLpGG_BpE1tBhCbnbw3BuzI2RPBO8Gcbah4wDtGKkyO_SPjxA1xWygsV0WJsSTIiIMtEQUv_oxvHQpSSOwqSSBg2lOTlHUXLGEd-n36oU__EwOevZjGPTpEEfQTpUmyNjIKENS7AFgG05ZGj6HiC-oTHTE%3D">billion dollar donations</a> to premium publishers any more.</strong></p>
+<p>When deciding whether to accept or reject a review, I apply the following heuristics:</p>
+<section id="input-filter-i-decline-to-review-manuscripts-that-fail-these-checks" class="level3">
+<h3 class="anchored" data-anchor-id="input-filter-i-decline-to-review-manuscripts-that-fail-these-checks">Input filter: I decline to review manuscripts that fail these checks</h3>
+<ul>
+<li><ol type="A">
+<li>As a signatory of the Peer Reviewer’s Openness (PRO) initiative and the Commitment to Research Transparency, I expect open data and open material in each paper that I am supposed to review, or a public justification why it is not possible. I do not review manuscripts that fail this check.</li>
+</ol></li>
+<li><ol start="2" type="A">
+<li>I signed the The Cost of Knowledge pledge, which means that I do not review for (or submit to) Elsevier journals.</li>
+</ol></li>
+<li><ol start="3" type="A">
+<li>I reject, if the topic is not within my area of expertise (at least partially).</li>
+</ol></li>
+</ul>
 </section>
-<section id="links" class="level2">
-<h2 class="anchored" data-anchor-id="links">Links</h2>
-<p>Published <a href="https://journals.aps.org/pr/pdf/10.1103/PhysRev.47.777">paper</a></p>
-<script type="text/javascript" src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script><div class="altmetric-embed" data-badge-popover="right" data-badge-type="donut" data-doi="10.1103/PhysRev.47.777"></div>
-
-<span class="__dimensions_badge_embed__" data-doi="10.1103/PhysRev.47.777" data-hide-zero-citations="true" data-style="small_circle"></span><script async="" src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script>
+<section id="weighting" class="level3">
+<h3 class="anchored" data-anchor-id="weighting">Weighting</h3>
+<p>After these initial eligibility checks, I apply the following weights:</p>
+<ul>
+<li><strong>Reviews for funders</strong>. This is the category where I probably can have the strongest impact on research quality. Furthermore, often the funding of ECRs depends on a timely review, so I rarely reject these.</li>
+<li>The most useful (and rewarding) manuscript reviews for me are <strong>Registered Reports</strong> (RRs), as my review can have the most constructive impact. Even better is the <a href="https://rr.peercommunityin.org/">PCI Registered Reports</a> initiative, as reviews are always published upon acceptance, and submitting authors are not tied to a specific journal.</li>
+<li>Next, I’ll allocate my reviewing and editorial work primarily to <a href="https://www.fairopenaccess.org/">Fair Open Access</a> journals, such as <a href="https://open.lnu.se/index.php/metapsychology/about">Meta-Psychology</a>. I have no interest of devoting my publicly paid working time (or even unpaid evening hours) to boost the “premium” publisher’s <a href="https://alexholcombe.wordpress.com/2015/05/21/scholarly-publisher-profit-update/">ridiculous profit margin</a> even more.</li>
+<li>I want reviews to be open, also as way to reduce redundancy. So much intellectual work goes into reviews, just to get hidden and often ignored. I prioritize journals that have an open peer review policy (such as <a href="https://open.lnu.se/index.php/metapsychology/about">Meta-Psychology</a> or <a href="https://online.ucpress.edu/collabra">Collabra</a>). As products of scholarly activity, open reviews should be citable with a doi, as, for example, Meta-Psychology does.</li>
+<li>Although I increasingly aim to publish my own papers in fair OA journals, there sometimes is no good thematic match for my papers (yet). Therefore, I will still submit some of my work to „traditional“ journals (except Elsevier). For fairness and „paying back“, I will do at least 3 reviews for each paper that I submit to such a journal. Hopefully, more and more diamond OA journals will be established that allow choosing one with a thematic fit.</li>
+</ul>
+<p>I anticipate that my criteria will gradually shift more and more to the top categories.</p>
+<p>I realize that this personal policy has some side effects. For example, I really appreciate the good work of the editorial team from Nature Human Behavior. They did a lot to improve standards and policies at a Nature journal. So, while I’d be happy to support that specific team, I do not want to support SpringerNature as a profit organization; even more as they now test a scheme where they take a „a non-refundable fee of €2,190 to cover an editorial assessment and the peer-review process“ (<a href="https://www.nature.com/articles/d41586-020-03324-y">Nature journals reveal terms of landmark open-access option</a>).</p>
+<p>Wait – reviewers now get paid for their work? No, of course not. Researchers still do the reviews for free, as always. Nature now wants to get paid for your reviews.</p>
+<p>I hope that with that reviewing policy I can make a small change towards a more open, more credible, and more efficient academic system. At least I feel much better with these priorities and have more fun reviewing.</p>
 
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@article{einstein1935,
-  author = {Einstein, Albert and Podolsky, Boris and Rosen, Nathan},
-  title = {Can Quantum-Mechanical Description of Physical Reality Be
-    Considered Complete?},
-  journal = {Physical Review},
-  volume = {47},
-  number = {7938},
-  pages = {777-80},
-  date = {1935-05-15},
-  url = {https://journals.aps.org/pr/pdf/10.1103/PhysRev.47.777},
-  doi = {10.1103/PhysRev.47.777},
-  langid = {en}
-}
-</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-einstein1935" class="csl-entry quarto-appendix-citeas">
-Einstein, Albert, Boris Podolsky, and Nathan Rosen. 1935. <span>“Can
-Quantum-Mechanical Description of Physical Reality Be Considered
-Complete?”</span> <em>Physical Review</em> 47 (7938): 777–80. <a href="https://doi.org/10.1103/PhysRev.47.777">https://doi.org/10.1103/PhysRev.47.777</a>.
-</div></div></section></div> ]]></description>
-  <category>paper</category>
-  <guid>https://www.nicebread.de/posts/paper-title/</guid>
-  <pubDate>Tue, 14 May 1935 23:00:00 GMT</pubDate>
-  <media:content url="https://www.nicebread.de/posts/paper-title/featured.jpg" medium="image" type="image/jpeg"/>
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>I employ the following heuristic: To keep the current academic system going, I have to review three papers for each paper that I submit as first author (including all revisions, as they usually require additional reviews). I clearly exceed this heuristic a lot.↩︎</p></li>
+</ol>
+</section></div> ]]></description>
+  <guid>https://www.nicebread.de/posts/reviewing_policy.html</guid>
+  <pubDate>Tue, 01 Apr 2025 22:00:00 GMT</pubDate>
+  <media:content url="https://www.nicebread.de/posts/img/burning_money.jpg" medium="image" type="image/jpeg"/>
 </item>
 </channel>
 </rss>

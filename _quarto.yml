@@ -10,6 +10,7 @@ website:
   title: "Felix Schönbrodt"
   image: "https://quarto.org/quarto.png"
   description: "Academic Website of Felix Schönbrodt"
+  favicon: files/images/favicon-32x32.png
  
   navbar:
     background: light
@@ -17,12 +18,14 @@ website:
     left:
 #      - text: Home
 #        href: index.qmd
-      # - text: Abouthttps://www.nicebread.de/wp-content/uploads/2021/11/rt_logo_wide.png
+      # - text: About
       #   menu:
       #     - text: News
       #       href: posts.qmd#category=news
       #     - text: Events
       #       href: posts.qmd#category=event                             
+      - text: Blog
+        href: posts.qmd
       - text: Publications      
         href: publications.qmd
       - text: CV

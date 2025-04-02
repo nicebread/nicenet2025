@@ -1,6 +1,6 @@
 ---
-title: "What’s New & Updated"
-subtitle: "Posts about papers, events, news, and more"
+title: "Blog"
+subtitle: "Posts about meta-science, open science, research"
 description-meta: "Posts about papers, events, news, and more"
 listing: 
   sort: "date desc"
@@ -12,7 +12,7 @@ listing:
   feed: true
   contents: 
       - posts
-      - posts/post-links.yml
+#      - posts/post-links.yml
 #      categories: [] 
 
 #page-layout: full
@@ -21,3 +21,6 @@ page-navigation: false
 title-block-banner: false
 ---
 
+*I recently rebuilt my website from scratch, and I will copy some of my old blog posts here one after one. My old website with all blog posts can be found here: [https://legacy.nicebread.de](https://legacy.nicebread.de).*
+
+--- 

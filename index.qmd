@@ -29,22 +29,22 @@ about:
       href: https://scicomm.xyz/@nicebread
       target: _blank   
 
-# listing:
-#   - id: recent-posts
-#     contents: 
-#       - posts
-#       - posts/post-links.yml
-#     exclude:
-#       title: ""
-#     type: grid
-#     max-items: 3
-# #    image-height: 150px
-#     page-size: 3 #set same as max-times to remove the page number setting
-#     fields: [image, date, title, subtitle]
-#     max-description-length: 75
-#     sort: 
-#       - "date desc"
-#       - "title asc"
+listing:
+  - id: recent-posts
+    contents: 
+      - posts
+#      - posts/post-links.yml
+    exclude:
+      title: ""
+    type: grid
+    max-items: 3
+#    image-height: 150px
+    page-size: 3 #set same as max-times to remove the page number setting
+    fields: [image, date, title, subtitle]
+    max-description-length: 75
+    sort: 
+      - "date desc"
+      - "title asc"
 ---
 
 :::{#hero-heading}
@@ -67,9 +67,12 @@ You can sign, too!
 <!-- ## Recent Posts
 Check out the latest &nbsp;[Papers](posts.qmd#category=paper)&nbsp;, &nbsp;[News](posts.qmd#category=news)&nbsp;, &nbsp;[Events](posts.qmd#category=event)&nbsp;, and &nbsp;[More »](/posts.qmd)
 
+-->
+
+### Blog posts
+
 :::{#recent-posts}
 ::: 
 
 <p align="right">[All Posts »](/posts.qmd)</p>
 
--->

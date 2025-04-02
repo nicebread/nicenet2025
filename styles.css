@@ -235,3 +235,13 @@ input {
   opacity: 1 !important;
   visibility: visible !important;
 }
+
+
+
+/* Image floating in text */
+.float-right {
+  float: right;
+  margin-left: 2rem; /* Adjust spacing as needed */
+  margin-bottom: 2rem;
+  /* Optionally, set a width, e.g.: width: 200px; */
+}

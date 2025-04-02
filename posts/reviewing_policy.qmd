@@ -1,0 +1,47 @@
+---
+title: "My personal reviewing policy: No more billion-dollar donations"
+description: "Here I explain which review requests I (likely) accept, and which I will decline."
+author: 
+  - name: Felix Schönbrodt
+date: "2025-04-02"
+image: "/posts/img/burning_money.jpg"
+#css: /custom.css
+#draft: true
+---
+
+<!--Include academic icons or bottons-->
+{{< include /files/includes/_academic.qmd >}}
+
+<img src="/posts/img/burning_money.jpg" alt="Descriptive alt text" class="float-right" style="height: 300px; width: auto;"/>
+
+I get more requests to review scientific papers than I can reasonably handle[^1]. Hence, I have to decide which requests I accept and which I decline.
+
+[^1]: I employ the following heuristic: To keep the current academic system going, I have to review three papers for each paper that I submit as first author (including all revisions, as they usually require additional reviews). I clearly exceed this heuristic a lot.
+
+**I want to invest my reviewing work in research that is worth to be reviewed. Furthermore, I do not want to further increase the [billion dollar donations](https://link.springer.com/epdf/10.1186/s41073-021-00118-2?sharing_token=UeRgaB3yWmGNtySWmnLpGG_BpE1tBhCbnbw3BuzI2RPBO8Gcbah4wDtGKkyO_SPjxA1xWygsV0WJsSTIiIMtEQUv_oxvHQpSSOwqSSBg2lOTlHUXLGEd-n36oU__EwOevZjGPTpEEfQTpUmyNjIKENS7AFgG05ZGj6HiC-oTHTE%3D) to premium publishers any more.**
+
+When deciding whether to accept or reject a review, I apply the following heuristics:
+
+### Input filter: I decline to review manuscripts that fail these checks
+
+- (A) As a signatory of the Peer Reviewer’s Openness (PRO) initiative and the Commitment to Research Transparency, I expect open data and open material in each paper that I am supposed to review, or a public justification why it is not possible. I do not review manuscripts that fail this check.
+- (B) I signed the The Cost of Knowledge pledge, which means that I do not review for (or submit to) Elsevier journals.
+- (C) I reject, if the topic is not within my area of expertise (at least partially).
+
+### Weighting
+
+After these initial eligibility checks, I apply the following weights:
+
+- **Reviews for funders**. This is the category where I probably can have the strongest impact on research quality. Furthermore, often the funding of ECRs depends on a timely review, so I rarely reject these.
+- The most useful (and rewarding) manuscript reviews for me are **Registered Reports** (RRs), as my review can have the most constructive impact. Even better is the [PCI Registered Reports](https://rr.peercommunityin.org/) initiative, as reviews are always published upon acceptance, and submitting authors are not tied to a specific journal.
+- Next, I’ll allocate my reviewing and editorial work primarily to [Fair Open Access](https://www.fairopenaccess.org/) journals, such as [Meta-Psychology](https://open.lnu.se/index.php/metapsychology/about). I have no interest of devoting my publicly paid working time (or even unpaid evening hours) to boost the “premium” publisher’s [ridiculous profit margin](https://alexholcombe.wordpress.com/2015/05/21/scholarly-publisher-profit-update/) even more.
+- I want reviews to be open, also as way to reduce redundancy. So much intellectual work goes into reviews, just to get hidden and often ignored. I prioritize journals that have an open peer review policy (such as [Meta-Psychology](https://open.lnu.se/index.php/metapsychology/about) or [Collabra](https://online.ucpress.edu/collabra)). As products of scholarly activity, open reviews should be citable with a doi, as, for example, Meta-Psychology does.
+- Although I increasingly aim to publish my own papers in fair OA journals, there sometimes is no good thematic match for my papers (yet). Therefore, I will still submit some of my work to „traditional“ journals (except Elsevier). For fairness and „paying back“, I will do at least 3 reviews for each paper that I submit to such a journal. Hopefully, more and more diamond OA journals will be established that allow choosing one with a thematic fit.
+
+I anticipate that my criteria will gradually shift more and more to the top categories.
+
+I realize that this personal policy has some side effects. For example, I really appreciate the good work of the editorial team from Nature Human Behavior. They did a lot to improve standards and policies at a Nature journal. So, while I’d be happy to support that specific team, I do not want to support SpringerNature as a profit organization; even more as they now test a scheme where they take a „a non-refundable fee of €2,190 to cover an editorial assessment and the peer-review process“ ([Nature journals reveal terms of landmark open-access option](https://www.nature.com/articles/d41586-020-03324-y)). 
+
+Wait – reviewers now get paid for their work? No, of course not. Researchers still do the reviews for free, as always. Nature now wants to get paid for your reviews.
+
+I hope that with that reviewing policy I can make a small change towards a more open, more credible, and more efficient academic system. At least I feel much better with these priorities and have more fun reviewing.
