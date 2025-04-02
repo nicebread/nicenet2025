@@ -10,15 +10,12 @@ website:
   title: "Felix Schönbrodt"
   image: "https://quarto.org/quarto.png"
   description: "Academic Website of Felix Schönbrodt"
-  favicon: files/images/favicon-32x32.png
+  favicon: "files/images/favicon-32x32.png"
  
   navbar:
     background: light
 
     left:
-#      - text: Home
-#        href: index.qmd
-      # - text: About
       #   menu:
       #     - text: News
       #       href: posts.qmd#category=news
@@ -90,7 +87,7 @@ bibliography: references.bib
 format:
   html:
     theme: 
-      light: spacelab
+      light: cosmo
     css: styles.css
     toc: true
     footnotes-hover: true
@@ -99,9 +96,9 @@ format:
     code-overflow: wrap
     fig-align: center
     link-external-icon: false
-    link-external-newwindow: true
+    link-external-newwindow: false
     email-obfuscation: javascript
-    link-external-filter: '^(?:http:|https:)\/\/drganghe\.github\.io\/custom'
+    #link-external-filter: '^(?:http:|https:)\/\/drganghe\.github\.io\/custom'
     include-in-header: 
       - files/includes/_academic.qmd
       - files/includes/matomo.html

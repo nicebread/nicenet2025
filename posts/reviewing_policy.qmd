@@ -9,6 +9,7 @@ image: "/posts/img/burning_money.jpg"
 #draft: true
 ---
 
+<hr>
 <!--Include academic icons or bottons-->
 {{< include /files/includes/_academic.qmd >}}
 

@@ -37,9 +37,9 @@ listing:
     exclude:
       title: ""
     type: grid
-    max-items: 3
-#    image-height: 150px
-    page-size: 3 #set same as max-times to remove the page number setting
+    max-items: 3    
+    page-size: 3 # set same as max-times to remove the page number setting
+    image-height: 150px
     fields: [image, date, title, subtitle]
     max-description-length: 75
     sort: 
@@ -68,6 +68,9 @@ You can sign, too!
 Check out the latest &nbsp;[Papers](posts.qmd#category=paper)&nbsp;, &nbsp;[News](posts.qmd#category=news)&nbsp;, &nbsp;[Events](posts.qmd#category=event)&nbsp;, and &nbsp;[More »](/posts.qmd)
 
 -->
+
+<hr>
+
 
 ### Blog posts
 
