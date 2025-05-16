@@ -7,13 +7,18 @@ title-block-banner: false
 css: custom.css
 ---
 
+<!-- How to refresh everything (including Haikus - this takes about XX min.!):
+
+1. Make sure that ollama runs locally and the llama3.1 model is available
+2. Delete the file `files/publist_processed.RData`
+3. Render again.
+-->
+
 <!--Include academic icons or buttons-->
 {{< include /files/includes/_academic.qmd >}}
 
 <!--Popup windows for Abstracts-->
 {{< include /files/includes/script-abstract-popup.html >}}
-
-*Note: I am rebuilding my website; pre-prints currently are missing in the list.*
 
 The buttons with small symbols for open access <img height='20' src='files/images/oa_small.png' alt='oa_badge'>, open data <img height='20' src='files/images/od_small.png' alt='od_badge'>, preregistration <img height='20' src='files/images/prereg_small.png' alt='prereg_badge'>, and open material <img height='20' src='files/images/om_small.png' alt='om_badge'> provide direct links to the sources. Not all of these badges have been officially awarded by the publishing journal (many journals have not implemented the badges yet, and some discarded them again).
 
@@ -69,7 +74,7 @@ format_name <- function(al, which="first", focus=c("Felix Schönbrodt", "Felix D
 
 
 
-get_authors <- function(sbib) {
+get_authors <- function(sbib, show_journal=TRUE) {
 
     res <- c()
     for (i in 1:nrow(sbib)) {
@@ -88,7 +93,8 @@ get_authors <- function(sbib) {
 
                     " (<span class='year'>", sbib[i, ]$publication_year, "</span>). ",
                     #str_to_sentence(sbib[i, ]$display_name), 
-                    " <i>", sbib[i, ]$so, "</i>.", " <a href='", sbib[i, ]$doi, "'>", sbib[i, ]$doi, "</a>"
+                    ifelse(show_journal, paste0(" <i>", sbib[i, ]$so, "</i>."), ""), 
+                    " <a href='", sbib[i, ]$doi, "'>", sbib[i, ]$doi, "</a>"
                     ))
         } else {
             res <- c(res, "No authors indicated")
@@ -115,17 +121,25 @@ clean_title <- function(title) {
 
 
 ```{r preprocess}
+#| include: false
+
 # keep the cached file if it exists.
 if (file.exists("files/publist_processed.RData")) {
     load("files/publist_processed.RData")
 } else {
     publist <- import("files/publist.xlsx")
     publist$doi <- normalize_dois(publist$doi)
+    publist$is_preprint <- !is.na(publist$is_preprint) & publist$is_preprint == "true"
+
     publist <- publist %>% filter(!is.na(doi))
 
     OAlex_papers <- oa_fetch(entity = "works", doi = normalize_dois(publist$doi))
 
-    # TODO: Get meta-data information for preprints
+    non_OpenAlex_dois <- setdiff(publist$doi, OAlex_papers$doi)
+    print(paste0(length(non_OpenAlex_dois), " papers in the list are not available in OpeAlex:"))
+    print(publist %>% filter(doi %in% non_OpenAlex_dois) %>% select(doi, is_preprint, Title))
+    
+    # TODO: handle the non_OpenAlex_dois
 
     OAlex_papers <- left_join(OAlex_papers, publist, by = "doi")
 
@@ -137,6 +151,7 @@ if (file.exists("files/publist_processed.RData")) {
 
     OAlex_papers$haiku <- ""
     for (i in 1:nrow(OAlex_papers)) {
+        print(paste0("Creating Haiku for ", OAlex_papers[i, "display_name"]))
         OAlex_papers$haiku[i] <- get_haiku(title=OAlex_papers[i, "display_name"], abstract=OAlex_papers[i, "ab"])
     }
 
@@ -146,6 +161,103 @@ if (file.exists("files/publist_processed.RData")) {
 
 ```
 
+```{r get_entry}
+build_published_entry <- function(counter, OA_record) {
+    paste0(
+            "<div data-id='", counter, "' class='reference'>
+            <div class='reference-content'>",
+
+            strong(OA_record$display_name |> clean_title()),
+            br(),
+
+            "<span style='font-size: 80%; color: #555555;'>",
+            get_authors(OA_record) |> HTML(),
+            "</span>",
+
+            "<div class='buttons'>",
+
+            " <button class='button' onclick='openPopup(event, \"popup", counter, "\")'>
+                Abstract
+            </button>",
+             ifelse(!is.na(OA_record$OpenAccess), paste0(
+                "<a href='", OA_record$OpenAccess, "'  class='button'><img height='20' src='files/images/oa_small.png' alt='oa_badge'> PDF</a>"), ""),
+            ifelse(!is.na(OA_record$OpenData), paste0(
+                "<a href='", OA_record$OpenData, "'  class='button'><img height='20' src='files/images/od_small.png' alt='open_data_badge'> Open Data</a>"), ""),
+            ifelse(!is.na(OA_record$OpenMaterial), paste0(
+                "<a href='", OA_record$OpenMaterial, "'  class='button'><img height='20' src='files/images/om_small.png' alt='open_material_badge'> Open Material</a>"), ""),
+            ifelse(!is.na(OA_record$Preregistration), paste0(
+                "<a href='", OA_record$Preregistration, "'  class='button'><img height='20' src='files/images/prereg_small.png' alt='prereg_badge'> Preregistration</a>"), ""),
+            "</div>",  # of .buttons
+
+            "<div><span style='font-size: 80%; color: #555555;'>Citation count: ",  OA_record$cited_by_count, "</span></div>",
+            "</div>",  # of .reference-content
+
+
+            "<div class='haiku-box'>",
+            str_split(OA_record$haiku, "\n")[[1]] |> paste(collapse=" - <br/>"),
+            "</div>",
+
+            "<!-- Pop-up Modal (Hidden by Default) -->
+            <div id='popup", counter, "' class='popup'>
+              <div class='popup-content'>
+                <span class='close' onclick='closePopup(\"popup", counter, "\")'>&times;</span>
+                <h3>Abstract</h3>
+                <p>", OA_record$ab, "</p>
+              </div>
+            </div>",
+
+            "</div>"   # of .reference
+        )
+}
+
+
+
+build_preprint_entry <- function(counter, OA_record) {
+    paste0(
+            "<div data-id='", counter, "' class='reference'>
+            <div class='reference-content'>",
+
+            strong(OA_record$display_name |> clean_title()),
+            br(),
+
+            "<span style='font-size: 80%; color: #555555;'>",
+            get_authors(OA_record,show_journal=FALSE) |> HTML(),
+            "</span>",
+
+            "<div class='buttons'>",
+
+            " <button class='button' onclick='openPopup(event, \"popup", counter, "\")'>
+                Abstract
+            </button>",
+             ifelse(!is.na(OA_record$OpenAccess), paste0(
+                "<a href='", OA_record$OpenAccess, "'  class='button'><img height='20' src='files/images/oa_small.png' alt='oa_badge'> PDF</a>"), ""),
+            ifelse(!is.na(OA_record$OpenData), paste0(
+                "<a href='", OA_record$OpenData, "'  class='button'><img height='20' src='files/images/od_small.png' alt='open_data_badge'> Open Data</a>"), ""),
+            ifelse(!is.na(OA_record$OpenMaterial), paste0(
+                "<a href='", OA_record$OpenMaterial, "'  class='button'><img height='20' src='files/images/om_small.png' alt='open_material_badge'> Open Material</a>"), ""),
+            ifelse(!is.na(OA_record$Preregistration), paste0(
+                "<a href='", OA_record$Preregistration, "'  class='button'><img height='20' src='files/images/prereg_small.png' alt='prereg_badge'> Preregistration</a>"), ""),
+            "</div>",  # of .buttons
+            "</div>",  # of .reference-content
+
+
+            "<div class='haiku-box'>",
+            str_split(OA_record$haiku, "\n")[[1]] |> paste(collapse=" - <br/>"),
+            "</div>",
+
+            "<!-- Pop-up Modal (Hidden by Default) -->
+            <div id='popup", counter, "' class='popup'>
+              <div class='popup-content'>
+                <span class='close' onclick='closePopup(\"popup", counter, "\")'>&times;</span>
+                <h3>Abstract</h3>
+                <p>", OA_record$ab, "</p>
+              </div>
+            </div>",
+
+            "</div>"   # of .reference
+        )
+}
+```
 
 
 ```{r build_reflist}
@@ -154,62 +266,38 @@ if (file.exists("files/publist_processed.RData")) {
 PL <- ""
 
 counter <- 0
-for (y in unique(OAlex_papers$publication_year) |> sort(decreasing=TRUE)) {
-    PL <- c(PL, paste0("\n\n<h2>", y, "</h2>\n\n"))
 
-    OA_y <- OAlex_papers %>% 
-        filter(publication_year == y) %>% 
-        arrange(desc(publication_date))
+# Preprints
+OA_pp <- OAlex_papers %>% 
+    filter(is_preprint == TRUE) %>% 
+    arrange(desc(publication_date))
 
-    for (i in 1:nrow(OA_y)) {        
+if (nrow(OA_pp) > 0) {
+    PL <- c(PL, paste0("\n\n<h2>Preprints</h2>\n\n"))
 
-        PL0 <- paste0(
-            "<div data-id='", counter, "' class='reference'>
-            <div class='reference-content'>",
-
-            strong(OA_y[i, "display_name"] |> clean_title()),
-            br(),
-
-            "<span style='font-size: 80%; color: #555555;'>",
-            get_authors(OA_y[i, ]) |> HTML(),
-            "</span>",
-
-            "<div class='buttons'>",
-
-            " <button class='button' onclick='openPopup(event, \"popup", counter, "\")'>
-                Abstract
-            </button>",
-             ifelse(!is.na(OA_y[i, "OpenAccess"]), paste0(
-                "<a href='", OA_y[i, "OpenAccess"], "'  class='button'><img height='20' src='files/images/oa_small.png' alt='oa_badge'> PDF</a>"), ""),
-            ifelse(!is.na(OA_y[i, "OpenData"]), paste0(
-                "<a href='", OA_y[i, "OpenData"], "'  class='button'><img height='20' src='files/images/od_small.png' alt='open_data_badge'> Open Data</a>"), ""),
-            ifelse(!is.na(OA_y[i, "OpenMaterial"]), paste0(
-                "<a href='", OA_y[i, "OpenMaterial"], "'  class='button'><img height='20' src='files/images/om_small.png' alt='open_material_badge'> Open Material</a>"), ""),
-            ifelse(!is.na(OA_y[i, "Preregistration"]), paste0(
-                "<a href='", OA_y[i, "Preregistration"], "'  class='button'><img height='20' src='files/images/prereg_small.png' alt='prereg_badge'> Preregistration</a>"), ""),
-            "</div>",  # of .buttons
-            "</div>",  # of .reference-content
-
-
-            "<div class='haiku-box'>",
-            str_split(OA_y[i, "haiku"], "\n")[[1]] |> paste(collapse=" - <br/>"),
-            "</div>",
-
-"<!-- Pop-up Modal (Hidden by Default) -->
-<div id='popup", counter, "' class='popup'>
-  <div class='popup-content'>
-    <span class='close' onclick='closePopup(\"popup", counter, "\")'>&times;</span>
-    <h3>Abstract</h3>
-    <p>", OA_y[i, "ab"], "</p>
-  </div>
-</div>",
-
-            "</div>"   # of .reference
-        )
-        
-        PL <- c(PL, PL0)
+    for (i in 1:nrow(OA_pp)) {        
+        PL <- c(PL, build_preprint_entry(counter, OA_pp[i, ]))
         counter <- counter + 1
     }
+}    
+
+# Published papers
+for (y in unique(OAlex_papers$publication_year) |> sort(decreasing=TRUE)) {
+
+    OA_y <- OAlex_papers %>% 
+        filter(
+            publication_year == y,
+            is_preprint == FALSE) %>% 
+        arrange(desc(publication_date))
+
+    if (nrow(OA_y) > 0) {
+        PL <- c(PL, paste0("\n\n<h2>", y, "</h2>\n\n"))
+
+        for (i in 1:nrow(OA_y)) {        
+            PL <- c(PL, build_published_entry(counter, OA_y[i, ]))
+            counter <- counter + 1
+        }
+    }    
 }
 
 PL <- c(PL, "</div></div>\n\n")  # closing outer divs "list" and "refList"
